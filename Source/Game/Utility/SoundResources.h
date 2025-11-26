@@ -1,0 +1,57 @@
+
+#if (AX_TARGET_PLATFORM == AX_PLATFORM_WIN32 ||AX_TARGET_PLATFORM == AX_PLATFORM_ANDROID || AX_TARGET_PLATFORM == AX_PLATFORM_IOS)
+
+#    define SOUND_CLICK         "GameSound/ButtonClick.mp3"
+#    define SOUND_CHOOSE_BALL   "GameSound/selectBall.mp3"
+#    define SOUND_FAIL          "GameSound/bom1.mp3"
+#    define SOUND_LOSE          "GameSound/Lose.mp3"
+#    define SOUND_MOVE          "GameSound/jumpBonus.mp3"
+#    define SOUND_SCORE1        "GameSound/eatScore_1.mp3"
+#    define SOUND_SCORE2        "GameSound/eatScore_2.mp3"
+#    define SOUND_SCORE3        "GameSound/eatScore_3.mp3"
+#    define SOUND_SCORE4        "GameSound/eatScore_4.mp3"
+#    define SOUND_SCORE5        "GameSound/eatScore_5.mp3"
+#    define SOUND_SCORE6        "GameSound/eatScore_5.mp3"
+#    define SOUND_WIN           "GameSound/Win.mp3"
+#    define SOUND_TIME          "GameSound/TimeCountDown.mp3"
+#    define SOUND_LEVEL_UP      "GameSound/levelUp.mp3"
+#    define SOUND_BOMB          "GameSound/bomb.mp3"
+#    define SOUND_START         "GameSound/start.mp3"
+#    define SOUND_COUNT_DOWN    "GameSound/TimeCountDown.mp3"
+#    define SOUND_OTHER_SCORE   "GameSound/otherScore.mp3"
+#    define SOUND_PLAYER_JOIN   "GameSound/playerJoin.mp3"
+#    define SOUND_PLAYER_OUT    "GameSound/playerOut.mp3"
+#    define SOUND_THUNDER       "GameSound/thunder.mp3"
+#    define SOUND_END           "GameSound/end.mp3"
+#    define SOUND_LOSE_SOUND    "GameSound/loseSound.mp3"
+#    define SOUND_EXTRA         "GameSound/extra.mp3"
+#    define SOUND_SCORE_EXTRA    "GameSound/scoreExtra.mp3"
+
+#    define SOUND_EGG_BREAK     "GameSound/BreakEgg.mp3"
+#    define SOUND_EGG_LAND      "GameSound/EggLands.mp3"
+
+#    define UP_NUMBER           "GameSound/upNumber.mp3"
+#    define NEW_NUMBER          "GameSound/newNumber.mp3"
+#    define LEVEL_UP            "GameSound/levelUp.mp3"
+#    define SOUND_EAT           "GameSound/eat.mp3"
+#    define SOUND_HIT           "GameSound/hit.mp3"
+#    define SOUND_FIREWORK      "GameSound/fireworks.mp3"
+
+#    define SOUND_BOMB_GUESS    "GameSound/bombGuess.mp3"
+#    define SOUND_BOMB_UN_GUESS "GameSound/bombUnguess.mp3"
+#    define SOUND_OPEN_CELL     "GameSound/openCell.mp3"
+#    define SOUND_BREAK_BLOCK     "GameSound/breakBlock.mp3"
+
+
+#    define SOUND_BREAK_EGG       "GameSound/BreakEgg.mp3"
+#    define SOUND_EGG_LAND        "GameSound/EggLands.mp3"
+#    define SOUND_END             "GameSound/End.mp3"
+#    define SOUND_MAMA            "GameSound/Mama.mp3"
+#    define SOUND_TICK_TOCK       "GameSound/ticktock.mp3"
+#    define SOUND_WARN            "GameSound/Warn.mp3"
+#    define SOUND_WHIRLEY_HIT     "GameSound/WhirleyHit.mp3"
+#    define SOUND_WHIRLEY_SIREN   "GameSound/whirleysiren.mp3"
+
+#    define SOUND_JUMP            "GameSound/jump.mp3"
+#    define SOUND_MOVE_DOWN       "GameSound/moveDown.mp3"
+#endif

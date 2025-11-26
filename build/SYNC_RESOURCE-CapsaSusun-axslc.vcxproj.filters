@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\dev\projects\CapsaSusun\build\CMakeFiles\fe8cbeec23be7ab5d0f67a031e381d73\SYNC_RESOURCE-CapsaSusun-axslc.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\dev\projects\CapsaSusun\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\dev\projects\CapsaSusun\build\CMakeFiles\SYNC_RESOURCE-CapsaSusun-axslc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{C4CA934F-C90C-332B-A731-542DCDEC048B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
