@@ -239,13 +239,13 @@ void GUIMinigames::initInfoUser() {
 
     avatar = ImageView::create("avatarIOS/avatar_0.png");
     bgInfo->addChild(avatar);
-    avatar->setPosition(Vec2(avatar->getContentSize().width * 0.6, bgInfo->getContentSize().height / 2));
+    avatar->setPosition(Vec2(avatar->getContentSize().width * 0.7, bgInfo->getContentSize().height / 2));
 
     borderAvatar = ImageView::create("avatarIOS/avatar_0.png");
     bgInfo->addChild(borderAvatar);
     borderAvatar->setPosition(avatar->getPosition());
 
-    float posX = avatar->getPositionX() + avatar->getContentSize().width * 0.6;
+    float posX = avatar->getPositionX() + avatar->getContentSize().width * 0.7;
     float padY = 40;
     lbName = Text::create("Player", "fonts/tahoma.ttf", 22);
     bgInfo->addChild(lbName);
