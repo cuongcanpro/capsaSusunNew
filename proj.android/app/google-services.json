@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "735745505095",
+    "project_id": "line-98-451615",
+    "storage_bucket": "line-98-451615.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735745505095:android:9f59347edf4e84bb663e62",
+        "android_client_info": {
+          "package_name": "org.game.tienlenAll"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQ3tzeRaMCYiIy1ORSfItbhkiHHVvHL6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

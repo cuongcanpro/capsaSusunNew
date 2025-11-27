@@ -129,9 +129,9 @@ void GameClient::loadPreferences()
     sourceApp  = UserDefault::getInstance()->getIntegerForKey("sourceApp", -1);
     idAdsBanner = UserDefault::getInstance()->getIntegerForKey("idAdsBanner", 1);
     idAdsFull = UserDefault::getInstance()->getIntegerForKey("idAdsFull", 1);
-    adInterUnit = UserDefault::getInstance()->getStringForKey("adInterUnit", "ca-app-pub-7169368956692170/2561269098");
-    adBannerUnit = UserDefault::getInstance()->getStringForKey("adBannerUnit", "ca-app-pub-7169368956692170/5041475660");
-    adRewardUnit = UserDefault::getInstance()->getStringForKey("adRewardUnit", "ca-app-pub-7169368956692170/1248187426");
+    adInterUnit = UserDefault::getInstance()->getStringForKey("adInterUnit", "ca-app-pub-3940256099942544/6300978111");
+    adBannerUnit = UserDefault::getInstance()->getStringForKey("adBannerUnit", "ca-app-pub-3940256099942544/1033173712");
+    adRewardUnit = UserDefault::getInstance()->getStringForKey("adRewardUnit", "ca-app-pub-3940256099942544/5224354917");
 
     adInterUnitCampaign  = "ca-app-pub-7169368956692170/2561269098";
     adBannerUnitCampaign = "ca-app-pub-7169368956692170/5041475660";

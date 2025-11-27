@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:installLocation="auto">
 
     <uses-feature android:glEsVersion="0x00020000" />
@@ -12,7 +13,15 @@
         <!-- Tell AxmolActivity the name of our .so -->
         <meta-data android:name="android.app.lib_name"
                    android:value="CapsaSusun" />
-
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-7169368956692170~7778361787"/>
+        <meta-data android:name="com.google.android.gms.games.APP_ID"
+            android:value="@string/game_services_project_id"/>
+        <property
+            android:name="android.adservices.AD_SERVICES_CONFIG"
+            android:resource="@xml/gma_ad_services_config"
+            tools:replace="android:resource" />
         <activity
             android:name="dev.axmol.app.AppActivity"
             android:screenOrientation="sensorLandscape"
@@ -31,5 +40,5 @@
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.VIBRATE"/>
 </manifest>
