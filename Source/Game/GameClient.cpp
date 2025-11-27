@@ -640,7 +640,7 @@ void GameClient::getVersion() {
   //  request->setHeaders(std::vector<std::string>{CHROME_UA});
     request->setResponseCallback(AX_CALLBACK_2(GameClient::onVersionCompleted, this));
     request->setTag("GET test3");
-    ax::network::HttpClient::getInstance()->send(request);
+    //ax::network::HttpClient::getInstance()->send(request);
     // don't forget to release it, pair to new
     request->release();
     time_t currentTime;
