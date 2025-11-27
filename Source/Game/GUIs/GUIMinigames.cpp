@@ -110,7 +110,8 @@ void GUIMinigames::callBackSplash()
     initInfoUser();
 
     btnChess = addButton(BTN_LINE, "iconCard.png", new BubbleBehavior(), NULL, false);
-    btnChess->setPosition(bgInfo->getPositionX(), bgInfo->getPositionY() + btnChess->getHeight() * 0.7 + bgInfo->getContentSize().height * 0.5);
+    btnChess->setPosition(bgInfo->getPositionX(), bgInfo->getPositionY() + btnChess->getHeight() * 0.6 + bgInfo->getContentSize().height * 0.5);
+    btnChess->normalImage->setScale(0.8);
 	
     float heightBg = btnBack->getPositionY() - btnBack->getHeight() * 0.7 - size.height * 0.15;
     float widthBg  = size.width * 0.95f - bgInfo->getPositionX() - bgInfo->getContentSize().width * 0.5 - size.width * 0.05;
@@ -234,37 +235,37 @@ void GUIMinigames::initInfoUser() {
     bgInfo = Scale9Sprite::create("IconGame/popup.png");
     addChild(bgInfo);
     bgInfo->setContentSize(Size(300, 200));
-    bgInfo->setPosition(Vec2(size.width * 0.05 + bgInfo->getContentSize().width * 0.5, size.height * 0.16 + bgInfo->getContentSize().height * 0.5));
+    bgInfo->setPosition(Vec2(size.width * 0.05 + bgInfo->getContentSize().width * 0.5, size.height * 0.15 + bgInfo->getContentSize().height * 0.5));
 
     avatar = ImageView::create("avatarIOS/avatar_0.png");
     bgInfo->addChild(avatar);
-    avatar->setPosition(Vec2(70, bgInfo->getContentSize().height / 2));
+    avatar->setPosition(Vec2(avatar->getContentSize().width * 0.6, bgInfo->getContentSize().height / 2));
 
     borderAvatar = ImageView::create("avatarIOS/avatar_0.png");
     bgInfo->addChild(borderAvatar);
     borderAvatar->setPosition(avatar->getPosition());
 
     float posX = avatar->getPositionX() + avatar->getContentSize().width * 0.6;
-    float padY = 50;
-    lbName = Text::create("Player", "fonts/tahoma.ttf", 25);
+    float padY = 40;
+    lbName = Text::create("Player", "fonts/tahoma.ttf", 22);
     bgInfo->addChild(lbName);
     lbName->setTextHorizontalAlignment(ax::TextHAlignment::LEFT);
     lbName->setAnchorPoint(Vec2(0, 0.5f));
-    lbName->setPosition(Vec2(posX, bgInfo->getContentSize().height - 40));
+    lbName->setPosition(Vec2(posX, bgInfo->getContentSize().height - 30));
 
-    lbGold = Text::create("Player", "fonts/tahoma.ttf", 25);
+    lbGold = Text::create("Player", "fonts/tahoma.ttf", 22);
     bgInfo->addChild(lbGold);
     lbGold->setTextHorizontalAlignment(ax::TextHAlignment::LEFT);
     lbGold->setAnchorPoint(Vec2(0, 0.5f));
     lbGold->setPosition(Vec2(posX, lbName->getPositionY() - padY));
 
-    lbWin = Text::create("Player", "fonts/tahoma.ttf", 25);
+    lbWin = Text::create("Player", "fonts/tahoma.ttf", 22);
     bgInfo->addChild(lbWin);
     lbWin->setTextHorizontalAlignment(ax::TextHAlignment::LEFT);
     lbWin->setAnchorPoint(Vec2(0, 0.5f));
     lbWin->setPosition(Vec2(posX, lbGold->getPositionY() - padY));
 
-    lbLevel = Text::create("Player", "fonts/tahoma.ttf", 25);
+    lbLevel = Text::create("Player", "fonts/tahoma.ttf", 22);
     bgInfo->addChild(lbLevel);
     lbLevel->setTextHorizontalAlignment(ax::TextHAlignment::LEFT);
     lbLevel->setAnchorPoint(Vec2(0, 0.5f));

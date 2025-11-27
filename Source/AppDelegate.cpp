@@ -75,7 +75,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     {
 #if (AX_TARGET_PLATFORM == AX_PLATFORM_WIN32) || (AX_TARGET_PLATFORM == AX_PLATFORM_MAC) || \
     (AX_TARGET_PLATFORM == AX_PLATFORM_LINUX)
-        renderView = RenderViewImpl::createWithRect("HelloCpp", ax::Rect(0, 0, 320, 240));
+        renderView = RenderViewImpl::createWithRect("HelloCpp", ax::Rect(0, 0, 400, 240));
          //renderView = RenderViewImpl::createWithRect("HelloCpp", ax::Rect(0, 0, 1000, 562));
         // renderView = RenderViewImpl::createWithRect("HelloCpp", ax::Rect(0, 0, 460, 1000));
         // renderView = RenderViewImpl::createWithRect("HelloCpp", ax::Rect(0, 0, 750, 1000));
