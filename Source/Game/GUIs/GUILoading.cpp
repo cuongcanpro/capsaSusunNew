@@ -9,6 +9,10 @@
 #include <Game/Utility/JNIUtils.h>
 #include <Game/Utility/GameUtility.h>
 #include <Game/Utility/GameSound.h>
+#include "spine/spine.h"
+#include <cocostudio/ArmatureDataManager.h>
+#include <cocostudio/Armature.h>
+#include <DragonBones/DragonBonesHeaders.h>
 
 #define BACKGROUND_RES "loading/bgPortalCenterZP.jpg"
 #define PROGRESS_RES "loading/bgProgress.png"
@@ -100,6 +104,7 @@ void GUILoading::callBackSplash()
             NULL
         )
     );
+    iconBall->setVisible(false);
 
 	background->getImg()->runAction(
         Sequence::create(
@@ -110,4 +115,42 @@ void GUILoading::callBackSplash()
         )
     );
     GameSound::playLevelUp();
+
+   // 1. Lấy factory singleton
+    auto factory = dragonBones::CCFactory::getFactory();
+
+    // 2. Load skeleton & atlas
+    // Đường dẫn là tương đối trong Resources
+    factory->loadDragonBonesData("kyby_paotai6_ske.json");
+    factory->loadTextureAtlasData("kyby_paotai6_tex.json");
+
+    // 3. Tạo armature display
+    // Tên armature trong file: "kyby_paotai1"
+    auto armatureDisplay = factory->buildArmatureDisplay("kyby_paotai6");
+    // Nếu project của bạn có nhiều DragonBonesData, có thể cần truyền thêm tên DragonBonesData:
+    // auto armatureDisplay = factory->buildArmatureDisplay("kyby_paotai1", "kyby_paotai1");
+
+    // 4. Đặt vị trí & add vào scene
+    armatureDisplay->setPosition(ax::Vec2(300, 200));
+    this->addChild(armatureDisplay);
+
+    // 5. Play animation (trong file có: "fire", "appear", "disappear", "stand")
+    armatureDisplay->getAnimation()->play("appear");
+
+  ////  skeletonNode->setAnimation(0, "walk", true);
+
+  //  // alternative setting two color tint for groups of 10 skeletons
+  //  // should end up with #skeletons / 10 batches
+  //  // if (j++ < 10)
+  //  //			skeletonNode->setTwoColorTint(true);
+  //  //		if (j == 20) j = 0;
+  //  // skeletonNode->setTwoColorTint(true);
+
+  //  skeletonNode->setPosition(Vec2(200, 200));
+  //  addChild(skeletonNode);
+
+    //cocostudio::ArmatureDataManager::getInstance()->addArmatureFileInfo("kyby_paotai1_ske.json");
+    //cocostudio::Armature *pAr = cocostudio::Armature::create("kyby_paotai1"); //
+    //addChild(pAr);
+    //pAr->getAnimation()->play("fire");
 }

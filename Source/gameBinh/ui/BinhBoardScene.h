@@ -52,7 +52,7 @@ public:
 private:
 	ImageView *bgBoard, *imgChi, *imgFinish;
 	Text *labelRoom, *labelBet, *labelRate;
-	Button *btnSound, *btnQuit, *btnStart,*btnArrange, *btnHelp;
+	Button *btnSound, *btnQuit, *btnStart,*btnArrange, *btnHelp, *btnLanguage;
 	ImageView* btnQuitSelect;
 	
 	//SelfUI *myPlayer;

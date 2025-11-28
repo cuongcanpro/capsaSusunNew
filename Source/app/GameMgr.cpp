@@ -22,7 +22,6 @@
 
 GameMgr::GameMgr()
 {
-
 }
 
 GameMgr::~GameMgr()
@@ -98,7 +97,7 @@ GameMgr* GameMgr::getInstance()
 void GameMgr::startGame() {
 	// need init before loading
 //	typeTop = 0;
-        isIndo      = false;
+        isIndo      = true;
         isInitAds   = false;
         useAds      = 1;
 	need_update = 0;
@@ -354,7 +353,7 @@ bool GameMgr::checkIsCountry(std::string id) {
 }
 
 SettingConfig GameMgr::getSetting() {
-	setting.vibrate = StorageUtil::getBool("_game_setting_vibrate_");
+	/*setting.vibrate = StorageUtil::getBool("_game_setting_vibrate_");
 	setting.sound = StorageUtil::getBool("_game_setting_sound_", true);
 	setting.acceptInvite = StorageUtil::getBool("_game_setting_invite_");
 	setting.acceptFriend = StorageUtil::getBool("_game_setting_friend_");
@@ -364,7 +363,7 @@ SettingConfig GameMgr::getSetting() {
 	}
 	else {
 		languageMgr->changeLanguage(LANGUAGE_EN);
-	}
+	}*/
 	return setting;
 }
 
