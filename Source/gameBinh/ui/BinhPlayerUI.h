@@ -7,11 +7,13 @@
 #include "BinhCardImage.h"
 #include "spine/SkeletonAnimation.h"
 #include "BinhCardButton.h"
-
+#include <DragonBones/DragonBonesHeaders.h>
+#include <DragonBones/CCArmatureDisplay.h>
 #include "EffekseerForCocos2d-x.h"
 using namespace ax::ui;
 using namespace ax::extension;
 using namespace ax;
+using namespace dragonBones;
 
 #define USER_LEFT 1
 #define USER_RIGHT 3
@@ -76,7 +78,7 @@ public:
 	void setNormalZOrder();
 	void showParticle();
 	void loadTheme(int idTheme);
-	
+	void showGun(float rotation);
 public:
 	Node* bgAvatar;
 	ImageView* bg;
@@ -102,6 +104,51 @@ public:
 	void onButtonRelease(Button* button, int id);
     efk::EffectManager* manager;
     efk::EffectEmitter* effBomb;
+    CCArmatureDisplay* gun;
+    int step;
+    void playAppear()
+    {
+        step = 0;
+        gun->getAnimation()->play("appear", 1);
+    }
+
+    void playStand()
+    {
+        gun->getAnimation()->play("stand", 1);
+        step = 1;
+    }
+
+    void playFire()
+    {
+        gun->getAnimation()->play("fire", 1);
+        step = 2;
+    }
+
+    void playDisappear()
+    {
+        gun->getAnimation()->play("disappear", 1);
+        step = 3;
+    }
+    void onGunAnimationComplete()
+    {
+        
+        switch (step)
+        {
+        case 0:
+            playStand();
+            break;
+        case 1:
+            playFire();
+            break;
+        case 2:
+            playDisappear();
+            break;
+        case 3:
+            //playAppear();
+            break;
+        }
+    }
+    
 protected:
 	int chairIndex;
 };

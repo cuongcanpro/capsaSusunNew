@@ -25,6 +25,7 @@ using namespace ax::ui;
 #define BOARD_SCENE_BTN_ARRANGE 7 
 #define BOARD_SCENE_BTN_THEME 8 
 #define BOARD_SCENE_BTN_TOP 9
+#define BOARD_SCENE_BTN_LANGUAGE      10
 
 BinhBoardScene::BinhBoardScene()
 {
@@ -86,6 +87,19 @@ void BinhBoardScene::initGUI()
 	btnArrange = customButton("btnArrange", BOARD_SCENE_BTN_ARRANGE, panelRight);
 	btnSound = customButton("btnSound", BOARD_SCENE_BTN_SOUND, pTopRight);
 	btnHelp = customButton("btnHelp", BOARD_SCENE_BTN_HELP, pTopRight);
+    btnLanguage    = customButton("btnLanguage", BOARD_SCENE_BTN_LANGUAGE, pTopRight);
+    string res;
+    if (languageMgr->checkCurrentLanguage(LANGUAGE_EN))
+    {
+        //languageMgr->changeLanguage("en");
+        res = "Board/table/flag_0.png";
+    }
+    else
+    {
+       // languageMgr->changeLanguage("vn");
+        res = "Board/table/flag_1.png";
+    }
+    btnLanguage->loadTextures(res, res, res);
 
 	manager        = EffectManager::create(size);
 	Effect* effect = Effect::create("flame.efk", 40);
@@ -246,7 +260,7 @@ void BinhBoardScene::update(float delta)
 				int arr[13] = { 0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50 };
 				//int arr[13] = { 0, 1, 2, 3, 16, 17, 18, 19, 34, 35, 41, 42, 50 };
 				for (int i = 0; i < 13; i++) {
-					//arrayAutoCard[0].push_back(arr[i]);
+				//	arrayAutoCard[0].push_back(arr[i]);
 				}
 				/*arrayAutoCard[1].clear();
 					int arr1[13] = { 0, 4, 9, 13, 17, 36, 40, 45, 49, 32, 7, 11, 15 };
@@ -258,11 +272,11 @@ void BinhBoardScene::update(float delta)
 						arrayAutoCard[1].push_back(arr1[j]);
 					}*/
 				//arrayAutoCard[2].clear();
-				//int arr2[13] = { 0, 1, 9, 10, 18, 19, 31, 30, 34, 35, 41, 42, 50 }; // luc phe bon
-				////int arr[13] = { 0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50 };
-				//for (int j = 0; j < 13; j++) {
-				//	arrayAutoCard[2].push_back(arr2[j]);
-				//}
+				int arr2[13] = { 0, 1, 9, 10, 18, 19, 31, 30, 34, 35, 41, 42, 50 }; // luc phe bon
+				//int arr[13] = { 0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50 };
+				for (int j = 0; j < 13; j++) {
+					//arrayAutoCard[2].push_back(arr2[j]);
+				}
 
 				//arrayAutoCard[3].clear();
 				////int arr3[13] = { 37, 33, 21, 13, 5, 48, 44, 28, 4, 0, 43, 26, 23 };
@@ -462,6 +476,7 @@ void BinhBoardScene::update(float delta)
                         }
                     }
                 }
+
 				BinhGameLogic::getInstance()->autoStart(5, true);
 				autoState = AUTO_START_STATE;
 				BinhGameLogic::getInstance()->timeAuto = -1;
@@ -650,6 +665,9 @@ void BinhBoardScene::userLeave(char chair)
 void BinhBoardScene::autoStart(int time, bool isAutoStart) {
 	if (isAutoStart) {
 		if (BinhGameLogic::getInstance()->isShowBtnStart()) {
+            string res = "Board/table/" + BinhGameLogic::getInstance()->getRes() + "btnStart.png";
+
+            btnStart->loadTextures(res, res, res);
 			btnStart->setVisible(true);
 			btnStart->runAction(
 				RepeatForever::create(
@@ -1002,6 +1020,8 @@ void BinhBoardScene::soBai(bool isMauBinh, vector<double> arrayMoney)
 		bgDark->runAction(FadeIn::create(0.5));
 
 		// show imgFinish
+        string res = "Board/table/" + BinhGameLogic::getInstance()->getRes() + "finish.png";
+        imgFinish->loadTexture(res);
 		imgFinish->setVisible(true);
 		imgFinish->setOpacity(0);
 		imgFinish->runAction(Sequence::create(
@@ -1019,6 +1039,7 @@ void BinhBoardScene::soBai(bool isMauBinh, vector<double> arrayMoney)
 			emitter->play(1);
 			TienlenGameSound::playAutoWin();
 		}
+
         if (BinhGameLogic::getInstance()->getNumMauBinh() == 1)
         {
             Size size      = Director::getInstance()->getVisibleSize();
@@ -1210,6 +1231,8 @@ void BinhBoardScene::summary(vector<double> arrayMoney)
     JNIUtils::vibrate(20);
 	gameMgr->checkCanPlayEffect();
 	imgChi->setVisible(false);
+    string res = "Board/table/" + BinhGameLogic::getInstance()->getRes() + "finish.png";
+    imgFinish->loadTexture(res);
 	imgFinish->setVisible(true);
 	//imgFinish->setOpacity(0);
 	imgFinish->runAction(
@@ -1355,6 +1378,7 @@ void BinhBoardScene::onButtonRelease(ax::ui::Button* button, int id)
 		/*sceneMgr->showOkDialogWithAction("lfdjfld fdljf ", [this](int btnId) {
 		});
 		return;*/
+        arrayPlayer[0]->showGun(0);
 		UserInfo* info = BinhGameLogic::getInstance()->arrayPlayer[0]->getUserInfo();
 		if (info->bean <= 1000 && BinhGameLogic::getInstance()->checkGetSupport()) {
 			JNIUtils::sendEvent("get_support", "1");
@@ -1405,6 +1429,28 @@ void BinhBoardScene::onButtonRelease(ax::ui::Button* button, int id)
 	case BOARD_SCENE_BTN_HELP:
 		sceneMgr->openGUI(BinhHelpGUI::className);
 		break;
+    case BOARD_SCENE_BTN_LANGUAGE:
+        {
+            //gameMgr->isIndo = !gameMgr->isIndo;
+            //StorageUtil::setBool("isIndo", gameMgr->isIndo);
+            if (languageMgr->checkCurrentLanguage(LANGUAGE_EN)) {
+                languageMgr->changeLanguage(LANGUAGE_VN);
+            }
+            else {
+                languageMgr->changeLanguage(LANGUAGE_EN);
+            }
+            string res = "";
+            if (languageMgr->checkCurrentLanguage(LANGUAGE_EN))
+            {
+                res = "Board/table/flag_0.png";
+            }
+            else
+            {
+                res = "Board/table/flag_1.png";
+            }
+            btnLanguage->loadTextures(res, res, res);
+            break;
+        }
 	case BOARD_SCENE_BTN_SOUND: {
 		gameMgr->changeSound();
 		loadBtnSound();
@@ -1537,7 +1583,7 @@ void BinhBoardScene::updateMyAvatar()
 }
 
 void BinhBoardScene::loadLanguage() {
-    if (gameMgr->isIndo)
+    if (languageMgr->checkCurrentLanguage(LANGUAGE_EN))
     {
 
     }

@@ -157,7 +157,7 @@ void BinhTinhAt::initButton()
 	btnArrange = customButton("btnArrange", BINH_TINH_AT_BTN_ARRANGE, _layout);
 	btnNormal = customButton("btnNormal", BINH_TINH_AT_BTN_NORMAL, _layout);
 
-    if (gameMgr->isIndo)
+    if (languageMgr->checkCurrentLanguage(LANGUAGE_EN))
     {
         string res = "table/textEnglish/btnReady.png";
         btnComplete->loadTextures(res, res, res);
@@ -569,7 +569,7 @@ void BinhTinhAt::highlightCard(bool sound)
 		showEffectChi(playerCard);
 	}
 	else {
-        if (gameMgr->isIndo)
+        if (languageMgr->checkCurrentLanguage(LANGUAGE_EN))
 		    effectBoBai("table/binhLungBig.png");
         else
             effectBoBai("table/textEnglish/binhLungBig.png");

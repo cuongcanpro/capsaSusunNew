@@ -1276,7 +1276,7 @@ int BinhGameLogic::getCardKindReady()
 
 std::string BinhGameLogic::getResourceBinh(int typeMaubinh)
 {
-    if (gameMgr->isIndo)
+    if (languageMgr->checkCurrentLanguage(LANGUAGE_EN))
     {
         switch (typeMaubinh)
         {
@@ -1622,7 +1622,7 @@ bool BinhGameLogic::checkGetSupport()
 
 string BinhGameLogic::getRes()
 {
-    if (gameMgr->isIndo)
+    if (languageMgr->checkCurrentLanguage(LANGUAGE_EN))
         return "textEnglish/";
     return "";
 }

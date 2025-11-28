@@ -6,7 +6,7 @@
 #include "core/gui/SceneMgr.h"
 #include "MauBinhGroup.h"
 #include "common/UserInfoGUI.h"
-
+#include "dragonBones/CCFactory.h"
 #define PLAYER_UI_BTN_INFO 1
 BinhPlayerUI::BinhPlayerUI()
 {
@@ -22,6 +22,7 @@ void BinhPlayerUI::initGUI()
 {
 	initCommon();
 	initGroupCard();
+    gun = NULL;
 }
 
 void BinhPlayerUI::initCommon()
@@ -776,6 +777,27 @@ void BinhPlayerUI::loadTheme(int idTheme)
 		break;
 	}
 	bg->loadTexture("table/" + arrayTheme[idTheme] + name);
+}
+
+void BinhPlayerUI::showGun(float rotation) {
+    if (gun == NULL) {
+        // 1. Lấy factory singleton
+        auto factory = dragonBones::CCFactory::getFactory();
+       // factory->loadDragonBonesData("kyby_paotai6_ske.json");
+       // factory->loadTextureAtlasData("kyby_paotai6_tex.json");
+
+        gun = factory->buildArmatureDisplay("kyby_paotai6");
+        //gun->setPosition(ax::Vec2(300, 200));
+        layout->addChild(gun);
+    }
+    gun->setRotation(rotation);
+    gun->addDBEventListener(dragonBones::EventObject::COMPLETE,
+                            AX_CALLBACK_0(BinhPlayerUI::onGunAnimationComplete, this));
+    gun->addDBEventListener(dragonBones::EventObject::LOOP_COMPLETE,
+                            AX_CALLBACK_0(BinhPlayerUI::onGunAnimationComplete, this));
+    gun->addDBEventListener(dragonBones::EventObject::START, AX_CALLBACK_0(BinhPlayerUI::onGunAnimationComplete, this));
+    playAppear();
+    
 }
 
 void BinhPlayerUI::onButtonRelease(Button* button, int id)

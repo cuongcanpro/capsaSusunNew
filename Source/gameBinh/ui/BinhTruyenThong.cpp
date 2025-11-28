@@ -100,7 +100,7 @@ void BinhTruyenThong::initGUI()
 	effectImage->setLocalZOrder(10);
 	effectImage->setPosition(arrayCard[2]->getPosition());
 
-    if (gameMgr->isIndo)
+    if (languageMgr->checkCurrentLanguage(LANGUAGE_EN))
     {
         string res = "table/textEnglish/btnReady.png";
         btnComplete->loadTextures(res, res, res);
