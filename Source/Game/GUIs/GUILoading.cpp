@@ -72,6 +72,10 @@ void GUILoading::callbackCompleteEndGame1()
     //GUIManager::getInstance().showGuiWithName(GUIMerge::className);
 }
 
+void GUILoading::callbackTest() {
+    AXLOG("CALLBACK +++++++++ ");
+}
+
 void GUILoading::update(float delta) {
     //manager->update();
 }
@@ -133,7 +137,10 @@ void GUILoading::callBackSplash()
     // 4. Đặt vị trí & add vào scene
     armatureDisplay->setPosition(ax::Vec2(300, 200));
     this->addChild(armatureDisplay);
-
+    armatureDisplay->getEventDispatcher()->setEnabled(true);
+    // Lắng nghe sự kiện hoàn thành animation
+    armatureDisplay->addDBEventListener(dragonBones::EventObject::COMPLETE,
+                                        AX_CALLBACK_0(GUILoading::callbackTest, this));
     // 5. Play animation (trong file có: "fire", "appear", "disappear", "stand")
     armatureDisplay->getAnimation()->play("appear");
 

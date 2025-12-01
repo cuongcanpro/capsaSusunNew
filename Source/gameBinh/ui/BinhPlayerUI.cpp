@@ -362,10 +362,20 @@ void BinhPlayerUI::sapBai(double money, SapBaiType sapType)
 		imgSap->setVisible(true);
 		effectGold(money, false);
 
-        effBomb->stop();
-        effBomb->setVisible(true);
-        effBomb->play(0);
-        effBomb->setPosition(arrayCard2[7]->getPosition());
+        layout->runAction(Sequence::create(
+            DelayTime::create(0.4f),
+            CallFunc::create([this]() {
+            if (effBomb)
+            {
+                effBomb->stop();
+                effBomb->setVisible(true);
+                effBomb->play(0);
+                effBomb->setPosition(arrayCard2[7]->getPosition());
+            }
+            }),
+            NULL
+        ));
+       
 	}
 	else {
 		setDarkCard2(false);
@@ -789,13 +799,13 @@ void BinhPlayerUI::showGun(float rotation) {
         gun = factory->buildArmatureDisplay("kyby_paotai6");
         //gun->setPosition(ax::Vec2(300, 200));
         layout->addChild(gun);
+        gun->getEventDispatcher()->setEnabled(true);
     }
+    
     gun->setRotation(rotation);
     gun->addDBEventListener(dragonBones::EventObject::COMPLETE,
                             AX_CALLBACK_0(BinhPlayerUI::onGunAnimationComplete, this));
-    gun->addDBEventListener(dragonBones::EventObject::LOOP_COMPLETE,
-                            AX_CALLBACK_0(BinhPlayerUI::onGunAnimationComplete, this));
-    gun->addDBEventListener(dragonBones::EventObject::START, AX_CALLBACK_0(BinhPlayerUI::onGunAnimationComplete, this));
+   
     playAppear();
     
 }

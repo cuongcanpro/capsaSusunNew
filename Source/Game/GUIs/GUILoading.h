@@ -17,6 +17,7 @@ public:
 	void callBackSplash();
 	void callbackCompleteEndGame();
     void callbackCompleteEndGame1();
+    void callbackTest();
     void update(float delta) override;
 
 public:
