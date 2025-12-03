@@ -14,3 +14,17 @@
 
 medium gray drop shadow,
 ,  curve text
+
+{
+  "image_style": "cartoon, glossy, sharp, high-contrast, game UI asset",
+  "elements": [
+    {
+      "text": "LOSE",
+      "color_scheme": "metallic silver and charcoal gray",
+      "style_details": "Highly polished, glossy finish, thick rounded border (outline), subtle 3D bevel effect",
+      "mood": "Neutral, subdued, professional (for a 'lose' state)"
+    }
+  ],
+  "background": "Solid white background, isolated on white",
+  "font": "Rounded, bubble, bold, sans-serif font"
+}

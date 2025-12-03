@@ -21,7 +21,7 @@
 
       "color_scheme": "bright golden yellow and reflective white highlights",
 
-      "style_details": "Extremely glossy, wet look, thick Orange outline, strong inner reflection, normal black drop shadow.",
+      "style_details": "Extremely glossy, wet look, thick Orange outline, strong inner reflection.",
 
       "mood": "Exciting, vibrant, triumphant (for a 'win' state)"
 	  

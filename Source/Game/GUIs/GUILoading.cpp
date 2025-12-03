@@ -114,7 +114,7 @@ void GUILoading::callBackSplash()
         Sequence::create(
             DelayTime::create(2.5),
            // FadeOut::create(0.5f), 
-            //CallFunc::create(AX_CALLBACK_0(GUILoading::callbackCompleteEndGame1, this)),
+            CallFunc::create(AX_CALLBACK_0(GUILoading::callbackCompleteEndGame1, this)),
             NULL
         )
     );
