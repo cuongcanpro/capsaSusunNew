@@ -1378,7 +1378,7 @@ void BinhBoardScene::onButtonRelease(ax::ui::Button* button, int id)
 		/*sceneMgr->showOkDialogWithAction("lfdjfld fdljf ", [this](int btnId) {
 		});
 		return;*/
-        arrayPlayer[0]->showGun(0);
+        //arrayPlayer[0]->showGun(0);
 		UserInfo* info = BinhGameLogic::getInstance()->arrayPlayer[0]->getUserInfo();
 		if (info->bean <= 1000 && BinhGameLogic::getInstance()->checkGetSupport()) {
 			JNIUtils::sendEvent("get_support", "1");

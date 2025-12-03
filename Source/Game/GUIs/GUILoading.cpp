@@ -72,6 +72,10 @@ void GUILoading::callbackCompleteEndGame1()
     //GUIManager::getInstance().showGuiWithName(GUIMerge::className);
 }
 
+void GUILoading::callbackTest() {
+    AXLOG("CALLBACK +++++++++ ");
+}
+
 void GUILoading::update(float delta) {
     //manager->update();
 }
@@ -110,7 +114,7 @@ void GUILoading::callBackSplash()
         Sequence::create(
             DelayTime::create(2.5),
            // FadeOut::create(0.5f), 
-            CallFunc::create(AX_CALLBACK_0(GUILoading::callbackCompleteEndGame1, this)),
+            //CallFunc::create(AX_CALLBACK_0(GUILoading::callbackCompleteEndGame1, this)),
             NULL
         )
     );
@@ -132,8 +136,11 @@ void GUILoading::callBackSplash()
 
     // 4. Đặt vị trí & add vào scene
     armatureDisplay->setPosition(ax::Vec2(300, 200));
-    this->addChild(armatureDisplay);
-
+   // this->addChild(armatureDisplay);
+    armatureDisplay->getEventDispatcher()->setEnabled(true);
+    // Lắng nghe sự kiện hoàn thành animation
+    armatureDisplay->addDBEventListener(dragonBones::EventObject::COMPLETE,
+                                        AX_CALLBACK_0(GUILoading::callbackTest, this));
     // 5. Play animation (trong file có: "fire", "appear", "disappear", "stand")
     armatureDisplay->getAnimation()->play("appear");
 
@@ -146,11 +153,12 @@ void GUILoading::callBackSplash()
   //  //		if (j == 20) j = 0;
   //  // skeletonNode->setTwoColorTint(true);
 
-  //  skeletonNode->setPosition(Vec2(200, 200));
-  //  addChild(skeletonNode);
 
-    //cocostudio::ArmatureDataManager::getInstance()->addArmatureFileInfo("kyby_paotai1_ske.json");
-    //cocostudio::Armature *pAr = cocostudio::Armature::create("kyby_paotai1"); //
-    //addChild(pAr);
-    //pAr->getAnimation()->play("fire");
+    spine::SkeletonAnimation* skeletonNode =
+        spine::SkeletonAnimation::createWithJsonFile("nohuthanglon.json", "nohuthanglon.atlas", 1.5f);
+    skeletonNode->setAnimation(0, "nohu", true);
+   // skeletonNode->setSkin("goblin");
+    skeletonNode->setPosition(Vec2(200, 200));
+    addChild(skeletonNode);
+
 }

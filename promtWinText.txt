@@ -1,0 +1,40 @@
+{
+  "image_style": "cartoon, glossy, sharp, high-contrast, game UI asset",
+  "elements": [
+    {
+      "text": "SIX PAIRS",
+      "color_scheme": "bright God Yellow and reflective white highlights",
+
+      "style_details": "Extremely glossy, wet look, thick black outline, strong inner reflection, deep black drop shadow.",
+
+      "mood": "Exciting, vibrant, triumphant (for a 'win' state)"
+
+    }
+  ],
+  "background": "Solid white background, isolated on white",
+  "font": "Rounded, bubble, bold, sans-serif font"
+}
+
+{
+
+      "text": "SIX PAIRS",
+
+      "color_scheme": "bright golden yellow and reflective white highlights",
+
+      "style_details": "Extremely glossy, wet look, thick Orange outline, strong inner reflection, normal black drop shadow.",
+
+      "mood": "Exciting, vibrant, triumphant (for a 'win' state)"
+	  
+	  "layout": "One Row, Not break line"
+
+    }
+
+  ],
+
+    "background": "Solid white background, isolated on white",
+
+  "font": "Rounded, bubble, bold, sans-serif font"
+
+}
+
+intense gold-yellow neon glow effect radiating from the text,
