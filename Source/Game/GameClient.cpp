@@ -133,9 +133,9 @@ void GameClient::loadPreferences()
     adBannerUnit = UserDefault::getInstance()->getStringForKey("adBannerUnit", "ca-app-pub-3940256099942544/1033173712");
     adRewardUnit = UserDefault::getInstance()->getStringForKey("adRewardUnit", "ca-app-pub-3940256099942544/5224354917");
 
-    adInterUnitCampaign  = "ca-app-pub-7169368956692170/2561269098";
-    adBannerUnitCampaign = "ca-app-pub-7169368956692170/5041475660";
-    adRewardUnitCampaign = "ca-app-pub-7169368956692170/1248187426";
+    adInterUnitCampaign  = "ca-app-pub-3940256099942544/6300978111";
+    adBannerUnitCampaign = "ca-app-pub-3940256099942544/1033173712";
+    adRewardUnitCampaign = "ca-app-pub-3940256099942544/5224354917";
 
     adBannerFacebook = UserDefault::getInstance()->getStringForKey("adBannerFacebook", "");
     adRewardFacebook = UserDefault::getInstance()->getStringForKey("adRewardFacebook", "");
