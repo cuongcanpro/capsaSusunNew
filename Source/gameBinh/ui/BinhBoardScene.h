@@ -6,6 +6,7 @@
 #include "../data/GameConstant.h"
 #include "gameTienlen/ui/ClockCountDown.h"
 #include "EffekseerForCocos2d-x.h"
+#include "spine/spine.h"
 using namespace efk;
 
 class BinhBoardScene:
@@ -65,6 +66,7 @@ private:
 	
 	vector <char> arrayAutoCard[NUM_PLAYER];
 	vector<double> arrayMoneySummary;
+        vector<spine::SkeletonAnimation*> arrayFirework;
 
 private:
 	float timeWaitOther;
@@ -143,6 +145,9 @@ public:
 	efk::EffectManager* manager;
 	efk::EffectEmitter* emitter;
     void loadLanguage();
+    spine::SkeletonAnimation* getFirework();
+    float countFireworkTime;
+    spine::SkeletonAnimation* dragon;
 };
 
 

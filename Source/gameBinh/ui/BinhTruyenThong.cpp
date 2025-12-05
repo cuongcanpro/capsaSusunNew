@@ -92,8 +92,11 @@ void BinhTruyenThong::initGUI()
 		
 
 		Node* clipper = getControl("clipper" + to_string(i), groupCard);
-		
 		clipper->setLocalZOrder(11);
+        arrayEffectChi[i] = new Sparkle(clipper->getContentSize().width, clipper->getContentSize().height);
+        clipper->addChild(arrayEffectChi[i]);
+        arrayEffectChi[i]->setVisible(false);
+        arrayEffectChi[i]->emitTime = 0.2f;
 	}
 	effectImage = Sprite::create("table/lucPheBon.png");
 	groupCard->addChild(effectImage);
@@ -454,6 +457,7 @@ void BinhTruyenThong::checkBoBai(MaubinhPlayerCard playerCard, int cardKind, boo
 		effectParticle();
 		TienlenGameSound::playSoundmaubinh_sanhrong();
 		TienlenGameSound::playSoundThang();
+        effect3Chi();
 		break;
 	}
 	default:
@@ -581,10 +585,16 @@ void BinhTruyenThong::showTypeChi(int chi, int type, bool binh)
 	typeChi[chi]->setString(resource);
 }
 
+void BinhTruyenThong::effect3Chi() {
+    for (int i = 0; i < 3; i++) {
+        arrayEffectChi[i]->startEffect(1000);
+    }
+}
+
 void BinhTruyenThong::effectChi(int chi)
 {
 //	arrayEffectChi[chi]->getAnimation()->gotoAndPlay("1", -1, -1, 1);
-//	arrayEffectChi[chi]->setVisible(true);
+	arrayEffectChi[chi]->startEffect(2.0);
 }
 
 void BinhTruyenThong::effectBoBai(string resource)

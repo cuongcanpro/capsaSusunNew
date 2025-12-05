@@ -446,8 +446,8 @@ void BinhPlayerUI::soBaiMauBinh(double money)
 			pos = arrayCard2[7]->getParent()->convertToWorldSpace(pos);
 			pos = pEffect->convertToNodeSpace(pos);
 			group->setPosition(pos);
+            group->setScale(0.35);
 			group->showMauBinh(kind);
-			group->setScale(0.35);
 			group->runAction(
 				Sequence::create(
 					DelayTime::create(5.0),

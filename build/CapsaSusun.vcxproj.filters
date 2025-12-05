@@ -637,6 +637,9 @@
     <ClCompile Include="D:\dev\projects\CapsaSusun\proj.win32\main.cpp">
       <Filter>Source Files\proj.win32</Filter>
     </ClCompile>
+    <ClCompile Include="..\Source\core\gui\Sparkle.cpp">
+      <Filter>Source Files\Source\core\gui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Source\AppDelegate.h">
@@ -5681,6 +5684,9 @@
     </ClInclude>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\texture.png">
       <Filter>Content</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\core\gui\Sparkle.h">
+      <Filter>Source Files\Source\core\gui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

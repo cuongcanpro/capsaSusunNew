@@ -13,6 +13,7 @@
 #include <cocostudio/ArmatureDataManager.h>
 #include <cocostudio/Armature.h>
 #include <DragonBones/DragonBonesHeaders.h>
+#include "core/gui/Sparkle.h"
 
 #define BACKGROUND_RES "loading/bgPortalCenterZP.jpg"
 #define PROGRESS_RES "loading/bgProgress.png"
@@ -155,10 +156,18 @@ void GUILoading::callBackSplash()
 
 
     spine::SkeletonAnimation* skeletonNode =
-        spine::SkeletonAnimation::createWithJsonFile("nohuthanglon.json", "nohuthanglon.atlas", 1.5f);
-    skeletonNode->setAnimation(0, "nohu", true);
-   // skeletonNode->setSkin("goblin");
+        spine::SkeletonAnimation::createWithJsonFile("dragon_fire.json", "dragon_fire.atlas", 0.5f);
+    skeletonNode->setAnimation(0, "idle", true);
+   // skeletonNode->setSkin("idle");
     skeletonNode->setPosition(Vec2(200, 200));
     addChild(skeletonNode);
+    skeletonNode->setRotation(90);
+    skeletonNode->runAction(MoveBy::create(3.0, Vec2(500, 0)));
+    skeletonNode->setVisible(false);
 
+    Sparkle* test = new Sparkle(500, 200);
+    addChild(test);
+    test->setPosition(size.width * 0.2, size.height * 0.2);
+    test->emitTime = 0.2;
+    test->startEffect();
 }

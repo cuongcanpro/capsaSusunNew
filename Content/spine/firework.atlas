@@ -1,0 +1,69 @@
+
+firework.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+circle
+  rotate: false
+  xy: 2, 81
+  size: 164, 169
+  orig: 164, 169
+  offset: 0, 0
+  index: -1
+comma2
+  rotate: false
+  xy: 168, 83
+  size: 9, 16
+  orig: 9, 16
+  offset: 0, 0
+  index: -1
+diamond
+  rotate: true
+  xy: 402, 136
+  size: 114, 104
+  orig: 114, 104
+  offset: 0, 0
+  index: -1
+flare
+  rotate: false
+  xy: 80, 47
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+flare khac
+  rotate: false
+  xy: 80, 18
+  size: 26, 27
+  orig: 26, 27
+  offset: 0, 0
+  index: -1
+flare4
+  rotate: false
+  xy: 2, 2
+  size: 76, 77
+  orig: 76, 77
+  offset: 0, 0
+  index: -1
+gragonfly
+  rotate: false
+  xy: 281, 110
+  size: 119, 140
+  orig: 119, 140
+  offset: 0, 0
+  index: -1
+heart
+  rotate: true
+  xy: 402, 20
+  size: 114, 104
+  orig: 114, 104
+  offset: 0, 0
+  index: -1
+spades
+  rotate: false
+  xy: 168, 101
+  size: 111, 149
+  orig: 111, 149
+  offset: 0, 0
+  index: -1

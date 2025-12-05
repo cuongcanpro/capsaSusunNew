@@ -6,6 +6,8 @@
 #include "BinhCardButton.h"
 #include "../logic/gamePlay/MaubinhPlayerCard.h"
 #include "gameTienlen/ui/ClockCountDown.h"
+#include "core/gui/Sparkle.h"
+
 class BinhCardButton;
 
 class BinhTruyenThong:
@@ -43,6 +45,7 @@ public:
 	void checkTypeChi(MaubinhPlayerCard playerCard);
 	void showTypeChi(int chi, int type, bool binh);
 
+    void effect3Chi();
 	void effectChi(int chi);
 	void effectBoBai(string resource);
 	void effectParticle();
@@ -58,6 +61,7 @@ public:
 	ImageView* bgTypeChi[NUM_CHI];
 	Text* typeChi[NUM_CHI];
 	ClockGame* clockGame;
+    Sparkle* arrayEffectChi[NUM_CHI];
 public:
 	// name
 	static const std::string className;

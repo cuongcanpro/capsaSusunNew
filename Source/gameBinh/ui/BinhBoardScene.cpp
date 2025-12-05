@@ -52,6 +52,8 @@ bool BinhBoardScene::init()
 
 void BinhBoardScene::initGUI()
 {
+    countFireworkTime = -1;
+    dragon = NULL;
 	idTheme = UserDefault::getInstance()->getIntegerForKey("idTheme", 0);
 	JNIUtils::sendEvent(("table_" + to_string(idTheme)).c_str(), "1");
 	srand((unsigned int)time(NULL));
@@ -245,49 +247,72 @@ void BinhBoardScene::update(float delta)
 				for (int i = 0; i < 52; i++) {
 					arrayId.push_back(i);
 				}
-				vector<char> cardIds;
-				string s = "";
 				for (int i = 0; i < NUM_PLAYER; i++)
 					arrayAutoCard[i].clear();
-				for (int i = 0; i < 52; i++) {
-					int value = AXRANDOM_0_1() * arrayId.size() * 0.999f;
-					arrayAutoCard[i % 4].push_back(arrayId[value]);
-					s = s + ", " + to_string(arrayId[value]);
-					arrayId.erase(arrayId.begin() + value);
-				}
-				//arrayAutoCard[0].clear();
-			////	int arr[13] = { 0, 4, 9, 13, 17, 36, 40, 45, 49, 32, 7, 11, 15 };
-				int arr[13] = { 0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50 };
-				//int arr[13] = { 0, 1, 2, 3, 16, 17, 18, 19, 34, 35, 41, 42, 50 };
-				for (int i = 0; i < 13; i++) {
-				//	arrayAutoCard[0].push_back(arr[i]);
-				}
-				/*arrayAutoCard[1].clear();
-					int arr1[13] = { 0, 4, 9, 13, 17, 36, 40, 45, 49, 32, 7, 11, 15 };
-					int arr[13] = { 0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50 };
-					int arr1[13] = { 0, 4, 20, 28, 44, 45, 37, 33, 25, 21, 7, 12, 15 };
-					int arr1[13] = { 45, 37, 33, 25, 21,  0, 4, 20, 28, 48, 7, 12, 15 };
-					int arr1[13] = { 5, 9, 14, 16, 20, 27, 26, 36, 37, 44, 46, 29, 50 };
-					for (int j = 0; j < 13; j++) {
-						arrayAutoCard[1].push_back(arr1[j]);
-					}*/
-				//arrayAutoCard[2].clear();
-				int arr2[13] = { 0, 1, 9, 10, 18, 19, 31, 30, 34, 35, 41, 42, 50 }; // luc phe bon
-				//int arr[13] = { 0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50 };
-				for (int j = 0; j < 13; j++) {
-					//arrayAutoCard[2].push_back(arr2[j]);
-				}
 
-				//arrayAutoCard[3].clear();
-				////int arr3[13] = { 37, 33, 21, 13, 5, 48, 44, 28, 4, 0, 43, 26, 23 };
-				////int arr3[13] = { 0, 1, 2, 4, 5, 8, 13, 17, 21, 30, 31, 26, 23 };
-				////int arr3[13] = { 0, 1, 9, 10, 18, 19, 31, 30, 34, 35, 41, 42, 50 };  // luc phe bon
-				//int arr3[13] = { 0, 8, 12, 20, 24, 1, 9, 25, 29, 37, 2, 10, 14 }; // 3 cai thung
-				////int arr3[13] = { 0, 4, 8, 12, 16, 1, 5, 9, 13, 17, 22, 11, 14 }; // 3 cai thung
-				//for (int j = 0; j < 13; j++) {
-				//	arrayAutoCard[3].push_back(arr3[j]);
-				//}
+                if (gameMgr->winCountBinh + gameMgr->lostCountBinh == 1 || false) {
+                    for (int i = 0; i < 13; i++) {
+                        int id = i * 4 + AXRANDOM_0_1() * 3.9999;
+                        arrayAutoCard[0].push_back(id);
+                        int index = 0;
+                        for (int j = 0; j < arrayId.size(); j++) {
+                            if (arrayId[j] == id) {
+                                arrayId.erase(arrayId.begin() + j);
+                                break;
+                            }
+                        }
+                    }
+                    for (int i = 0; i < 39; i++)
+                    {
+                        int value = AXRANDOM_0_1() * arrayId.size() * 0.999f;
+                        arrayAutoCard[1 + i % 3].push_back(arrayId[value]);
+                        arrayId.erase(arrayId.begin() + value);
+                    }
+                }
+                else {
+                    for (int i = 0; i < 52; i++)
+                    {
+                        int value = AXRANDOM_0_1() * arrayId.size() * 0.999f;
+                        arrayAutoCard[i % 4].push_back(arrayId[value]);
+                        arrayId.erase(arrayId.begin() + value);
+                    }
+                    arrayAutoCard[0].clear();
+                    ////	int arr[13] = { 0, 4, 9, 13, 17, 36, 40, 45, 49, 32, 7, 11, 15 };
+                    int arr[13] = {0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50};
+                    // int arr[13] = { 0, 1, 2, 3, 16, 17, 18, 19, 34, 35, 41, 42, 50 };
+                    for (int i = 0; i < 13; i++)
+                    {
+                        arrayAutoCard[0].push_back(arr[i]);
+                    }
+                    /*arrayAutoCard[1].clear();
+                            int arr1[13] = { 0, 4, 9, 13, 17, 36, 40, 45, 49, 32, 7, 11, 15 };
+                            int arr[13] = { 0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50 };
+                            int arr1[13] = { 0, 4, 20, 28, 44, 45, 37, 33, 25, 21, 7, 12, 15 };
+                            int arr1[13] = { 45, 37, 33, 25, 21,  0, 4, 20, 28, 48, 7, 12, 15 };
+                            int arr1[13] = { 5, 9, 14, 16, 20, 27, 26, 36, 37, 44, 46, 29, 50 };
+                            for (int j = 0; j < 13; j++) {
+                                    arrayAutoCard[1].push_back(arr1[j]);
+                            }*/
+                    // arrayAutoCard[2].clear();
+                    int arr2[13] = {0, 1, 9, 10, 18, 19, 31, 30, 34, 35, 41, 42, 50};  // luc phe bon
+                    // int arr[13] = { 0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50 };
+                    for (int j = 0; j < 13; j++)
+                    {
+                        // arrayAutoCard[2].push_back(arr2[j]);
+                    }
 
+                    // arrayAutoCard[3].clear();
+                    ////int arr3[13] = { 37, 33, 21, 13, 5, 48, 44, 28, 4, 0, 43, 26, 23 };
+                    ////int arr3[13] = { 0, 1, 2, 4, 5, 8, 13, 17, 21, 30, 31, 26, 23 };
+                    ////int arr3[13] = { 0, 1, 9, 10, 18, 19, 31, 30, 34, 35, 41, 42, 50 };  // luc phe bon
+                    // int arr3[13] = { 0, 8, 12, 20, 24, 1, 9, 25, 29, 37, 2, 10, 14 }; // 3 cai thung
+                    ////int arr3[13] = { 0, 4, 8, 12, 16, 1, 5, 9, 13, 17, 22, 11, 14 }; // 3 cai thung
+                    // for (int j = 0; j < 13; j++) {
+                    //	arrayAutoCard[3].push_back(arr3[j]);
+                    // }
+
+                }
+				
 				BinhGameLogic::getInstance()->notifyStart(arrayAutoCard[0], 1, 48);
 				autoState = ARRANGE_CARD_STATE;
 				BinhGameLogic::getInstance()->timeAuto = 50;
@@ -515,6 +540,28 @@ void BinhBoardScene::update(float delta)
 		}
 	}
 	manager->update(delta);
+
+    Size size = Director::getInstance()->getVisibleSize();
+    if (countFireworkTime >= 0)
+    {
+        countFireworkTime = countFireworkTime + delta;
+        if (countFireworkTime >= 0.5)
+        {
+            countFireworkTime = 0;
+            spine::SkeletonAnimation* firework = getFirework();
+            firework->setVisible(true);
+            firework->setPosition(ax::Vec2((0.2 + AXRANDOM_0_1() * 0.6) * size.width, (0.4 + AXRANDOM_0_1() * 0.5) * size.height));
+            int index = floor(AXRANDOM_0_1() * 4);
+            firework->setAnimation(0, to_string(index), false);
+            firework->runAction(
+                Sequence::create(
+                    DelayTime::create(2.0f),
+                    Hide::create(),
+                    NULL
+                )
+            );
+        }
+    }
 }
 
 void BinhBoardScene::updateMyCard(vector<int> arrayId, vector<Vec2> arrayPos, vector<float> arraySize)
@@ -1036,12 +1083,13 @@ void BinhBoardScene::soBai(bool isMauBinh, vector<double> arrayMoney)
 				UserDefault::getInstance()->setIntegerForKey("canPlayEffect", 2);
 				UserDefault::getInstance()->flush();
 			}
-			emitter->play(1);
+		//	emitter->play(1);
 			TienlenGameSound::playAutoWin();
 		}
 
         if (BinhGameLogic::getInstance()->getNumMauBinh() == 1)
         {
+            countFireworkTime = 0.5;
             Size size      = Director::getInstance()->getVisibleSize();
             float sumWidth = 0;
             float wCard    = size.width / 8.5;
@@ -1122,6 +1170,23 @@ void BinhBoardScene::soBai(bool isMauBinh, vector<double> arrayMoney)
                 }
                 targetX = targetX + padPhom + wCard * 0.5;
             }
+            if (dragon == NULL) {
+                dragon =
+                    spine::SkeletonAnimation::createWithJsonFile("dragon_fire.json", "dragon_fire.atlas", 0.5f);
+                dragon->setAnimation(0, "idle", true);
+                // skeletonNode->setSkin("idle");
+                addChild(dragon);
+                dragon->setRotation(90);
+            }
+            dragon->setVisible(true);
+            dragon->setPosition(Vec2(-200, size.height * 0.3));
+            dragon->runAction(
+                Sequence::create(
+                    MoveBy::create(3.0, Vec2(size.width * 1.3, 0)),
+                    Hide::create(),
+                    NULL
+                )
+            );
         }
 	}
 	else {
@@ -1168,6 +1233,7 @@ void BinhBoardScene::callbackSoBai(Node* pSender)
 				NULL
 			)
 		);
+        
 	}
 	else {
 
@@ -1184,7 +1250,9 @@ void BinhBoardScene::callbackSoBai(Node* pSender)
 	}
 	bgDark->runAction(Sequence::create(
 		DelayTime::create(6.0),
-		FadeOut::create(0.5),
+		FadeOut::create(0.5), CallFunc::create([this]() {
+            countFireworkTime = -1;
+        }),
 		NULL
 	));
 }
@@ -1587,6 +1655,21 @@ void BinhBoardScene::loadLanguage() {
     {
 
     }
+}
+
+spine::SkeletonAnimation* BinhBoardScene::getFirework()
+{
+    for (int i = 0; i < arrayFirework.size(); i++) {
+        if (!arrayFirework[i]->isVisible())
+        {
+            return arrayFirework[i];
+        }
+    }
+    spine::SkeletonAnimation* firework = spine::SkeletonAnimation::createWithJsonFile(
+        "spine/firework.json", "spine/firework.atlas", 0.7f);
+    arrayFirework.push_back(firework);
+    addChild(firework);
+    return firework;
 }
 
 const std::string BinhBoardScene::className = "BinhBoardScene";
