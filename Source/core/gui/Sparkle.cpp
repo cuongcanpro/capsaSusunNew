@@ -1,16 +1,21 @@
 #include "Sparkle.h"
 
-Sparkle::Sparkle(float width, float height): Node()
+Sparkle::Sparkle(float width, float height, string resource): Node()
 {
 	this->width = width;
 	this->height = height;
 	countGen = 0.2;
     emitTime = 0.2;
     type = SPARKLE_RIGHT;
+    this->resource   = resource;
 }
 
 void Sparkle::startEffect(float _lifeTime)
 {
+    for (int i = 0; i < arrayStar.size(); i++)
+    {
+        arrayStar[i]->setVisible(false);
+    }
 	setVisible(true);
     schedule(AX_SCHEDULE_SELECTOR(Sparkle::updateEffect), 0.02);
 	countGen = 0.1;
@@ -80,7 +85,7 @@ void Sparkle::effectStarRight(Sprite* sprite)
     // sprite->setBlendFunc(BlendFunc{ GL_DST_COLOR, GL_ONE });
 
     sprite->setPosition(width * AXRANDOM_0_1(), height * (AXRANDOM_0_1()));
-    float randomTime = AXRANDOM_0_1() * 1 + 1;
+    float randomTime = AXRANDOM_0_1() * 0.3 + 0.4;
     float rScale     = AXRANDOM_0_1() * 0.6 + 0.6;
     float rOpacity   = AXRANDOM_0_1() * 100 + 155;
 
@@ -93,7 +98,7 @@ void Sparkle::effectStarRight(Sprite* sprite)
     sprite->setPosition(pos);
     sprite->runAction(Sequence::create(
         Spawn::create(
-            EaseSineIn::create(MoveBy::create(randomTime, Vec2((AXRANDOM_0_1() * 0.3 + 0.3) * width, 0))),
+            EaseSineIn::create(MoveBy::create(randomTime, Vec2((AXRANDOM_0_1() * 0.3 + 0.1) * width, 0))),
             Sequence::create(FadeOut::create(randomTime), NULL), NULL),
         Hide::create(), NULL));
     sprite->runAction(RepeatForever::create(Sequence::create(
@@ -138,7 +143,7 @@ ax::Sprite* Sparkle::getStar()
 		}
 	}
 	if (image == NULL) {
-		image = Sprite::create("Board/Particles/lights.png");
+		image = Sprite::create(resource);
 		this->addChild(image);
 		arrayStar.push_back(image);
 	}

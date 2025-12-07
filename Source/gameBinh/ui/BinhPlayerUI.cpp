@@ -75,6 +75,7 @@ void BinhPlayerUI::initCommon()
 
 	imgSap = (ImageView*)layout->getChildByName("imageSap");
 	imgSap->setLocalZOrder(50);
+    imgSap->ignoreContentAdaptWithSize(true);
 
 	//moneyGroup = TextBMFont::create( "10000", "Font/loseNumber.fnt");
 	moneyGroup = Text::create("10000", "fonts/tahomabd.ttf", 40);
@@ -361,6 +362,10 @@ void BinhPlayerUI::sapBai(double money, SapBaiType sapType)
 		setDarkCard2(true);
 		imgSap->setVisible(true);
 		effectGold(money, false);
+        if (languageMgr->checkCurrentLanguage(LANGUAGE_EN))
+            imgSap->loadTexture("table/textEnglish/sap3Chi.png");
+        else
+            imgSap->loadTexture("table/sap3Chi.png");
 
         layout->runAction(Sequence::create(
             DelayTime::create(0.4f),

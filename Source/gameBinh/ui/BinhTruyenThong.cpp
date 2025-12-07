@@ -93,10 +93,10 @@ void BinhTruyenThong::initGUI()
 
 		Node* clipper = getControl("clipper" + to_string(i), groupCard);
 		clipper->setLocalZOrder(11);
-        arrayEffectChi[i] = new Sparkle(clipper->getContentSize().width, clipper->getContentSize().height);
+        arrayEffectChi[i] = new Sparkle(clipper->getContentSize().width, clipper->getContentSize().height, "Board/Particles/lightSmall.png");
         clipper->addChild(arrayEffectChi[i]);
         arrayEffectChi[i]->setVisible(false);
-        arrayEffectChi[i]->emitTime = 0.2f;
+        arrayEffectChi[i]->emitTime = 0.1f;
 	}
 	effectImage = Sprite::create("table/lucPheBon.png");
 	groupCard->addChild(effectImage);
@@ -452,7 +452,7 @@ void BinhTruyenThong::checkBoBai(MaubinhPlayerCard playerCard, int cardKind, boo
 	case EM_SANHRONG:
 	{
 		effectBoBai(BinhGameLogic::getInstance()->getResourceBinh(cardKind));
-		// mauBinh = true;
+		 mauBinh = true;
 		isEffect = true;
 		effectParticle();
 		TienlenGameSound::playSoundmaubinh_sanhrong();

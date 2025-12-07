@@ -165,7 +165,7 @@ void GUILoading::callBackSplash()
     skeletonNode->runAction(MoveBy::create(3.0, Vec2(500, 0)));
     skeletonNode->setVisible(false);
 
-    Sparkle* test = new Sparkle(500, 200);
+    Sparkle* test = new Sparkle(500, 200, "Board/Particles/spark.png");
     addChild(test);
     test->setPosition(size.width * 0.2, size.height * 0.2);
     test->emitTime = 0.2;

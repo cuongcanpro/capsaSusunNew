@@ -10,8 +10,9 @@ enum SparkleType {
 };
 class Sparkle : public Node {
 public:
-	Sparkle(float width, float height);
+    Sparkle(float width, float height, string resource = "Board/Particles/lights.png");
 	vector<Sprite*> arrayStar;
+    string resource;
 	float width, height;
 	float countGen;
     float emitTime;
