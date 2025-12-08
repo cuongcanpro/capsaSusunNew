@@ -115,7 +115,7 @@ void GUILoading::callBackSplash()
         Sequence::create(
             DelayTime::create(2.5),
            // FadeOut::create(0.5f), 
-           // CallFunc::create(AX_CALLBACK_0(GUILoading::callbackCompleteEndGame1, this)),
+            CallFunc::create(AX_CALLBACK_0(GUILoading::callbackCompleteEndGame1, this)),
             NULL
         )
     );
@@ -142,15 +142,15 @@ void GUILoading::callBackSplash()
   //  // skeletonNode->setTwoColorTint(true);
 
 
-  //  spine::SkeletonAnimation* skeletonNode =
-  //      spine::SkeletonAnimation::createWithJsonFile("spine/RongThang/skeleton.json", "spine/RongThang/skeleton.atlas", 0.5f);
-  //  skeletonNode->setAnimation(0, "NgocLucBao", true);
-  // // skeletonNode->setSkin("idle");
-  //  skeletonNode->setPosition(Vec2(200, 200));
-  //  addChild(skeletonNode);
-  ////  skeletonNode->setRotation(90);
-  ////  skeletonNode->runAction(MoveBy::create(3.0, Vec2(500, 0)));
-  //  skeletonNode->setVisible(false);
+    spine::SkeletonAnimation* skeletonNode =
+        spine::SkeletonAnimation::createWithJsonFile("spine/68_TX JP/TX JP.json", "spine/68_TX JP/TX JP.atlas", 0.5f);
+    skeletonNode->setAnimation(0, "JP no hu", true);
+   // skeletonNode->setSkin("idle");
+    skeletonNode->setPosition(Vec2(300, 000));
+    addChild(skeletonNode);
+  //  skeletonNode->setRotation(90);
+  //  skeletonNode->runAction(MoveBy::create(3.0, Vec2(500, 0)));
+   // skeletonNode->setVisible(false);
 
     Sparkle* test = new Sparkle(500, 200, "Board/Particles/spark.png");
     addChild(test);

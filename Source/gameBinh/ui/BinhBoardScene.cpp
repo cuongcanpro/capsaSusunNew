@@ -276,13 +276,13 @@ void BinhBoardScene::update(float delta)
                         arrayAutoCard[i % 4].push_back(arrayId[value]);
                         arrayId.erase(arrayId.begin() + value);
                     }
-                  //  arrayAutoCard[0].clear();
+                    arrayAutoCard[0].clear();
                     ////	int arr[13] = { 0, 4, 9, 13, 17, 36, 40, 45, 49, 32, 7, 11, 15 };
-                    int arr[13] = {0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50};
-                    // int arr[13] = { 0, 1, 2, 3, 16, 17, 18, 19, 34, 35, 41, 42, 50 };
+                   // int arr[13] = {0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50};
+                     int arr[13] = { 0, 1, 2, 3, 16, 17, 18, 19, 34, 35, 41, 42, 50 };
                     for (int i = 0; i < 13; i++)
                     {
-                       // arrayAutoCard[0].push_back(arr[i]);
+                        arrayAutoCard[0].push_back(arr[i]);
                     }
                     /*arrayAutoCard[1].clear();
                             int arr1[13] = { 0, 4, 9, 13, 17, 36, 40, 45, 49, 32, 7, 11, 15 };
@@ -293,12 +293,12 @@ void BinhBoardScene::update(float delta)
                             for (int j = 0; j < 13; j++) {
                                     arrayAutoCard[1].push_back(arr1[j]);
                             }*/
-                    // arrayAutoCard[2].clear();
+                     arrayAutoCard[2].clear();
                     int arr2[13] = {0, 1, 9, 10, 18, 19, 31, 30, 34, 35, 41, 42, 50};  // luc phe bon
                     // int arr[13] = { 0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50 };
                     for (int j = 0; j < 13; j++)
                     {
-                        // arrayAutoCard[2].push_back(arr2[j]);
+                         arrayAutoCard[2].push_back(arr2[j]);
                     }
 
                     // arrayAutoCard[3].clear();
