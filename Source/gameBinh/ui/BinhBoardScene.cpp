@@ -1170,23 +1170,22 @@ void BinhBoardScene::soBai(bool isMauBinh, vector<double> arrayMoney)
                 }
                 targetX = targetX + padPhom + wCard * 0.5;
             }
-            if (dragon == NULL) {
-                dragon =
-                    spine::SkeletonAnimation::createWithJsonFile("dragon_fire.json", "dragon_fire.atlas", 0.5f);
-                dragon->setAnimation(0, "idle", true);
-                // skeletonNode->setSkin("idle");
-                addChild(dragon);
-                dragon->setRotation(90);
+            int kind = BinhGameLogic::getInstance()->getEffectMaubinh(-1);
+            if (kind == EM_SANHRONG) {
+                if (dragon == NULL)
+                {
+                    dragon =
+                        spine::SkeletonAnimation::createWithJsonFile("dragon_fire.json", "dragon_fire.atlas", 0.5f);
+                    dragon->setAnimation(0, "idle", true);
+                    // skeletonNode->setSkin("idle");
+                    addChild(dragon);
+                    dragon->setRotation(90);
+                }
+                dragon->setVisible(true);
+                dragon->setPosition(Vec2(-400, size.height * 0.3));
+                dragon->runAction(
+                    Sequence::create(MoveBy::create(5.0, Vec2(size.width * 1.3 + 400, 0)), Hide::create(), NULL));
             }
-            dragon->setVisible(true);
-            dragon->setPosition(Vec2(-400, size.height * 0.3));
-            dragon->runAction(
-                Sequence::create(
-                    MoveBy::create(5.0, Vec2(size.width * 1.3 + 400, 0)),
-                    Hide::create(),
-                    NULL
-                )
-            );
         }
 	}
 	else {

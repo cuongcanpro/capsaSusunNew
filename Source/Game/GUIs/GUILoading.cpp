@@ -115,35 +115,22 @@ void GUILoading::callBackSplash()
         Sequence::create(
             DelayTime::create(2.5),
            // FadeOut::create(0.5f), 
-            CallFunc::create(AX_CALLBACK_0(GUILoading::callbackCompleteEndGame1, this)),
+           // CallFunc::create(AX_CALLBACK_0(GUILoading::callbackCompleteEndGame1, this)),
             NULL
         )
     );
     GameSound::playLevelUp();
 
-   // 1. Lấy factory singleton
     auto factory = dragonBones::CCFactory::getFactory();
-
-    // 2. Load skeleton & atlas
-    // Đường dẫn là tương đối trong Resources
-    factory->loadDragonBonesData("kyby_paotai6_ske.json");
-    factory->loadTextureAtlasData("kyby_paotai6_tex.json");
-
-    // 3. Tạo armature display
-    // Tên armature trong file: "kyby_paotai1"
-    auto armatureDisplay = factory->buildArmatureDisplay("kyby_paotai6");
-    // Nếu project của bạn có nhiều DragonBonesData, có thể cần truyền thêm tên DragonBonesData:
-    // auto armatureDisplay = factory->buildArmatureDisplay("kyby_paotai1", "kyby_paotai1");
-
-    // 4. Đặt vị trí & add vào scene
+    factory->loadDragonBonesData("dragonbone/kyby_eff_gold_bomb_ske.json");
+    factory->loadTextureAtlasData("dragonbone/kyby_eff_gold_bomb_tex.json");
+    auto armatureDisplay = factory->buildArmatureDisplay("kyby_eff_gold_bomb");
     armatureDisplay->setPosition(ax::Vec2(300, 200));
-   // this->addChild(armatureDisplay);
+    this->addChild(armatureDisplay);
     armatureDisplay->getEventDispatcher()->setEnabled(true);
-    // Lắng nghe sự kiện hoàn thành animation
     armatureDisplay->addDBEventListener(dragonBones::EventObject::COMPLETE,
                                         AX_CALLBACK_0(GUILoading::callbackTest, this));
-    // 5. Play animation (trong file có: "fire", "appear", "disappear", "stand")
-    armatureDisplay->getAnimation()->play("appear");
+    armatureDisplay->getAnimation()->play("animation");
 
   ////  skeletonNode->setAnimation(0, "walk", true);
 
@@ -155,15 +142,15 @@ void GUILoading::callBackSplash()
   //  // skeletonNode->setTwoColorTint(true);
 
 
-    spine::SkeletonAnimation* skeletonNode =
-        spine::SkeletonAnimation::createWithJsonFile("dragon_fire.json", "dragon_fire.atlas", 0.5f);
-    skeletonNode->setAnimation(0, "idle", true);
-   // skeletonNode->setSkin("idle");
-    skeletonNode->setPosition(Vec2(200, 200));
-    addChild(skeletonNode);
-    skeletonNode->setRotation(90);
-    skeletonNode->runAction(MoveBy::create(3.0, Vec2(500, 0)));
-    skeletonNode->setVisible(false);
+  //  spine::SkeletonAnimation* skeletonNode =
+  //      spine::SkeletonAnimation::createWithJsonFile("spine/RongThang/skeleton.json", "spine/RongThang/skeleton.atlas", 0.5f);
+  //  skeletonNode->setAnimation(0, "NgocLucBao", true);
+  // // skeletonNode->setSkin("idle");
+  //  skeletonNode->setPosition(Vec2(200, 200));
+  //  addChild(skeletonNode);
+  ////  skeletonNode->setRotation(90);
+  ////  skeletonNode->runAction(MoveBy::create(3.0, Vec2(500, 0)));
+  //  skeletonNode->setVisible(false);
 
     Sparkle* test = new Sparkle(500, 200, "Board/Particles/spark.png");
     addChild(test);
