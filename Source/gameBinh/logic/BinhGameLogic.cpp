@@ -1611,6 +1611,7 @@ bool BinhGameLogic::checkGetSupport()
 			BinhGameLogic::getInstance()->arrayPlayer[0]->Gold(15000);
 			BinhBoardScene *gui = (BinhBoardScene *)SceneMgr::getInstance()->getMainLayer();
 			gui->updateUserMoney(0);
+            gameMgr->showReceiveGold();
 		});
 		JNIUtils::sendEvent("get_support", "1");
 		UserDefault::getInstance()->setStringForKey("daySupport", s1);

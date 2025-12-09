@@ -18,7 +18,10 @@
 #include "gameBinh/ui/BinhLobbyScene.h"
 #include "gameBinh/ui/BinhHelpGUI.h"
 
-
+#include <cocostudio/ArmatureDataManager.h>
+#include <cocostudio/Armature.h>
+#include <DragonBones/DragonBonesHeaders.h>
+#include <DragonBones/CCFactory.h>
 
 GameMgr::GameMgr()
 {
@@ -787,5 +790,20 @@ bool GameMgr::checkUpdate()
 	return false;
 }
 
+void GameMgr::showReceiveGold()
+{
+    auto factory         = dragonBones::CCFactory::getFactory();
+    auto armatureDisplay = factory->buildArmatureDisplay("kyby_eff_gold_bomb");
+    Size size            = Director::getInstance()->getVisibleSize();
+    armatureDisplay->setPosition(ax::Vec2(size.width * 0.5, size.height * 0.5));
+    // this->addChild(armatureDisplay);
+    /* armatureDisplay->getEventDispatcher()->setEnabled(true);
+     armatureDisplay->addDBEventListener(dragonBones::EventObject::COMPLETE,
+                                         AX_CALLBACK_0(GUILoading::callbackTest, this));*/
+    armatureDisplay->getAnimation()->timeScale = 0.5;
+    armatureDisplay->getAnimation()->play("animation");
+    sceneMgr->addLayerSystem(armatureDisplay);
+    armatureDisplay->runAction(Sequence::create(DelayTime::create(4.0), RemoveSelf::create(), NULL));
+}
 GameMgr* GameMgr::_instance = nullptr;
 

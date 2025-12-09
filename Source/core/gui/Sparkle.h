@@ -6,7 +6,8 @@ using namespace ax;
 using namespace std;
 enum SparkleType {
     SPARKLE_BLOOM,
-    SPARKLE_RIGHT
+    SPARKLE_RIGHT,
+    SPARKLE_SHOW
 };
 class Sparkle : public Node {
 public:
@@ -21,6 +22,7 @@ public:
 	void startEffect(float _lifeTime = 100);
 	void effectStarBloom(Sprite* sprite);
     void effectStarRight(Sprite* sprite);
+    void effectStarShow(Sprite* sprite);
 	void updateEffect(float dt);
 	Sprite* getStar();
 };

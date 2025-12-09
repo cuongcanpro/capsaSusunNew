@@ -171,5 +171,6 @@ public:
     void openBinhScene();
     public:
 	static GameMgr* getInstance();
+        void showReceiveGold();
 };
 #endif // GameMgr_h__

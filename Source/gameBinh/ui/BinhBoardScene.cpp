@@ -278,8 +278,8 @@ void BinhBoardScene::update(float delta)
                     }
                     arrayAutoCard[0].clear();
                     ////	int arr[13] = { 0, 4, 9, 13, 17, 36, 40, 45, 49, 32, 7, 11, 15 };
-                   // int arr[13] = {0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50};
-                     int arr[13] = { 0, 1, 2, 3, 16, 17, 18, 19, 34, 35, 41, 42, 50 };
+                    int arr[13] = {0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50};
+                     //int arr[13] = { 0, 1, 2, 3, 16, 17, 18, 19, 34, 35, 41, 42, 50 };
                     for (int i = 0; i < 13; i++)
                     {
                         arrayAutoCard[0].push_back(arr[i]);
@@ -293,12 +293,12 @@ void BinhBoardScene::update(float delta)
                             for (int j = 0; j < 13; j++) {
                                     arrayAutoCard[1].push_back(arr1[j]);
                             }*/
-                     arrayAutoCard[2].clear();
+                  //   arrayAutoCard[2].clear();
                     int arr2[13] = {0, 1, 9, 10, 18, 19, 31, 30, 34, 35, 41, 42, 50};  // luc phe bon
                     // int arr[13] = { 0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50 };
                     for (int j = 0; j < 13; j++)
                     {
-                         arrayAutoCard[2].push_back(arr2[j]);
+                        // arrayAutoCard[2].push_back(arr2[j]);
                     }
 
                     // arrayAutoCard[3].clear();
@@ -530,6 +530,7 @@ void BinhBoardScene::update(float delta)
 					BinhBoardScene *gui = (BinhBoardScene *)SceneMgr::getInstance()->getMainLayer();
                     if (gui)
 					    gui->updateUserMoney(0);
+                    gameMgr->showReceiveGold();
 				});
 				JNIUtils::sendEvent("get_reward_success", "1");
 				break;
@@ -1175,7 +1176,7 @@ void BinhBoardScene::soBai(bool isMauBinh, vector<double> arrayMoney)
                 if (dragon == NULL)
                 {
                     dragon =
-                        spine::SkeletonAnimation::createWithJsonFile("dragon_fire.json", "dragon_fire.atlas", 0.5f);
+                        spine::SkeletonAnimation::createWithJsonFile("spine/dragon_fire.json", "spine/dragon_fire.atlas", 0.5f);
                     dragon->setAnimation(0, "idle", true);
                     // skeletonNode->setSkin("idle");
                     addChild(dragon);
@@ -1447,12 +1448,12 @@ void BinhBoardScene::onButtonRelease(ax::ui::Button* button, int id)
 		return;*/
         //arrayPlayer[0]->showGun(0);
 		UserInfo* info = BinhGameLogic::getInstance()->arrayPlayer[0]->getUserInfo();
-		if (info->bean <= 1000 && BinhGameLogic::getInstance()->checkGetSupport()) {
+		if (info->bean < 3000 && BinhGameLogic::getInstance()->checkGetSupport()) {
 			JNIUtils::sendEvent("get_support", "1");
 			return;
 		}
 		
-		if (info->bean <= 1000) {
+		if (info->bean < 3000) {
 			string reason = LocalizedString::to("VIEW_REWARD");
 			sceneMgr->showOkCancelDialog(reason, [this](int buttonId) {
 				if (buttonId == Dialog::BTN_OK) {

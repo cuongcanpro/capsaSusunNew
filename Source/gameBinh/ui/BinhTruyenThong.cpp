@@ -93,10 +93,11 @@ void BinhTruyenThong::initGUI()
 
 		Node* clipper = getControl("clipper" + to_string(i), groupCard);
 		clipper->setLocalZOrder(11);
-        arrayEffectChi[i] = new Sparkle(clipper->getContentSize().width, clipper->getContentSize().height, "Board/Particles/lightSmall.png");
+        arrayEffectChi[i] = new Sparkle(clipper->getContentSize().width, clipper->getContentSize().height, "Board/Particles/flare.png");
         clipper->addChild(arrayEffectChi[i]);
         arrayEffectChi[i]->setVisible(false);
-        arrayEffectChi[i]->emitTime = 0.1f;
+        arrayEffectChi[i]->emitTime = 0.2f;
+        arrayEffectChi[i]->type = SPARKLE_SHOW;
 	}
 	effectImage = Sprite::create("table/lucPheBon.png");
 	groupCard->addChild(effectImage);
@@ -427,6 +428,7 @@ void BinhTruyenThong::checkBoBai(MaubinhPlayerCard playerCard, int cardKind, boo
 		effectParticle();
 		TienlenGameSound::playSoundmaubinh_lucphebon();
 		TienlenGameSound::playSoundThang();
+        effect3Chi();
 		break;
 	}
 	case EM_3SANH:
@@ -437,6 +439,7 @@ void BinhTruyenThong::checkBoBai(MaubinhPlayerCard playerCard, int cardKind, boo
 		effectParticle();
 		TienlenGameSound::playSoundmaubinh_3caisanh();
 		TienlenGameSound::playSoundThang();
+        effect3Chi();
 		break;
 	}
 	case EM_3THUNG:
@@ -447,6 +450,7 @@ void BinhTruyenThong::checkBoBai(MaubinhPlayerCard playerCard, int cardKind, boo
 		effectParticle();
 		TienlenGameSound::playSoundmaubinh_3caithung();
 		TienlenGameSound::playSoundThang();
+        effect3Chi();
 		break;
 	}
 	case EM_SANHRONG:

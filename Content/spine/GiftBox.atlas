@@ -1,0 +1,272 @@
+
+GiftBox.png
+size: 778,778
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+confetti1
+  rotate: false
+  xy: 545, 1
+  size: 17, 14
+  orig: 17, 14
+  offset: 0, 0
+  index: -1
+confetti2
+  rotate: false
+  xy: 578, 18
+  size: 29, 24
+  orig: 29, 24
+  offset: 0, 0
+  index: -1
+confetti3
+  rotate: false
+  xy: 545, 16
+  size: 32, 26
+  orig: 32, 26
+  offset: 0, 0
+  index: -1
+confetti4
+  rotate: true
+  xy: 523, 7
+  size: 44, 21
+  orig: 44, 21
+  offset: 0, 0
+  index: -1
+confetti5
+  rotate: true
+  xy: 585, 288
+  size: 17, 18
+  orig: 17, 19
+  offset: 0, 1
+  index: -1
+gift1/gift1_bow
+  rotate: true
+  xy: 732, 283
+  size: 42, 40
+  orig: 44, 42
+  offset: 1, 1
+  index: -1
+gift1/gift1_bow1
+  rotate: true
+  xy: 303, 74
+  size: 79, 91
+  orig: 81, 93
+  offset: 1, 1
+  index: -1
+gift1/gift1_bow2
+  rotate: false
+  xy: 551, 43
+  size: 74, 84
+  orig: 76, 86
+  offset: 1, 1
+  index: -1
+gift1/gift_box
+  rotate: false
+  xy: 266, 523
+  size: 239, 254
+  orig: 241, 256
+  offset: 1, 1
+  index: -1
+gift1/gift_ribbon1
+  rotate: false
+  xy: 464, 177
+  size: 116, 58
+  orig: 116, 58
+  offset: 0, 0
+  index: -1
+gift1/gift_ribbon2
+  rotate: false
+  xy: 209, 1
+  size: 85, 70
+  orig: 85, 70
+  offset: 0, 0
+  index: -1
+gift1/gift_top
+  rotate: false
+  xy: 506, 666
+  size: 267, 111
+  orig: 269, 113
+  offset: 1, 1
+  index: -1
+gift2/gift2_bow1
+  rotate: false
+  xy: 680, 279
+  size: 51, 46
+  orig: 51, 46
+  offset: 0, 0
+  index: -1
+gift2/gift2_bow2
+  rotate: false
+  xy: 462, 2
+  size: 60, 49
+  orig: 60, 49
+  offset: 0, 0
+  index: -1
+gift2/gift2_bow3
+  rotate: false
+  xy: 604, 280
+  size: 75, 66
+  orig: 77, 68
+  offset: 1, 1
+  index: -1
+gift2/gift2_bow4
+  rotate: false
+  xy: 464, 52
+  size: 86, 75
+  orig: 88, 77
+  offset: 1, 1
+  index: -1
+gift2/gift2_bow5
+  rotate: false
+  xy: 266, 450
+  size: 83, 72
+  orig: 85, 74
+  offset: 1, 1
+  index: -1
+gift2/gift2_bow6
+  rotate: true
+  xy: 607, 413
+  size: 85, 80
+  orig: 87, 82
+  offset: 1, 1
+  index: -1
+gift2/gift2_star
+  rotate: true
+  xy: 687, 326
+  size: 83, 84
+  orig: 85, 86
+  offset: 1, 1
+  index: -1
+gift2/gift_box
+  rotate: false
+  xy: 1, 170
+  size: 252, 279
+  orig: 254, 281
+  offset: 1, 1
+  index: -1
+gift2/gift_ribbon1
+  rotate: false
+  xy: 480, 236
+  size: 104, 67
+  orig: 104, 67
+  offset: 0, 0
+  index: -1
+gift2/gift_ribbon2
+  rotate: false
+  xy: 367, 158
+  size: 96, 82
+  orig: 96, 82
+  offset: 0, 0
+  index: -1
+gift2/gift_top
+  rotate: true
+  xy: 367, 241
+  size: 281, 112
+  orig: 283, 114
+  offset: 1, 1
+  index: -1
+gift3/gift3_bow1
+  rotate: false
+  xy: 378, 3
+  size: 83, 67
+  orig: 85, 69
+  offset: 1, 1
+  index: -1
+gift3/gift3_bow2
+  rotate: true
+  xy: 395, 71
+  size: 86, 68
+  orig: 88, 70
+  offset: 1, 1
+  index: -1
+gift3/gift3_bow3
+  rotate: false
+  xy: 209, 72
+  size: 93, 81
+  orig: 95, 83
+  offset: 1, 1
+  index: -1
+gift3/gift3_bow4
+  rotate: false
+  xy: 295, 1
+  size: 82, 70
+  orig: 84, 72
+  offset: 1, 1
+  index: -1
+gift3/gift3_bow5
+  rotate: false
+  xy: 480, 304
+  size: 98, 91
+  orig: 100, 93
+  offset: 1, 1
+  index: -1
+gift3/gift3_box
+  rotate: false
+  xy: 1, 450
+  size: 264, 327
+  orig: 266, 329
+  offset: 1, 1
+  index: -1
+gift3/gift3_icon
+  rotate: false
+  xy: 480, 396
+  size: 126, 102
+  orig: 128, 104
+  offset: 1, 1
+  index: -1
+gift3/gift3_ribbon1
+  rotate: false
+  xy: 688, 410
+  size: 89, 66
+  orig: 89, 66
+  offset: 0, 0
+  index: -1
+gift3/gift3_ribbon2
+  rotate: false
+  xy: 607, 347
+  size: 79, 65
+  orig: 79, 65
+  offset: 0, 0
+  index: -1
+gift3/gift3_rope1
+  rotate: true
+  xy: 1, 5
+  size: 164, 207
+  orig: 164, 207
+  offset: 0, 0
+  index: -1
+gift3/gift3_rope1_shadow
+  rotate: true
+  xy: 464, 128
+  size: 48, 125
+  orig: 48, 127
+  offset: 0, 2
+  index: -1
+gift3/gift3_rope2
+  rotate: false
+  xy: 506, 499
+  size: 181, 166
+  orig: 181, 166
+  offset: 0, 0
+  index: -1
+gift3/gift3_rope2_shadow
+  rotate: false
+  xy: 579, 306
+  size: 24, 89
+  orig: 26, 91
+  offset: 1, 1
+  index: -1
+gift3/gift3_top
+  rotate: true
+  xy: 254, 154
+  size: 295, 112
+  orig: 297, 114
+  offset: 1, 1
+  index: -1
+light
+  rotate: true
+  xy: 688, 477
+  size: 188, 89
+  orig: 190, 90
+  offset: 1, 0
+  index: -1

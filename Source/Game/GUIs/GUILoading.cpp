@@ -115,7 +115,7 @@ void GUILoading::callBackSplash()
         Sequence::create(
             DelayTime::create(2.5),
            // FadeOut::create(0.5f), 
-            CallFunc::create(AX_CALLBACK_0(GUILoading::callbackCompleteEndGame1, this)),
+            //CallFunc::create(AX_CALLBACK_0(GUILoading::callbackCompleteEndGame1, this)),
             NULL
         )
     );
@@ -124,13 +124,17 @@ void GUILoading::callBackSplash()
     auto factory = dragonBones::CCFactory::getFactory();
     factory->loadDragonBonesData("dragonbone/kyby_eff_gold_bomb_ske.json");
     factory->loadTextureAtlasData("dragonbone/kyby_eff_gold_bomb_tex.json");
-    auto armatureDisplay = factory->buildArmatureDisplay("kyby_eff_gold_bomb");
+
+    factory->loadDragonBonesData("dragonbone/kyby_zidan6-hit_ske.json");
+    factory->loadTextureAtlasData("dragonbone/kyby_zidan6-hit_tex.json");
+
+    auto armatureDisplay = factory->buildArmatureDisplay("kyby_zidan6-hit");
     armatureDisplay->setPosition(ax::Vec2(300, 200));
     this->addChild(armatureDisplay);
     armatureDisplay->getEventDispatcher()->setEnabled(true);
     armatureDisplay->addDBEventListener(dragonBones::EventObject::COMPLETE,
                                         AX_CALLBACK_0(GUILoading::callbackTest, this));
-    armatureDisplay->getAnimation()->play("animation");
+    armatureDisplay->getAnimation()->play("kyby_zidan6-hit");
 
   ////  skeletonNode->setAnimation(0, "walk", true);
 
@@ -143,18 +147,21 @@ void GUILoading::callBackSplash()
 
 
     spine::SkeletonAnimation* skeletonNode =
-        spine::SkeletonAnimation::createWithJsonFile("spine/68_TX JP/TX JP.json", "spine/68_TX JP/TX JP.atlas", 0.5f);
-    skeletonNode->setAnimation(0, "JP no hu", true);
+        spine::SkeletonAnimation::createWithJsonFile("spine/GiftBox.json", "spine/GiftBox.atlas", 0.5f);
+    skeletonNode->setAnimation(0, "win_vang", true);
    // skeletonNode->setSkin("idle");
-    skeletonNode->setPosition(Vec2(300, 000));
+    skeletonNode->setPosition(Vec2(300, 300));
     addChild(skeletonNode);
   //  skeletonNode->setRotation(90);
   //  skeletonNode->runAction(MoveBy::create(3.0, Vec2(500, 0)));
-   // skeletonNode->setVisible(false);
+  //  skeletonNode->setVisible(false);
 
-    Sparkle* test = new Sparkle(500, 200, "Board/Particles/spark.png");
+    Sparkle* test = new Sparkle(500, 200, "Board/Particles/flare.png");
     addChild(test);
     test->setPosition(size.width * 0.2, size.height * 0.2);
     test->emitTime = 0.2;
+    test->type = SPARKLE_SHOW;
     test->startEffect();
+
+    
 }

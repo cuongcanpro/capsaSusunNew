@@ -7,9 +7,25 @@
 #include <fmt/format.h>
 std::string StringUtility::standartNumber(long long number)
 {
-	std::string tmp = std::to_string(number);
-	
-	return tmp;
+    std::string tmp = std::to_string(number);
+    if (tmp.size() < 4)
+    {
+        return tmp;
+    }
+    std::string tmp2 = "";
+    for (int i = 0; i < tmp.size() - 1; i++)
+    {
+        if (((i + 1) % 3) == 0)
+        {
+            tmp2 = ax::StringUtils::format(",%c%s", tmp[tmp.size() - i - 1], tmp2.c_str());
+        }
+        else
+        {
+            tmp2 = ax::StringUtils::format("%c%s", tmp[tmp.size() - i - 1], tmp2.c_str());
+        }
+    }
+    tmp2 = ax::StringUtils::format("%c%s", tmp[0], tmp2.c_str());
+    return tmp2;
 }
 
 std::string StringUtility::formatNumberSymbol(long long number)

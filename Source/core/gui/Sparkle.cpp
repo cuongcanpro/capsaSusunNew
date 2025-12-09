@@ -14,6 +14,7 @@ void Sparkle::startEffect(float _lifeTime)
 {
     for (int i = 0; i < arrayStar.size(); i++)
     {
+        arrayStar[i]->stopAllActions();
         arrayStar[i]->setVisible(false);
     }
 	setVisible(true);
@@ -105,6 +106,31 @@ void Sparkle::effectStarRight(Sprite* sprite)
         Spawn::create(Sequence::create(FadeIn::create(rTimeBlink), FadeOut::create(rTimeBlink), NULL), NULL), NULL)));
 }
 
+void Sparkle::effectStarShow(Sprite* sprite) {
+    sprite->setPosition(width * AXRANDOM_0_1(), height * (AXRANDOM_0_1()));
+    float rScale     = AXRANDOM_0_1() * 0.9 + 0.6;
+    Vec2 pos           = sprite->getPosition();
+    sprite->setScale(0);
+    sprite->setOpacity(0);
+    sprite->runAction(
+        Sequence::create(
+            Spawn::create(
+                ScaleTo::create(0.6, rScale),
+                FadeIn::create(0.3),
+                NULL
+            ),
+            Spawn::create(
+                ScaleTo::create(0.5, 0),
+                FadeOut::create(0.5),
+                NULL
+            ),
+            Hide::create(),
+            NULL
+        )
+    );
+    sprite->runAction(RotateBy::create(1.0, 350));
+}
+
 
 void Sparkle::updateEffect(float dt) {
 	if (lifeTime > 0) {
@@ -114,8 +140,10 @@ void Sparkle::updateEffect(float dt) {
 				Sprite* sprite = getStar();
                 if (type == SPARKLE_BLOOM)
 				    effectStarBloom(sprite);
-                else
+                else if (type == SPARKLE_RIGHT)
                     effectStarRight(sprite);
+                else
+                    effectStarShow(sprite);
 			}
 			
 			countGen = emitTime;

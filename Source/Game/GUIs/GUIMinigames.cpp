@@ -360,6 +360,7 @@ void GUIMinigames::showGUI(Node* parent /* = NULL */, bool hasFog /* = true */)
 	moveVertical(btnBack->normalImage->_img, 0, 400, 0);
 	moveVertical(btnSound->normalImage->_img, 0, 400, 0.1);
     moveHorizontal(btnChess->normalImage->_img, 0, -400, 0.0);
+    moveHorizontal(bgInfo, bgInfo->getPositionX(), -400, 0.1);
     moveHorizontal(scrollView, scrollView->getPositionX(), 400, 0.0);
 	for (int i = 0; i < arrayButtonGame.size(); i++) {
         /*int column = i % 2;
