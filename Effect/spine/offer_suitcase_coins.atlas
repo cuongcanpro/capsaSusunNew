@@ -1,0 +1,125 @@
+
+offer_suitcase_coins.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+All_coin
+  rotate: false
+  xy: 390, 179
+  size: 105, 75
+  orig: 105, 75
+  offset: 0, 0
+  index: -1
+bag
+  rotate: false
+  xy: 352, 96
+  size: 81, 81
+  orig: 81, 81
+  offset: 0, 0
+  index: -1
+boxD
+  rotate: false
+  xy: 207, 93
+  size: 143, 86
+  orig: 143, 86
+  offset: 0, 0
+  index: -1
+box_F
+  rotate: false
+  xy: 207, 181
+  size: 181, 73
+  orig: 181, 73
+  offset: 0, 0
+  index: -1
+coinX1
+  rotate: true
+  xy: 180, 15
+  size: 43, 25
+  orig: 43, 25
+  offset: 0, 0
+  index: -1
+coinX2
+  rotate: false
+  xy: 269, 10
+  size: 39, 24
+  orig: 39, 24
+  offset: 0, 0
+  index: -1
+coinX3
+  rotate: false
+  xy: 207, 2
+  size: 30, 34
+  orig: 30, 34
+  offset: 0, 0
+  index: -1
+coinX4
+  rotate: false
+  xy: 435, 89
+  size: 38, 24
+  orig: 38, 24
+  offset: 0, 0
+  index: -1
+coinX5
+  rotate: true
+  xy: 324, 53
+  size: 38, 24
+  orig: 38, 24
+  offset: 0, 0
+  index: -1
+coinXn
+  rotate: false
+  xy: 270, 36
+  size: 51, 23
+  orig: 51, 23
+  offset: 0, 0
+  index: -1
+cord
+  rotate: false
+  xy: 270, 61
+  size: 52, 30
+  orig: 52, 30
+  offset: 0, 0
+  index: -1
+fx_sparkle1
+  rotate: true
+  xy: 435, 115
+  size: 62, 61
+  orig: 62, 61
+  offset: 0, 0
+  index: -1
+hammer
+  rotate: true
+  xy: 207, 38
+  size: 53, 61
+  orig: 53, 61
+  offset: 0, 0
+  index: -1
+heart
+  rotate: true
+  xy: 129, 2
+  size: 56, 49
+  orig: 56, 49
+  offset: 0, 0
+  index: -1
+light_D
+  rotate: false
+  xy: 2, 60
+  size: 203, 194
+  orig: 203, 194
+  offset: 0, 0
+  index: -1
+shadow_coin
+  rotate: false
+  xy: 2, 18
+  size: 125, 40
+  orig: 125, 40
+  offset: 0, 0
+  index: -1
+star1
+  rotate: false
+  xy: 239, 5
+  size: 28, 31
+  orig: 28, 31
+  offset: 0, 0
+  index: -1

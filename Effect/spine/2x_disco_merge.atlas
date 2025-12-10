@@ -1,0 +1,468 @@
+
+2x_disco_merge.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+imgs/blocker/lighting_connect/lighting_connect_00
+  rotate: false
+  xy: 2, 386
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+imgs/blocker/lighting_connect/lighting_connect_01
+  rotate: false
+  xy: 402, 870
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+imgs/blocker/lighting_connect/lighting_connect_02
+  rotate: false
+  xy: 2, 244
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+imgs/blocker/lighting_connect/lighting_connect_03
+  rotate: false
+  xy: 544, 870
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+imgs/blocker/lighting_connect/lighting_connect_04
+  rotate: false
+  xy: 2, 102
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+imgs/blocker/lighting_connect/lighting_connect_05
+  rotate: false
+  xy: 686, 870
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+imgs/blocker/lighting_connect/lighting_connect_06
+  rotate: false
+  xy: 828, 870
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+imgs/blocker/lighting_connect/lighting_connect_07
+  rotate: true
+  xy: 260, 729
+  size: 139, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+imgs/blocker/lighting_connect/lighting_connect_08
+  rotate: false
+  xy: 402, 728
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+imgs/blocker/lighting_connect/lighting_connect_09
+  rotate: false
+  xy: 544, 728
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+imgs/blocker/lighting_connect/lighting_connect_10
+  rotate: false
+  xy: 686, 728
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+imgs/blocker/lighting_connect/lighting_connect_11
+  rotate: false
+  xy: 828, 728
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+imgs/blocker/lighting_connect/lighting_connect_12
+  rotate: false
+  xy: 228, 587
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+imgs/blocker/lighting_connect/lighting_connect_13
+  rotate: false
+  xy: 370, 586
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+imgs/blocker/lighting_connect/lighting_connect_14
+  rotate: false
+  xy: 260, 870
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+imgs/cricle_flare_2
+  rotate: false
+  xy: 512, 598
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+imgs/cross_flare
+  rotate: false
+  xy: 144, 404
+  size: 122, 122
+  orig: 128, 128
+  offset: 6, 4
+  index: -1
+imgs/disco/blur_00
+  rotate: true
+  xy: 902, 656
+  size: 70, 67
+  orig: 74, 74
+  offset: 2, 1
+  index: -1
+imgs/disco/blur_01
+  rotate: false
+  xy: 902, 586
+  size: 69, 68
+  orig: 74, 74
+  offset: 3, 1
+  index: -1
+imgs/disco/blur_02
+  rotate: true
+  xy: 78, 30
+  size: 70, 67
+  orig: 74, 74
+  offset: 2, 2
+  index: -1
+imgs/disco/blur_03
+  rotate: false
+  xy: 216, 139
+  size: 69, 68
+  orig: 74, 74
+  offset: 3, 1
+  index: -1
+imgs/disco/blur_04
+  rotate: true
+  xy: 216, 209
+  size: 70, 67
+  orig: 74, 74
+  offset: 2, 1
+  index: -1
+imgs/disco/blur_05
+  rotate: true
+  xy: 147, 69
+  size: 70, 67
+  orig: 74, 74
+  offset: 2, 1
+  index: -1
+imgs/disco/blur_06
+  rotate: false
+  xy: 216, 70
+  size: 70, 67
+  orig: 74, 74
+  offset: 2, 0
+  index: -1
+imgs/disco/blur_07
+  rotate: false
+  xy: 144, 211
+  size: 70, 68
+  orig: 74, 74
+  offset: 2, 0
+  index: -1
+imgs/disco/blur_08
+  rotate: false
+  xy: 144, 141
+  size: 70, 68
+  orig: 74, 74
+  offset: 2, 0
+  index: -1
+imgs/disco/disco_active_000
+  rotate: true
+  xy: 147, 2
+  size: 65, 67
+  orig: 74, 74
+  offset: 5, 1
+  index: -1
+imgs/disco/disco_active_001
+  rotate: false
+  xy: 932, 517
+  size: 65, 67
+  orig: 74, 74
+  offset: 5, 1
+  index: -1
+imgs/disco/disco_active_002
+  rotate: true
+  xy: 512, 532
+  size: 64, 68
+  orig: 74, 74
+  offset: 6, 1
+  index: -1
+imgs/disco/disco_active_003
+  rotate: true
+  xy: 268, 382
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 2
+  index: -1
+imgs/disco/disco_active_004
+  rotate: false
+  xy: 268, 448
+  size: 65, 67
+  orig: 74, 74
+  offset: 5, 2
+  index: -1
+imgs/disco/disco_active_005
+  rotate: true
+  xy: 216, 3
+  size: 65, 68
+  orig: 74, 74
+  offset: 5, 1
+  index: -1
+imgs/disco/disco_active_006
+  rotate: true
+  xy: 582, 532
+  size: 64, 68
+  orig: 74, 74
+  offset: 6, 1
+  index: -1
+imgs/disco/disco_active_007
+  rotate: true
+  xy: 652, 532
+  size: 64, 68
+  orig: 74, 74
+  offset: 6, 1
+  index: -1
+imgs/disco/disco_active_008
+  rotate: false
+  xy: 263, 313
+  size: 65, 67
+  orig: 74, 74
+  offset: 5, 1
+  index: -1
+imgs/disco/disco_active_009
+  rotate: false
+  xy: 335, 517
+  size: 65, 67
+  orig: 74, 74
+  offset: 5, 1
+  index: -1
+imgs/disco/disco_active_010
+  rotate: false
+  xy: 335, 448
+  size: 65, 67
+  orig: 74, 74
+  offset: 5, 1
+  index: -1
+imgs/disco/disco_active_011
+  rotate: true
+  xy: 722, 532
+  size: 64, 68
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_active_012
+  rotate: false
+  xy: 402, 517
+  size: 65, 67
+  orig: 74, 74
+  offset: 5, 0
+  index: -1
+imgs/disco/disco_active_013
+  rotate: false
+  xy: 402, 448
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_active_014
+  rotate: true
+  xy: 792, 531
+  size: 65, 68
+  orig: 74, 74
+  offset: 5, 0
+  index: -1
+imgs/disco/disco_active_015
+  rotate: true
+  xy: 862, 519
+  size: 65, 68
+  orig: 74, 74
+  offset: 5, 0
+  index: -1
+imgs/disco/disco_active_016
+  rotate: false
+  xy: 268, 517
+  size: 65, 68
+  orig: 74, 74
+  offset: 5, 0
+  index: -1
+imgs/disco/disco_idle_0000
+  rotate: true
+  xy: 337, 382
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0001
+  rotate: false
+  xy: 330, 313
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0002
+  rotate: false
+  xy: 406, 379
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0003
+  rotate: true
+  xy: 396, 313
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0004
+  rotate: false
+  xy: 285, 244
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0005
+  rotate: false
+  xy: 351, 244
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0006
+  rotate: false
+  xy: 417, 244
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0007
+  rotate: false
+  xy: 287, 175
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0008
+  rotate: false
+  xy: 353, 175
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0009
+  rotate: false
+  xy: 419, 175
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0010
+  rotate: false
+  xy: 288, 106
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0011
+  rotate: false
+  xy: 354, 106
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0012
+  rotate: false
+  xy: 420, 106
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0013
+  rotate: true
+  xy: 288, 40
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0014
+  rotate: true
+  xy: 357, 40
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0015
+  rotate: false
+  xy: 426, 37
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0016
+  rotate: true
+  xy: 465, 313
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/flash_00
+  rotate: false
+  xy: 2, 26
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+imgs/flare_00_00
+  rotate: false
+  xy: 642, 598
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+imgs/merge_ring_01
+  rotate: false
+  xy: 2, 528
+  size: 224, 224
+  orig: 256, 256
+  offset: 16, 16
+  index: -1
+imgs/rainbow_sp
+  rotate: false
+  xy: 2, 754
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+imgs/ring_02
+  rotate: false
+  xy: 144, 281
+  size: 117, 121
+  orig: 128, 128
+  offset: 8, 0
+  index: -1
+imgs/ring_explosion
+  rotate: false
+  xy: 772, 598
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1

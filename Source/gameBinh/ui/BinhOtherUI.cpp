@@ -8,6 +8,7 @@ BinhOtherUI::BinhOtherUI(int chairIndex, Node* panel, efk::EffectManager* manage
 	this->layout = panel;
 	timeArrange = -1;
 	initGUI();
+    AXLOG("CHAIR INDEX === %i ", this->chairIndex);
 }
 
 BinhOtherUI::~BinhOtherUI()

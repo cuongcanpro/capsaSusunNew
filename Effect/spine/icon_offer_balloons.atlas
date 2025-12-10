@@ -1,0 +1,83 @@
+
+icon_offer_balloons.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+balloons_P
+  rotate: false
+  xy: 118, 41
+  size: 57, 63
+  orig: 57, 63
+  offset: 0, 0
+  index: -1
+balloons_R
+  rotate: true
+  xy: 227, 124
+  size: 56, 61
+  orig: 56, 61
+  offset: 0, 0
+  index: -1
+balloons_X1
+  rotate: true
+  xy: 323, 184
+  size: 59, 68
+  orig: 59, 68
+  offset: 0, 0
+  index: -1
+balloons_X2
+  rotate: true
+  xy: 252, 182
+  size: 61, 69
+  orig: 61, 69
+  offset: 0, 0
+  index: -1
+balloons_Y
+  rotate: false
+  xy: 159, 126
+  size: 66, 67
+  orig: 66, 67
+  offset: 0, 0
+  index: -1
+box_coinX
+  rotate: false
+  xy: 2, 106
+  size: 155, 137
+  orig: 155, 137
+  offset: 0, 0
+  index: -1
+coin_flower
+  rotate: false
+  xy: 2, 2
+  size: 114, 102
+  orig: 114, 102
+  offset: 0, 0
+  index: -1
+corrdL
+  rotate: false
+  xy: 457, 183
+  size: 39, 60
+  orig: 39, 60
+  offset: 0, 0
+  index: -1
+corrdR
+  rotate: true
+  xy: 118, 7
+  size: 32, 68
+  orig: 32, 68
+  offset: 0, 0
+  index: -1
+fx_sparkle1
+  rotate: false
+  xy: 393, 182
+  size: 62, 61
+  orig: 62, 61
+  offset: 0, 0
+  index: -1
+ribbon
+  rotate: false
+  xy: 159, 195
+  size: 91, 48
+  orig: 91, 48
+  offset: 0, 0
+  index: -1

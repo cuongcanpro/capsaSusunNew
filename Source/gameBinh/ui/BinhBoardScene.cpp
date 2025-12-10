@@ -276,13 +276,13 @@ void BinhBoardScene::update(float delta)
                         arrayAutoCard[i % 4].push_back(arrayId[value]);
                         arrayId.erase(arrayId.begin() + value);
                     }
-                    arrayAutoCard[0].clear();
+                    //arrayAutoCard[0].clear();
                     ////	int arr[13] = { 0, 4, 9, 13, 17, 36, 40, 45, 49, 32, 7, 11, 15 };
                     int arr[13] = {0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50};
                      //int arr[13] = { 0, 1, 2, 3, 16, 17, 18, 19, 34, 35, 41, 42, 50 };
                     for (int i = 0; i < 13; i++)
                     {
-                        arrayAutoCard[0].push_back(arr[i]);
+                        //arrayAutoCard[0].push_back(arr[i]);
                     }
                     /*arrayAutoCard[1].clear();
                             int arr1[13] = { 0, 4, 9, 13, 17, 36, 40, 45, 49, 32, 7, 11, 15 };
@@ -1018,16 +1018,29 @@ void BinhBoardScene::sapBai(vector<double> arrayMoney)
 			int convert = BinhGameLogic::getInstance()->getChairInServer(i);
 			arrayPlayer[i]->sapBai(arrayMoney[convert], info->SapType());
 			if (i != 0) {
+                float rotate = 0;
 				Vec2 posStart, posEnd, posMedium;
 				if (info->SapType() == SapBaiType::BI_SAP) {
 					autoState = BAT_SAP_BAI_STATE;
 					posStart = arrayPlayer[0]->getPositionAvatar();
 					posEnd = arrayPlayer[i]->getCardPos2(7);
+                    if (i == 1)
+                        rotate = 10;
+                    else if (i == 2)
+                        rotate = -30;
+                    else if (i == 3)
+                        rotate = -80;
 				}
 				else {
 					autoState = BI_SAP_BAI_STATE;
 					posEnd = arrayPlayer[0]->getCardPos2(7);
 					posStart = arrayPlayer[i]->getPositionAvatar();
+                    if (i == 1)
+                        rotate = 180;
+                    else if (i == 2)
+                        rotate = 120;
+                    else if (i == 3)
+                        rotate = 80;
 				}
 				posMedium = Vec2(posStart.x * 0.5 + posEnd.y * 0.5, posStart.y * 0.5 + posEnd.y * 0.5);
 				posMedium.y = posMedium.y + 100 - 200 * AXRANDOM_0_1();
@@ -1052,6 +1065,27 @@ void BinhBoardScene::sapBai(vector<double> arrayMoney)
 						NULL
 					)
 				);
+
+                spine::SkeletonAnimation* effectSpecialChi = spine::SkeletonAnimation::createWithJsonFile(
+                                    "spine/fx_rocket.json", "spine/fx_rocket.atlas", 0.8f);
+                                this->addChild(effectSpecialChi, 100);
+                                /*effectSpecialChi->setCompleteListener(
+                                    [](spine::SkeletonAnimation* armature) { armature->setVisible(false); });*/
+
+                //effectSpecialChi->setCompleteListener([this](spine::TrackEntry* entry) {
+                //    AXLOGI("{} complete", entry->getTrackIndex());
+                //    //effectSpecialChi->setVisible(false);
+                //});
+                effectSpecialChi->setRotation(rotate);
+                effectSpecialChi->setVisible(true);
+                effectSpecialChi->setAnimation(0, "idle", true);
+                effectSpecialChi->setPosition(Vec2(posStart));
+                effectSpecialChi->runAction(
+                    Sequence::create(
+                        MoveTo::create(0.8, posEnd),
+                        RemoveSelf::create(), NULL
+                    )
+                );
 			}
 		}
 	}

@@ -104,50 +104,7 @@ public:
 	void onButtonRelease(Button* button, int id);
     efk::EffectManager* manager;
     efk::EffectEmitter* effBomb;
-    CCArmatureDisplay* gun;
-    int step;
-    void playAppear()
-    {
-        step = 0;
-        gun->getAnimation()->play("appear", 1);
-    }
-
-    void playStand()
-    {
-        gun->getAnimation()->play("stand", 1);
-        step = 1;
-    }
-
-    void playFire()
-    {
-        gun->getAnimation()->play("fire", 1);
-        step = 2;
-    }
-
-    void playDisappear()
-    {
-        gun->getAnimation()->play("disappear", 1);
-        step = 3;
-    }
-    void onGunAnimationComplete()
-    {
-        
-        switch (step)
-        {
-        case 0:
-            playStand();
-            break;
-        case 1:
-            playFire();
-            break;
-        case 2:
-            playDisappear();
-            break;
-        case 3:
-            //playAppear();
-            break;
-        }
-    }
+    spine::SkeletonAnimation* effectSpecialChi;
     
 protected:
 	int chairIndex;

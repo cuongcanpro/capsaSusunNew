@@ -1,0 +1,76 @@
+
+fx_rocket.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+10a
+  rotate: true
+  xy: 73, 74
+  size: 51, 79
+  orig: 51, 79
+  offset: 0, 0
+  index: -1
+Sp83_0
+  rotate: false
+  xy: 2, 19
+  size: 68, 31
+  orig: 68, 31
+  offset: 0, 0
+  index: -1
+Sp83_1
+  rotate: true
+  xy: 223, 59
+  size: 66, 31
+  orig: 66, 31
+  offset: 0, 0
+  index: -1
+Sp83_2
+  rotate: false
+  xy: 72, 8
+  size: 63, 31
+  orig: 63, 31
+  offset: 0, 0
+  index: -1
+Sp83_3
+  rotate: false
+  xy: 73, 41
+  size: 65, 31
+  orig: 65, 31
+  offset: 0, 0
+  index: -1
+Sp83_4
+  rotate: false
+  xy: 154, 93
+  size: 67, 32
+  orig: 67, 32
+  offset: 0, 0
+  index: -1
+Sp83_5
+  rotate: false
+  xy: 140, 28
+  size: 62, 32
+  orig: 62, 32
+  offset: 0, 0
+  index: -1
+Sp83_6
+  rotate: false
+  xy: 154, 62
+  size: 63, 29
+  orig: 63, 29
+  offset: 0, 0
+  index: -1
+grow
+  rotate: false
+  xy: 137, 2
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+rocket
+  rotate: false
+  xy: 2, 52
+  size: 69, 73
+  orig: 69, 73
+  offset: 0, 0
+  index: -1

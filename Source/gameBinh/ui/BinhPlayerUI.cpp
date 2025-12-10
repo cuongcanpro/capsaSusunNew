@@ -20,9 +20,9 @@ BinhPlayerUI::~BinhPlayerUI()
 
 void BinhPlayerUI::initGUI()
 {
+    effectSpecialChi = NULL;
 	initCommon();
 	initGroupCard();
-    gun = NULL;
 }
 
 void BinhPlayerUI::initCommon()
@@ -333,7 +333,24 @@ void BinhPlayerUI::compareChi(char chi, double money, int result)
 			string resource = BinhGameLogic::getInstance()->getResourceEffectChiCompare(chi, money, info->PlayerCard(), isEffectParticle, chairIndex == MY_INDEX);
 			//resource = "TextTypeChi.png";
 			effectChi(chi, resource);
-			if (isEffectParticle) {
+			if (isEffectParticle || true) {
+                if (effectSpecialChi == NULL)
+                {
+                    effectSpecialChi =
+                        spine::SkeletonAnimation::createWithJsonFile("spine/fire_work_daily.json", "spine/fire_work_daily.atlas", 0.3f);
+                    layout->addChild(effectSpecialChi, 100);
+                    /*effectSpecialChi->setCompleteListener(
+                        [](spine::SkeletonAnimation* armature) { armature->setVisible(false); });*/
+
+                    effectSpecialChi->setCompleteListener([this](spine::TrackEntry* entry) {
+                        AXLOGI("{} complete", entry->getTrackIndex());
+                        effectSpecialChi->setVisible(false);
+                    });
+                }
+                effectSpecialChi->setVisible(true);
+                effectSpecialChi->setAnimation(0, "firework", false);
+                effectSpecialChi->setPosition(Vec2(imgEffectChi->getPosition().x, imgEffectChi->getPosition().y - 40));
+                
 				/*DBCCArmatureNode *effIcon = DBCCFactory::getInstance()->buildArmatureNode("bom_change");
 				if (effIcon) {
 					layout->addChild(effIcon, 100);
@@ -795,23 +812,6 @@ void BinhPlayerUI::loadTheme(int idTheme)
 }
 
 void BinhPlayerUI::showGun(float rotation) {
-    if (gun == NULL) {
-        // 1. Lấy factory singleton
-        auto factory = dragonBones::CCFactory::getFactory();
-       // factory->loadDragonBonesData("kyby_paotai6_ske.json");
-       // factory->loadTextureAtlasData("kyby_paotai6_tex.json");
-
-        gun = factory->buildArmatureDisplay("kyby_paotai6");
-        //gun->setPosition(ax::Vec2(300, 200));
-        layout->addChild(gun);
-        gun->getEventDispatcher()->setEnabled(true);
-    }
-    
-    gun->setRotation(rotation);
-    gun->addDBEventListener(dragonBones::EventObject::COMPLETE,
-                            AX_CALLBACK_0(BinhPlayerUI::onGunAnimationComplete, this));
-   
-    playAppear();
     
 }
 

@@ -1,0 +1,20 @@
+
+pu_rocket.png
+size: 128,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+imgs/01
+  rotate: false
+  xy: 50, 30
+  size: 34, 31
+  orig: 74, 74
+  offset: 19, 21
+  index: -1
+imgs/02
+  rotate: false
+  xy: 2, 2
+  size: 46, 59
+  orig: 74, 74
+  offset: 14, 4
+  index: -1

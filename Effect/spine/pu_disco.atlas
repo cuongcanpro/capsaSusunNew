@@ -1,0 +1,335 @@
+
+pu_disco.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+imgs/cricle_flare_2
+  rotate: false
+  xy: 2, 666
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+imgs/cross_flare
+  rotate: false
+  xy: 228, 898
+  size: 122, 122
+  orig: 128, 128
+  offset: 6, 4
+  index: -1
+imgs/disco/blur_00
+  rotate: false
+  xy: 352, 953
+  size: 70, 67
+  orig: 74, 74
+  offset: 2, 1
+  index: -1
+imgs/disco/blur_01
+  rotate: false
+  xy: 2, 520
+  size: 69, 68
+  orig: 74, 74
+  offset: 3, 1
+  index: -1
+imgs/disco/blur_02
+  rotate: false
+  xy: 424, 953
+  size: 70, 67
+  orig: 74, 74
+  offset: 2, 2
+  index: -1
+imgs/disco/blur_03
+  rotate: false
+  xy: 2, 450
+  size: 69, 68
+  orig: 74, 74
+  offset: 3, 1
+  index: -1
+imgs/disco/blur_04
+  rotate: false
+  xy: 496, 953
+  size: 70, 67
+  orig: 74, 74
+  offset: 2, 1
+  index: -1
+imgs/disco/blur_05
+  rotate: true
+  xy: 2, 378
+  size: 70, 67
+  orig: 74, 74
+  offset: 2, 1
+  index: -1
+imgs/disco/blur_06
+  rotate: false
+  xy: 568, 953
+  size: 70, 67
+  orig: 74, 74
+  offset: 2, 0
+  index: -1
+imgs/disco/blur_07
+  rotate: false
+  xy: 132, 726
+  size: 70, 68
+  orig: 74, 74
+  offset: 2, 0
+  index: -1
+imgs/disco/blur_08
+  rotate: false
+  xy: 228, 828
+  size: 70, 68
+  orig: 74, 74
+  offset: 2, 0
+  index: -1
+imgs/disco/disco_active_000
+  rotate: false
+  xy: 2, 169
+  size: 65, 67
+  orig: 74, 74
+  offset: 5, 1
+  index: -1
+imgs/disco/disco_active_001
+  rotate: true
+  xy: 780, 955
+  size: 65, 67
+  orig: 74, 74
+  offset: 5, 1
+  index: -1
+imgs/disco/disco_active_002
+  rotate: false
+  xy: 2, 99
+  size: 64, 68
+  orig: 74, 74
+  offset: 6, 1
+  index: -1
+imgs/disco/disco_active_003
+  rotate: true
+  xy: 352, 887
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 2
+  index: -1
+imgs/disco/disco_active_004
+  rotate: true
+  xy: 849, 955
+  size: 65, 67
+  orig: 74, 74
+  offset: 5, 2
+  index: -1
+imgs/disco/disco_active_005
+  rotate: false
+  xy: 2, 308
+  size: 65, 68
+  orig: 74, 74
+  offset: 5, 1
+  index: -1
+imgs/disco/disco_active_006
+  rotate: false
+  xy: 2, 29
+  size: 64, 68
+  orig: 74, 74
+  offset: 6, 1
+  index: -1
+imgs/disco/disco_active_007
+  rotate: true
+  xy: 918, 956
+  size: 64, 68
+  orig: 74, 74
+  offset: 6, 1
+  index: -1
+imgs/disco/disco_active_008
+  rotate: true
+  xy: 421, 886
+  size: 65, 67
+  orig: 74, 74
+  offset: 5, 1
+  index: -1
+imgs/disco/disco_active_009
+  rotate: true
+  xy: 490, 886
+  size: 65, 67
+  orig: 74, 74
+  offset: 5, 1
+  index: -1
+imgs/disco/disco_active_010
+  rotate: true
+  xy: 559, 886
+  size: 65, 67
+  orig: 74, 74
+  offset: 5, 1
+  index: -1
+imgs/disco/disco_active_011
+  rotate: true
+  xy: 132, 660
+  size: 64, 68
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_active_012
+  rotate: true
+  xy: 228, 761
+  size: 65, 67
+  orig: 74, 74
+  offset: 5, 0
+  index: -1
+imgs/disco/disco_active_013
+  rotate: false
+  xy: 78, 591
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_active_014
+  rotate: true
+  xy: 640, 955
+  size: 65, 68
+  orig: 74, 74
+  offset: 5, 0
+  index: -1
+imgs/disco/disco_active_015
+  rotate: false
+  xy: 2, 238
+  size: 65, 68
+  orig: 74, 74
+  offset: 5, 0
+  index: -1
+imgs/disco/disco_active_016
+  rotate: true
+  xy: 710, 955
+  size: 65, 68
+  orig: 74, 74
+  offset: 5, 0
+  index: -1
+imgs/disco/disco_idle_0000
+  rotate: false
+  xy: 144, 591
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0001
+  rotate: true
+  xy: 204, 695
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0002
+  rotate: false
+  xy: 210, 626
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0003
+  rotate: false
+  xy: 210, 557
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0004
+  rotate: true
+  xy: 273, 695
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0005
+  rotate: false
+  xy: 276, 626
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0006
+  rotate: false
+  xy: 276, 557
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0007
+  rotate: false
+  xy: 628, 884
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0008
+  rotate: false
+  xy: 694, 886
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0009
+  rotate: false
+  xy: 760, 886
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0010
+  rotate: false
+  xy: 826, 886
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0011
+  rotate: false
+  xy: 892, 886
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0012
+  rotate: false
+  xy: 958, 887
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0013
+  rotate: false
+  xy: 958, 818
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0014
+  rotate: true
+  xy: 300, 821
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0015
+  rotate: true
+  xy: 369, 820
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/disco_idle_0016
+  rotate: true
+  xy: 438, 820
+  size: 64, 67
+  orig: 74, 74
+  offset: 6, 0
+  index: -1
+imgs/disco/flash_00
+  rotate: false
+  xy: 2, 590
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+imgs/merge_ring_01
+  rotate: false
+  xy: 2, 796
+  size: 224, 224
+  orig: 256, 256
+  offset: 16, 16
+  index: -1
