@@ -111,7 +111,6 @@ void GUIMinigames::callBackSplash()
 
     btnChess = addButton(BTN_LINE, "iconCard.png", new BubbleBehavior(), NULL, false);
     btnChess->setPosition(bgInfo->getPositionX(), bgInfo->getPositionY() + btnChess->getHeight() * 0.6 + bgInfo->getContentSize().height * 0.5);
-    btnChess->normalImage->setScale(0.8);
 	
     float heightBg = btnBack->getPositionY() - btnBack->getHeight() * 0.7 - size.height * 0.15;
     float widthBg  = size.width * 0.95f - bgInfo->getPositionX() - bgInfo->getContentSize().width * 0.5 - size.width * 0.05;
@@ -245,7 +244,7 @@ void GUIMinigames::initInfoUser() {
     bgInfo->addChild(borderAvatar);
     borderAvatar->setPosition(avatar->getPosition());
 
-    float posX = avatar->getPositionX() + avatar->getContentSize().width * 0.7;
+    float posX = avatar->getPositionX() + avatar->getContentSize().width * 0.9;
     float padY = 40;
     lbName = Text::create("Player", "fonts/tahoma.ttf", 22);
     bgInfo->addChild(lbName);

@@ -1025,22 +1025,23 @@ void BinhBoardScene::sapBai(vector<double> arrayMoney)
 					posStart = arrayPlayer[0]->getPositionAvatar();
 					posEnd = arrayPlayer[i]->getCardPos2(7);
                     if (i == 1)
-                        rotate = 10;
+                        rotate = -80;
                     else if (i == 2)
                         rotate = -30;
                     else if (i == 3)
-                        rotate = -80;
+                        rotate = 10;
 				}
 				else {
 					autoState = BI_SAP_BAI_STATE;
 					posEnd = arrayPlayer[0]->getCardPos2(7);
 					posStart = arrayPlayer[i]->getPositionAvatar();
+
                     if (i == 1)
-                        rotate = 180;
+                        rotate = 100;
                     else if (i == 2)
-                        rotate = 120;
+                        rotate = 150;
                     else if (i == 3)
-                        rotate = 80;
+                        rotate = -170;
 				}
 				posMedium = Vec2(posStart.x * 0.5 + posEnd.y * 0.5, posStart.y * 0.5 + posEnd.y * 0.5);
 				posMedium.y = posMedium.y + 100 - 200 * AXRANDOM_0_1();
@@ -1065,6 +1066,7 @@ void BinhBoardScene::sapBai(vector<double> arrayMoney)
 						NULL
 					)
 				);
+                imgBomb->setVisible(false);
 
                 spine::SkeletonAnimation* effectSpecialChi = spine::SkeletonAnimation::createWithJsonFile(
                                     "spine/fx_rocket.json", "spine/fx_rocket.atlas", 0.8f);
@@ -1082,7 +1084,7 @@ void BinhBoardScene::sapBai(vector<double> arrayMoney)
                 effectSpecialChi->setPosition(Vec2(posStart));
                 effectSpecialChi->runAction(
                     Sequence::create(
-                        MoveTo::create(0.8, posEnd),
+                        EaseExponentialIn::create(MoveTo::create(1.0, posEnd)),
                         RemoveSelf::create(), NULL
                     )
                 );

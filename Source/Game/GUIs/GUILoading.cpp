@@ -89,7 +89,7 @@ void GUILoading::callBackSplash()
 	background->setHeight(size.height);
 	background->setPos(size.width * 0.5f, size.height * 0.5f);
 
-    Sprite* iconBall = Sprite::create("GuiGame/iconCard.png");
+    Sprite* iconBall = Sprite::create("GuiGame/logo.png");
     addChild(iconBall);
     iconBall->setAnchorPoint(Vec2(0.5, 0));
     iconBall->setPosition(size.width * 0.5, size.height * 1.1);
@@ -109,7 +109,7 @@ void GUILoading::callBackSplash()
             NULL
         )
     );
-    iconBall->setVisible(false);
+    //iconBall->setVisible(false);
 
 	background->getImg()->runAction(
         Sequence::create(
@@ -144,17 +144,29 @@ void GUILoading::callBackSplash()
 
 
     spine::SkeletonAnimation* skeletonNode =
-        spine::SkeletonAnimation::createWithJsonFile("spine/fire_work_daily.json", "spine/fire_work_daily.atlas", 0.5f);
-    skeletonNode->setAnimation(0, "firework", true);
+        spine::SkeletonAnimation::createWithJsonFile("spine/fx_rocket.json", "spine/fx_rocket.atlas", 0.5f);
+    skeletonNode->setAnimation(0, "idle", true);
    // skeletonNode->setSkin("idle");
     skeletonNode->setPosition(Vec2(300, 300));
-    addChild(skeletonNode);
+   // addChild(skeletonNode);
+
+    // huong tu duoi len tren
+    skeletonNode->setRotation(50); // sang ben phai
+    skeletonNode->setRotation(-30); // huong ben tren
+    skeletonNode->setRotation(-80); // cheo tu phai sang trai
+    skeletonNode->setRotation(10); // cheo tu trai sang phai
+
+    // huong tu tren xuong duoi
+    skeletonNode->setRotation(150); // huong xuong duoi
+    skeletonNode->setRotation(100); // cheo tu trai sang phai
+    skeletonNode->setRotation(-170); // cheo tu phai sang trai
+
   //  skeletonNode->setRotation(90);
   //  skeletonNode->runAction(MoveBy::create(3.0, Vec2(500, 0)));
   //  skeletonNode->setVisible(false);
 
     Sparkle* test = new Sparkle(500, 200, "Board/Particles/flare.png");
-    addChild(test);
+   // addChild(test);
     test->setPosition(size.width * 0.2, size.height * 0.2);
     test->emitTime = 0.2;
     test->type = SPARKLE_SHOW;

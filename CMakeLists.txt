@@ -51,6 +51,7 @@ file(GLOB_RECURSE GAME_HEADER
 
 file(GLOB_RECURSE GAME_SOURCE
   Source/*.cpp Source/*.c
+
 )
 
 set(GAME_INC_DIRS

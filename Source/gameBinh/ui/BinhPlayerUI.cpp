@@ -333,7 +333,7 @@ void BinhPlayerUI::compareChi(char chi, double money, int result)
 			string resource = BinhGameLogic::getInstance()->getResourceEffectChiCompare(chi, money, info->PlayerCard(), isEffectParticle, chairIndex == MY_INDEX);
 			//resource = "TextTypeChi.png";
 			effectChi(chi, resource);
-			if (isEffectParticle || true) {
+			if (isEffectParticle) {
                 if (effectSpecialChi == NULL)
                 {
                     effectSpecialChi =
@@ -349,7 +349,7 @@ void BinhPlayerUI::compareChi(char chi, double money, int result)
                 }
                 effectSpecialChi->setVisible(true);
                 effectSpecialChi->setAnimation(0, "firework", false);
-                effectSpecialChi->setPosition(Vec2(imgEffectChi->getPosition().x, imgEffectChi->getPosition().y - 40));
+                effectSpecialChi->setPosition(Vec2(imgEffectChi->getPosition().x, imgEffectChi->getPosition().y - 10));
                 
 				/*DBCCArmatureNode *effIcon = DBCCFactory::getInstance()->buildArmatureNode("bom_change");
 				if (effIcon) {
@@ -385,7 +385,7 @@ void BinhPlayerUI::sapBai(double money, SapBaiType sapType)
             imgSap->loadTexture("table/sap3Chi.png");
 
         layout->runAction(Sequence::create(
-            DelayTime::create(0.4f),
+            DelayTime::create(0.9f),
             CallFunc::create([this]() {
             if (effBomb)
             {
