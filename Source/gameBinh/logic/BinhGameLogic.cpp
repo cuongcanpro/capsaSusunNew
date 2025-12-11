@@ -7,6 +7,7 @@
 #include "core/utils/TienlenGameSound.h"
 #include "gamePlay/MaubinhGameRule.h"
 #include "Game/Utility/JNIUtils.h"
+#include <common/ReceiveGUI.h>
 using namespace std::chrono;
 BinhGameLogic::BinhGameLogic()
 {
@@ -1607,12 +1608,13 @@ bool BinhGameLogic::checkGetSupport()
 		AXLOGD("CHUA NHAN SUPPORT");
 		string message = LocalizedString::to("SUPPORT_GOLD");
 		message = StringUtility::replaceAll(message, "@gold", "15.000");
-		sceneMgr->showOkDialogWithAction(message, [this](int btnId) {
-			BinhGameLogic::getInstance()->arrayPlayer[0]->Gold(15000);
-			BinhBoardScene *gui = (BinhBoardScene *)SceneMgr::getInstance()->getMainLayer();
-			gui->updateUserMoney(0);
-            gameMgr->showReceiveGold();
-		});
+        ReceiveGUI* gui1 = (ReceiveGUI*) sceneMgr->openGUI(ReceiveGUI::className);
+        gui1->showMessage(message);
+
+        BinhGameLogic::getInstance()->arrayPlayer[0]->Gold(15000);
+        BinhBoardScene* gui = (BinhBoardScene*)SceneMgr::getInstance()->getMainLayer();
+        gui->updateUserMoney(0);
+		
 		JNIUtils::sendEvent("get_support", "1");
 		UserDefault::getInstance()->setStringForKey("daySupport", s1);
 		UserDefault::getInstance()->flush();

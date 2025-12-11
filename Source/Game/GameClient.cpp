@@ -635,7 +635,7 @@ void GameClient::showAdsForOldUser(bool isUndo)
 void GameClient::getVersion() {
     ax::network::HttpRequest* request = new ax::network::HttpRequest();
     // required fields
-    request->setUrl("https://news.beansofts.com/?a=736&v=1");
+    request->setUrl("https://news.beansofts.com/?a=77&v=1");
     request->setRequestType(ax::network::HttpRequest::Type::GET);
   //  request->setHeaders(std::vector<std::string>{CHROME_UA});
     request->setResponseCallback(AX_CALLBACK_2(GameClient::onVersionCompleted, this));

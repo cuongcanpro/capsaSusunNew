@@ -18,6 +18,7 @@ void Sparkle::startEffect(float _lifeTime)
         arrayStar[i]->setVisible(false);
     }
 	setVisible(true);
+    unscheduleAllCallbacks();
     schedule(AX_SCHEDULE_SELECTOR(Sparkle::updateEffect), 0.02);
 	countGen = 0.1;
 	lifeTime = _lifeTime;

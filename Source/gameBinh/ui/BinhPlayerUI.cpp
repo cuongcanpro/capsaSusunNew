@@ -385,7 +385,7 @@ void BinhPlayerUI::sapBai(double money, SapBaiType sapType)
             imgSap->loadTexture("table/sap3Chi.png");
 
         layout->runAction(Sequence::create(
-            DelayTime::create(0.9f),
+            DelayTime::create(1.4f),
             CallFunc::create([this]() {
             if (effBomb)
             {

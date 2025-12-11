@@ -8,7 +8,7 @@
 using namespace std;
 
 
-static const std::string LANGUAGE_DEFAULT          = LANGUAGE_EN;
+static std::string LANGUAGE_DEFAULT          = LANGUAGE_EN;
 static const vector<std::string> LANGUAGES_SUPPORT = {LANGUAGE_EN, LANGUAGE_VN};
 
 static const std::map<std::string, std::string> LANGUAGES_PATH = {

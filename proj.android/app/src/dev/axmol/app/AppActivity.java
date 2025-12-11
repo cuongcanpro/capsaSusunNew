@@ -297,4 +297,9 @@ public class AppActivity extends BaseActivity implements InstallReferrerStateLis
     public static int getSourceApp() {
         return instance.isCampaign;
     }
+    
+    public static String getCountry() {
+        String locale = Locale.getDefault().getLanguage() + "-" + Locale.getDefault().getCountry();
+        return locale;
+    }
 }

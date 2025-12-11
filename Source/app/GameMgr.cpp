@@ -22,6 +22,7 @@
 #include <cocostudio/Armature.h>
 #include <DragonBones/DragonBonesHeaders.h>
 #include <DragonBones/CCFactory.h>
+#include <core/utils/LanguageMgr.cpp>
 
 GameMgr::GameMgr()
 {
@@ -107,7 +108,7 @@ void GameMgr::startGame() {
 	versionGame = TALA_OLD;
 	fakeApp = 0;
 	countryName = UserDefault::getInstance()->getStringForKey("countryName", "");
-	//getCountry();
+	getCountry();
 	//getVersion();
 	//getIdAds();
 	currentPosture = UserDefault::getInstance()->getIntegerForKey("currentPosture", 0);
@@ -329,17 +330,7 @@ void GameMgr::findCountryID() {
 }
 
 std::string GameMgr::getCountryID(bool isRealCountry) {
-// 	if (CheatCenter.isCheatCountry() && (isRealCountry != true)) {
-// 		return CheatCenter.COUNTRY_ID;
-// 	}
-// 	else {
-		if (country.countryID.empty()) country.countryID = getCountryAppName();
-
-		if (country.countryID.length() > 2) {
-			country.countryID = country.countryID.substr(0, 2);
-		}
-		return country.countryID;
-//	}
+   return "";
 }
 
 std::string GameMgr::getCountryIdShop() {
@@ -626,14 +617,14 @@ void GameMgr::getCountry()
 	string urlRequest = "https://api.myip.com/";
 
     string country = JNIUtils::getCountry();
-    if (country.find("id") != std::string::npos || country.find("ID") != std::string::npos)
+    if (country.find("vi") != std::string::npos || country.find("VI") != std::string::npos || country.find("vn") != std::string::npos ||
+        country.find("VN") != std::string::npos)
     {
-        //isIndo = true;
+        LANGUAGE_DEFAULT = LANGUAGE_VN;
     }
-    if (country.find("ph") != std::string::npos || country.find("PH") != std::string::npos ||
-        country.find("fil") != std::string::npos)
+    else
     {
-      //  isIndo = true;
+        LANGUAGE_DEFAULT = LANGUAGE_EN;
     }
 
 	string data = "";
@@ -651,33 +642,14 @@ void GameMgr::getCountry()
 					countryName = attribute["cc"].GetString();
 					UserDefault::getInstance()->setStringForKey("countryName", countryName);
 					UserDefault::getInstance()->flush();
-                    if (countryName.compare("id") == 0 || countryName.compare("ID") == 0) {
-                     //   isIndo = true;
+                    if (countryName.compare("vn") == 0 || countryName.compare("VN") == 0) {
+                        LANGUAGE_DEFAULT = LANGUAGE_VN;
                     }
-                    if (countryName.compare("ph") == 0 || countryName.compare("PH") == 0)
-                    {
-                       // isIndo = true;
-                    }
-                    if (isIndo)
-                    {
-                      //  languageMgr->changeLanguage(LANGUAGE_EN);
-                    }
-                    else
-                    {
-                        //languageMgr->changeLanguage(LANGUAGE_VN);
-                    }
+                    
 				}
 			}
 		}
 	});
-    if (isIndo)
-    {
-        languageMgr->changeLanguage(LANGUAGE_EN);
-    }
-    else
-    {
-        languageMgr->changeLanguage(LANGUAGE_VN);
-    }
 }
 
 

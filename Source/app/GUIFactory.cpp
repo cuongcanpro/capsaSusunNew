@@ -12,11 +12,14 @@
 #include "common/UserInfoGUI.h"
 #include "common/ChooseGameScene.h"
 #include "common/ChooseCardGUI.h"
+#include "common/ReceiveGUI.h"
+
 #include "gameBinh/ui/BinhBoardScene.h"
 #include "gameBinh/ui/BinhTruyenThong.h"
 #include "gameBinh/ui/BinhTinhAt.h"
 #include "gameBinh/ui/BinhLobbyScene.h"
 #include "gameBinh/ui/BinhHelpGUI.h"
+
 
 BaseLayer* GUIFactory::createGUI(std::string className) {
 	if (className.compare(Dialog::className) == 0) {
@@ -38,6 +41,10 @@ BaseLayer* GUIFactory::createGUI(std::string className) {
 	if (className.compare(NewLevelGUI::className) == 0) {
 		return NewLevelGUI::create();
 	}
+    if (className.compare(ReceiveGUI::className) == 0)
+    {
+        return ReceiveGUI::create();
+    }
 	
 	if (className.compare(LobbyScene::className) == 0) {
 		return LobbyScene::create();

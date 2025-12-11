@@ -146,6 +146,9 @@ void BinhTruyenThong::showEffect(Vec2 arrayPos[], float widthCard, bool effectGU
 		callbackShow(NULL);
 	}
 	effectImage->setVisible(false);
+    for (int i = 0; i < 3; i++) {
+        arrayEffectChi[i]->setVisible(false);
+    }
 }
 
 void BinhTruyenThong::callbackShow(Node* pSender)

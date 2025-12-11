@@ -109,7 +109,7 @@ void GUILoading::callBackSplash()
             NULL
         )
     );
-    //iconBall->setVisible(false);
+    iconBall->setVisible(false);
 
 	background->getImg()->runAction(
         Sequence::create(
@@ -126,8 +126,8 @@ void GUILoading::callBackSplash()
     factory->loadTextureAtlasData("dragonbone/kyby_eff_gold_bomb_tex.json");
 
     auto armatureDisplay = factory->buildArmatureDisplay("kyby_eff_gold_bomb");
-    armatureDisplay->setPosition(ax::Vec2(300, 200));
-   // this->addChild(armatureDisplay);
+    armatureDisplay->setPosition(ax::Vec2(300, 400));
+    //this->addChild(armatureDisplay);
     armatureDisplay->getEventDispatcher()->setEnabled(true);
     armatureDisplay->addDBEventListener(dragonBones::EventObject::COMPLETE,
                                         AX_CALLBACK_0(GUILoading::callbackTest, this));
@@ -144,11 +144,11 @@ void GUILoading::callBackSplash()
 
 
     spine::SkeletonAnimation* skeletonNode =
-        spine::SkeletonAnimation::createWithJsonFile("spine/fx_rocket.json", "spine/fx_rocket.atlas", 0.5f);
-    skeletonNode->setAnimation(0, "idle", true);
+        spine::SkeletonAnimation::createWithJsonFile("spine/firework.json", "spine/firework.atlas", 1.0f);
+    //skeletonNode->setAnimation(0, "idle", true);
    // skeletonNode->setSkin("idle");
     skeletonNode->setPosition(Vec2(300, 300));
-   // addChild(skeletonNode);
+    addChild(skeletonNode);
 
     // huong tu duoi len tren
     skeletonNode->setRotation(50); // sang ben phai
@@ -158,11 +158,22 @@ void GUILoading::callBackSplash()
 
     // huong tu tren xuong duoi
     skeletonNode->setRotation(150); // huong xuong duoi
-    skeletonNode->setRotation(100); // cheo tu trai sang phai
-    skeletonNode->setRotation(-170); // cheo tu phai sang trai
+    skeletonNode->setRotation(0); // cheo tu trai sang phai
+   // skeletonNode->setRotation(-170); // cheo tu phai sang trai
 
   //  skeletonNode->setRotation(90);
-  //  skeletonNode->runAction(MoveBy::create(3.0, Vec2(500, 0)));
+  /*  skeletonNode->setScale(0);
+    skeletonNode->runAction(
+        Sequence::create(
+            Spawn::create(
+                EaseBackOut::create(MoveBy::create(0.5, Vec2(0, 30))),
+                EaseExponentialOut::create(ScaleTo::create(0.5, 1.0)),
+                NULL
+            ),
+            EaseExponentialIn::create(MoveTo::create(1.0, Vec2(500, 110))),
+            NULL
+        )
+    );*/
   //  skeletonNode->setVisible(false);
 
     Sparkle* test = new Sparkle(500, 200, "Board/Particles/flare.png");
@@ -172,5 +183,6 @@ void GUILoading::callBackSplash()
     test->type = SPARKLE_SHOW;
     test->startEffect();
 
+    
     
 }

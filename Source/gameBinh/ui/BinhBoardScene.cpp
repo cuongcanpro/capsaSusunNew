@@ -13,6 +13,7 @@
 #include "BinhHelpGUI.h"
 #include <Game/Utility/Toast.h>
 #include <Engine/GlobalVar.h>
+#include <common/ReceiveGUI.h>
 
 using namespace ax::ui;
 #define BOARD_SCENE_BTN_JACK_POT 0
@@ -89,7 +90,9 @@ void BinhBoardScene::initGUI()
 	btnArrange = customButton("btnArrange", BOARD_SCENE_BTN_ARRANGE, panelRight);
 	btnSound = customButton("btnSound", BOARD_SCENE_BTN_SOUND, pTopRight);
 	btnHelp = customButton("btnHelp", BOARD_SCENE_BTN_HELP, pTopRight);
+    btnHelp->setVisible(false);
     btnLanguage    = customButton("btnLanguage", BOARD_SCENE_BTN_LANGUAGE, pTopRight);
+    btnLanguage->setPosition(btnHelp->getPosition());
     string res;
     if (languageMgr->checkCurrentLanguage(LANGUAGE_EN))
     {
@@ -525,13 +528,14 @@ void BinhBoardScene::update(float delta)
 			{
 				string reason = LocalizedString::to("RECEIVE_NUM");
 				reason = StringUtility::replaceAll(reason, "@gold", "30.000");
-				sceneMgr->showOkDialogWithAction(reason, [this](int btnId) {
-					BinhGameLogic::getInstance()->arrayPlayer[0]->Gold(30000);
-					BinhBoardScene *gui = (BinhBoardScene *)SceneMgr::getInstance()->getMainLayer();
-                    if (gui)
-					    gui->updateUserMoney(0);
-                    gameMgr->showReceiveGold();
-				});
+                ReceiveGUI* gui1 = (ReceiveGUI*) sceneMgr->openGUI(ReceiveGUI::className);
+                gui1->showMessage(reason);
+
+                BinhGameLogic::getInstance()->arrayPlayer[0]->Gold(30000);
+                BinhBoardScene* gui = (BinhBoardScene*)SceneMgr::getInstance()->getMainLayer();
+                if (gui)
+                    gui->updateUserMoney(0);
+                
 				JNIUtils::sendEvent("get_reward_success", "1");
 				break;
 			}
@@ -1069,7 +1073,7 @@ void BinhBoardScene::sapBai(vector<double> arrayMoney)
                 imgBomb->setVisible(false);
 
                 spine::SkeletonAnimation* effectSpecialChi = spine::SkeletonAnimation::createWithJsonFile(
-                                    "spine/fx_rocket.json", "spine/fx_rocket.atlas", 0.8f);
+                                    "spine/fx_rocket.json", "spine/fx_rocket.atlas", 1.1f);
                                 this->addChild(effectSpecialChi, 100);
                                 /*effectSpecialChi->setCompleteListener(
                                     [](spine::SkeletonAnimation* armature) { armature->setVisible(false); });*/
@@ -1082,12 +1086,11 @@ void BinhBoardScene::sapBai(vector<double> arrayMoney)
                 effectSpecialChi->setVisible(true);
                 effectSpecialChi->setAnimation(0, "idle", true);
                 effectSpecialChi->setPosition(Vec2(posStart));
+                effectSpecialChi->setScale(0);
                 effectSpecialChi->runAction(
-                    Sequence::create(
-                        EaseExponentialIn::create(MoveTo::create(1.0, posEnd)),
-                        RemoveSelf::create(), NULL
-                    )
-                );
+                    Sequence::create(Spawn::create(EaseBackOut::create(MoveBy::create(0.5, Vec2(0, 30))),
+                                                   EaseExponentialOut::create(ScaleTo::create(0.5, 1.0)), NULL),
+                                     EaseExponentialIn::create(MoveTo::create(1.0, Vec2(500, 110))), NULL));
 			}
 		}
 	}
@@ -1553,6 +1556,7 @@ void BinhBoardScene::onButtonRelease(ax::ui::Button* button, int id)
                 res = "Board/table/flag_1.png";
             }
             btnLanguage->loadTextures(res, res, res);
+            sceneMgr->openGUI(ReceiveGUI::className);
             break;
         }
 	case BOARD_SCENE_BTN_SOUND: {
