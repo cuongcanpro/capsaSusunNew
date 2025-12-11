@@ -68,6 +68,7 @@ public:
 	static LanguageMgr* _instance;
 	std::string cLang;
 	bool hasInit;
+    bool isVietnam;
 	LocalizedFile* mTextConfig;
 	std::vector<Lang> queueAddLocalizeds;
 	std::vector<std::string> mLanguages;

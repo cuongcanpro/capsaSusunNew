@@ -8,7 +8,7 @@
 using namespace std;
 
 
-static std::string LANGUAGE_DEFAULT          = LANGUAGE_EN;
+static const std::string LANGUAGE_DEFAULT          = LANGUAGE_EN;
 static const vector<std::string> LANGUAGES_SUPPORT = {LANGUAGE_EN, LANGUAGE_VN};
 
 static const std::map<std::string, std::string> LANGUAGES_PATH = {
@@ -339,7 +339,10 @@ void LanguageMgr::saveCurrentLanguage()
 
 std::string LanguageMgr::loadCurrentLanguage()
 {
-	return StorageUtil::getString(KEY_CURRENT_LANGUAGE, LANGUAGE_DEFAULT);
+    if (isVietnam)
+        return StorageUtil::getString(KEY_CURRENT_LANGUAGE, LANGUAGE_VN);
+    else
+	    return StorageUtil::getString(KEY_CURRENT_LANGUAGE, LANGUAGE_EN);
 }
 
 LanguageMgr* LanguageMgr::_instance = nullptr;

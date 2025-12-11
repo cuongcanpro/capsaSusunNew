@@ -397,6 +397,9 @@
     <ClCompile Include="D:\dev\projects\CapsaSusun\Source\common\NewLevelGUI.cpp">
       <Filter>Source Files\Source\common</Filter>
     </ClCompile>
+    <ClCompile Include="D:\dev\projects\CapsaSusun\Source\common\ReceiveGUI.cpp">
+      <Filter>Source Files\Source\common</Filter>
+    </ClCompile>
     <ClCompile Include="D:\dev\projects\CapsaSusun\Source\common\UserInfoGUI.cpp">
       <Filter>Source Files\Source\common</Filter>
     </ClCompile>
@@ -639,9 +642,6 @@
     </ClCompile>
     <ClCompile Include="D:\dev\projects\CapsaSusun\proj.win32\main.cpp">
       <Filter>Source Files\proj.win32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\common\ReceiveGUI.cpp">
-      <Filter>Source Files\Source\common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1057,6 +1057,9 @@
       <Filter>Source Files\Source\common</Filter>
     </ClInclude>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Source\common\NewLevelGUI.h">
+      <Filter>Source Files\Source\common</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\dev\projects\CapsaSusun\Source\common\ReceiveGUI.h">
       <Filter>Source Files\Source\common</Filter>
     </ClInclude>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Source\common\UserInfoGUI.h">
@@ -2009,6 +2012,9 @@
     </ClInclude>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\Board\Particles\stars.png">
       <Filter>Content\Board\Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\Board\ReceiveGUI.csb">
+      <Filter>Content\Board</Filter>
     </ClInclude>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\Board\SelfUI.csb">
       <Filter>Content\Board</Filter>
@@ -5946,14 +5952,20 @@
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\spine\fx_rocket.png">
       <Filter>Content\spine</Filter>
     </ClInclude>
+    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\spine\ruong.atlas">
+      <Filter>Content\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\spine\ruong.json">
+      <Filter>Content\spine</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\spine\ruong.png">
+      <Filter>Content\spine</Filter>
+    </ClInclude>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\texture.plist">
       <Filter>Content</Filter>
     </ClInclude>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\texture.png">
       <Filter>Content</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Source\common\ReceiveGUI.h">
-      <Filter>Source Files\Source\common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

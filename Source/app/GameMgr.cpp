@@ -22,7 +22,6 @@
 #include <cocostudio/Armature.h>
 #include <DragonBones/DragonBonesHeaders.h>
 #include <DragonBones/CCFactory.h>
-#include <core/utils/LanguageMgr.cpp>
 
 GameMgr::GameMgr()
 {
@@ -180,7 +179,7 @@ void GameMgr::startGame() {
 	//}
 	addSearchPath();
 	initPlugin();
-	languageMgr->init();
+	
 	if (languageMgr->cLang.compare(LANGUAGE_VN) == 0) {
 		JNIUtils::sendEvent("lang_vn", "1");
 	}
@@ -620,11 +619,11 @@ void GameMgr::getCountry()
     if (country.find("vi") != std::string::npos || country.find("VI") != std::string::npos || country.find("vn") != std::string::npos ||
         country.find("VN") != std::string::npos)
     {
-        LANGUAGE_DEFAULT = LANGUAGE_VN;
+        languageMgr->isVietnam = true;
     }
     else
     {
-        LANGUAGE_DEFAULT = LANGUAGE_EN;
+        languageMgr->isVietnam = false;
     }
 
 	string data = "";
@@ -643,7 +642,7 @@ void GameMgr::getCountry()
 					UserDefault::getInstance()->setStringForKey("countryName", countryName);
 					UserDefault::getInstance()->flush();
                     if (countryName.compare("vn") == 0 || countryName.compare("VN") == 0) {
-                        LANGUAGE_DEFAULT = LANGUAGE_VN;
+                        languageMgr->isVietnam = true;
                     }
                     
 				}

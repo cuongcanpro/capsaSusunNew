@@ -105,15 +105,13 @@
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <MinimalRebuild>
-      </MinimalRebuild>
+      <MinimalRebuild></MinimalRebuild>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <StringPooling>true</StringPooling>
-      <SupportJustMyCode>
-      </SupportJustMyCode>
+      <SupportJustMyCode></SupportJustMyCode>
       <UseFullPaths>false</UseFullPaths>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;AX_ENABLE_MFMEDIA=1;AX_ENABLE_MSEDGE_WEBVIEW2=1;AX_ENABLE_PHYSICS=1;AX_ENABLE_3D=1;AX_ENABLE_3D_PHYSICS=1;AX_ENABLE_NAVMESH=1;AX_ENABLE_MEDIA=1;AX_ENABLE_AUDIO=1;AX_ENABLE_CONSOLE=1;_AX_DEBUG=1;AX_GLES_PROFILE=300;_WIN32;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;AX_SSE_INTRINSICS=1;__SSE4_1__=1;AX_USE_ALSOFT=1;ZLIB_DLL=1;PNG_INTEL_SSE_OPT=1;CP_USE_CGTYPES=0;CP_USE_DOUBLES=0;BT_USE_SSE_IN_API=1;OPENSSL_SUPPRESS_DEPRECATED=1;P2T_STATIC_EXPORTS;ASTCENC_NEON=0;ASTCENC_SSE=41;ASTCENC_AVX=0;ASTCENC_POPCNT=1;ASTCENC_F16C=0;AX_ENABLE_OPUS=1;NOUNCRYPT=1;YASIO_SSL_BACKEND=1;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -145,8 +143,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>
-      </Message>
+      <Message>	</Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy D:/axmol/3rdparty/zlib/_x/lib/win32/x64/zlib1.dll D:/axmol/3rdparty/openssl/_x/lib/win32/x64/libssl-3-x64.dll D:/axmol/3rdparty/openssl/_x/lib/win32/x64/libcrypto-3-x64.dll D:/axmol/3rdparty/curl/_x/lib/win32/x64/libcurl.dll D:/dev/projects/CapsaSusun/build/bin/Debug/OpenAL32.dll D:/dev/projects/CapsaSusun/build/bin/CapsaSusun/Debug
 if %errorlevel% neq 0 goto :cmEnd
@@ -192,15 +189,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <MinimalRebuild>
-      </MinimalRebuild>
+      <MinimalRebuild></MinimalRebuild>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <StringPooling>true</StringPooling>
-      <SupportJustMyCode>
-      </SupportJustMyCode>
+      <SupportJustMyCode></SupportJustMyCode>
       <UseFullPaths>false</UseFullPaths>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;AX_ENABLE_MFMEDIA=1;AX_ENABLE_MSEDGE_WEBVIEW2=1;AX_ENABLE_PHYSICS=1;AX_ENABLE_3D=1;AX_ENABLE_3D_PHYSICS=1;AX_ENABLE_NAVMESH=1;AX_ENABLE_MEDIA=1;AX_ENABLE_AUDIO=1;AX_ENABLE_CONSOLE=1;AX_GLES_PROFILE=300;_WIN32;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;AX_SSE_INTRINSICS=1;__SSE4_1__=1;AX_USE_ALSOFT=1;ZLIB_DLL=1;PNG_INTEL_SSE_OPT=1;CP_USE_CGTYPES=0;CP_USE_DOUBLES=0;BT_USE_SSE_IN_API=1;OPENSSL_SUPPRESS_DEPRECATED=1;P2T_STATIC_EXPORTS;ASTCENC_NEON=0;ASTCENC_SSE=41;ASTCENC_AVX=0;ASTCENC_POPCNT=1;ASTCENC_F16C=0;AX_ENABLE_OPUS=1;NOUNCRYPT=1;YASIO_SSL_BACKEND=1;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -234,8 +229,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>
-      </Message>
+      <Message>	</Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy D:/axmol/3rdparty/zlib/_x/lib/win32/x64/zlib1.dll D:/axmol/3rdparty/openssl/_x/lib/win32/x64/libssl-3-x64.dll D:/axmol/3rdparty/openssl/_x/lib/win32/x64/libcrypto-3-x64.dll D:/axmol/3rdparty/curl/_x/lib/win32/x64/libcurl.dll D:/dev/projects/CapsaSusun/build/bin/Release/OpenAL32.dll D:/dev/projects/CapsaSusun/build/bin/CapsaSusun/Release
 if %errorlevel% neq 0 goto :cmEnd
@@ -281,15 +275,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <MinimalRebuild>
-      </MinimalRebuild>
+      <MinimalRebuild></MinimalRebuild>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>MinSpace</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <StringPooling>true</StringPooling>
-      <SupportJustMyCode>
-      </SupportJustMyCode>
+      <SupportJustMyCode></SupportJustMyCode>
       <UseFullPaths>false</UseFullPaths>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;AX_ENABLE_MFMEDIA=1;AX_ENABLE_MSEDGE_WEBVIEW2=1;AX_ENABLE_PHYSICS=1;AX_ENABLE_3D=1;AX_ENABLE_3D_PHYSICS=1;AX_ENABLE_NAVMESH=1;AX_ENABLE_MEDIA=1;AX_ENABLE_AUDIO=1;AX_ENABLE_CONSOLE=1;AX_GLES_PROFILE=300;_WIN32;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;AX_SSE_INTRINSICS=1;__SSE4_1__=1;AX_USE_ALSOFT=1;ZLIB_DLL=1;PNG_INTEL_SSE_OPT=1;CP_USE_CGTYPES=0;CP_USE_DOUBLES=0;BT_USE_SSE_IN_API=1;OPENSSL_SUPPRESS_DEPRECATED=1;P2T_STATIC_EXPORTS;ASTCENC_NEON=0;ASTCENC_SSE=41;ASTCENC_AVX=0;ASTCENC_POPCNT=1;ASTCENC_F16C=0;AX_ENABLE_OPUS=1;NOUNCRYPT=1;YASIO_SSL_BACKEND=1;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -323,8 +315,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>
-      </Message>
+      <Message>	</Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy D:/axmol/3rdparty/zlib/_x/lib/win32/x64/zlib1.dll D:/axmol/3rdparty/openssl/_x/lib/win32/x64/libssl-3-x64.dll D:/axmol/3rdparty/openssl/_x/lib/win32/x64/libcrypto-3-x64.dll D:/axmol/3rdparty/curl/_x/lib/win32/x64/libcurl.dll D:/dev/projects/CapsaSusun/build/bin/MinSizeRel/OpenAL32.dll D:/dev/projects/CapsaSusun/build/bin/CapsaSusun/MinSizeRel
 if %errorlevel% neq 0 goto :cmEnd
@@ -371,15 +362,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <MinimalRebuild>
-      </MinimalRebuild>
+      <MinimalRebuild></MinimalRebuild>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <StringPooling>true</StringPooling>
-      <SupportJustMyCode>
-      </SupportJustMyCode>
+      <SupportJustMyCode></SupportJustMyCode>
       <UseFullPaths>false</UseFullPaths>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;AX_ENABLE_MFMEDIA=1;AX_ENABLE_MSEDGE_WEBVIEW2=1;AX_ENABLE_PHYSICS=1;AX_ENABLE_3D=1;AX_ENABLE_3D_PHYSICS=1;AX_ENABLE_NAVMESH=1;AX_ENABLE_MEDIA=1;AX_ENABLE_AUDIO=1;AX_ENABLE_CONSOLE=1;AX_GLES_PROFILE=300;_WIN32;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;AX_SSE_INTRINSICS=1;__SSE4_1__=1;AX_USE_ALSOFT=1;ZLIB_DLL=1;PNG_INTEL_SSE_OPT=1;CP_USE_CGTYPES=0;CP_USE_DOUBLES=0;BT_USE_SSE_IN_API=1;OPENSSL_SUPPRESS_DEPRECATED=1;P2T_STATIC_EXPORTS;ASTCENC_NEON=0;ASTCENC_SSE=41;ASTCENC_AVX=0;ASTCENC_POPCNT=1;ASTCENC_F16C=0;AX_ENABLE_OPUS=1;NOUNCRYPT=1;YASIO_SSL_BACKEND=1;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -411,8 +400,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>
-      </Message>
+      <Message>	</Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy D:/axmol/3rdparty/zlib/_x/lib/win32/x64/zlib1.dll D:/axmol/3rdparty/openssl/_x/lib/win32/x64/libssl-3-x64.dll D:/axmol/3rdparty/openssl/_x/lib/win32/x64/libcrypto-3-x64.dll D:/axmol/3rdparty/curl/_x/lib/win32/x64/libcurl.dll D:/dev/projects/CapsaSusun/build/bin/RelWithDebInfo/OpenAL32.dll D:/dev/projects/CapsaSusun/build/bin/CapsaSusun/RelWithDebInfo
 if %errorlevel% neq 0 goto :cmEnd
@@ -506,7 +494,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Source\common\ReceiveGUI.h" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\Source\AppDelegate.h" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\Source\Engine\Engine.h" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\Source\Engine\GUI\BaseBehavior.h" />
@@ -645,6 +632,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Source\common\ChooseCardGUI.h" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\Source\common\ChooseGameScene.h" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\Source\common\NewLevelGUI.h" />
+    <ClInclude Include="D:\dev\projects\CapsaSusun\Source\common\ReceiveGUI.h" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\Source\common\UserInfoGUI.h" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\Source\core\BaseMgr.h" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\Source\core\gui\BaseLayer.h" />
@@ -739,7 +727,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Source\gameTienlen\ui\Viewing.h" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\proj.win32\main.h" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\proj.win32\resource.h" />
-    <ClCompile Include="..\Source\common\ReceiveGUI.cpp" />
     <ClCompile Include="D:\dev\projects\CapsaSusun\Source\AppDelegate.cpp" />
     <ClCompile Include="D:\dev\projects\CapsaSusun\Source\Engine\Engine.cpp" />
     <ClCompile Include="D:\dev\projects\CapsaSusun\Source\Engine\GUI\BaseBehavior.cpp" />
@@ -872,6 +859,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\dev\projects\CapsaSusun\Source\common\ChooseCardGUI.cpp" />
     <ClCompile Include="D:\dev\projects\CapsaSusun\Source\common\ChooseGameScene.cpp" />
     <ClCompile Include="D:\dev\projects\CapsaSusun\Source\common\NewLevelGUI.cpp" />
+    <ClCompile Include="D:\dev\projects\CapsaSusun\Source\common\ReceiveGUI.cpp" />
     <ClCompile Include="D:\dev\projects\CapsaSusun\Source\common\UserInfoGUI.cpp" />
     <ClCompile Include="D:\dev\projects\CapsaSusun\Source\core\BaseMgr.cpp" />
     <ClCompile Include="D:\dev\projects\CapsaSusun\Source\core\gui\BaseLayer.cpp" />
@@ -1177,6 +1165,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\Board\Particles\renew.plist" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\Board\Particles\spark.png" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\Board\Particles\stars.png" />
+    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\Board\ReceiveGUI.csb" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\Board\SelfUI.csb" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\Board\TalaGameGUI.csb" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\Board\TalaLobbyScene.csb" />
@@ -2489,6 +2478,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\spine\fx_rocket.atlas" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\spine\fx_rocket.json" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\spine\fx_rocket.png" />
+    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\spine\ruong.atlas" />
+    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\spine\ruong.json" />
+    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\spine\ruong.png" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\texture.plist" />
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\texture.png" />
   </ItemGroup>

@@ -53,6 +53,7 @@ bool BinhBoardScene::init()
 
 void BinhBoardScene::initGUI()
 {
+    languageMgr->init();
     countFireworkTime = -1;
     dragon = NULL;
 	idTheme = UserDefault::getInstance()->getIntegerForKey("idTheme", 0);
@@ -1090,7 +1091,7 @@ void BinhBoardScene::sapBai(vector<double> arrayMoney)
                 effectSpecialChi->runAction(
                     Sequence::create(Spawn::create(EaseBackOut::create(MoveBy::create(0.5, Vec2(0, 30))),
                                                    EaseExponentialOut::create(ScaleTo::create(0.5, 1.0)), NULL),
-                                     EaseExponentialIn::create(MoveTo::create(1.0, Vec2(500, 110))), NULL));
+                                     EaseExponentialIn::create(MoveTo::create(1.0, Vec2(500, 110))), RemoveSelf::create(), NULL));
 			}
 		}
 	}

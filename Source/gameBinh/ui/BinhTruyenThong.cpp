@@ -96,7 +96,7 @@ void BinhTruyenThong::initGUI()
         arrayEffectChi[i] = new Sparkle(clipper->getContentSize().width, clipper->getContentSize().height, "Board/Particles/flare.png");
         clipper->addChild(arrayEffectChi[i]);
         arrayEffectChi[i]->setVisible(false);
-        arrayEffectChi[i]->emitTime = 0.2f;
+        arrayEffectChi[i]->emitTime = 0.1f;
         arrayEffectChi[i]->type = SPARKLE_SHOW;
 	}
 	effectImage = Sprite::create("table/lucPheBon.png");
