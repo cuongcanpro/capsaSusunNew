@@ -106,6 +106,12 @@ void BinhBoardScene::initGUI()
         res = "Board/table/flag_1.png";
     }
     btnLanguage->loadTextures(res, res, res);
+    if (CONSTANT_GAME.compare("binhAll") == 0) {
+        btnLanguage->setVisible(true);
+    }
+    else {
+        btnLanguage->setVisible(false);
+    }
 
 	manager        = EffectManager::create(size);
 	Effect* effect = Effect::create("flame.efk", 40);
@@ -1590,12 +1596,16 @@ void BinhBoardScene::backKeyPress()
 {
 	gameMgr->checkCanPlayEffect();
 	if (BinhGameLogic::getInstance()->getGameState() == BinhGameState::BINH_GAME_WAITING) {
-	//	sceneMgr->openScene(BinhLobbyScene::className);
-            JNIUtils::showAdsBanner(1);
-                sceneMgr->layerGUI    = nullptr;
-                sceneMgr->layerSystem = nullptr;
-                Director::getInstance()->replaceScene(mainScene);
-                sceneMgr->curGui = "";
+        JNIUtils::showAdsBanner(1);
+        if (CONSTANT_GAME.compare("binhAll")) {
+            sceneMgr->layerGUI    = nullptr;
+            sceneMgr->layerSystem = nullptr;
+            Director::getInstance()->replaceScene(mainScene);
+            sceneMgr->curGui = "";
+        }
+        else {
+            sceneMgr->openScene(BinhLobbyScene::className);
+        }
 	}
 	else {
 		string message = LocalizedString::to("QUIT_GAME");
@@ -1605,12 +1615,16 @@ void BinhBoardScene::backKeyPress()
 			if (buttonId == Dialog::BTN_OK) {
 				int bet = 6 * BinhGameLogic::getInstance()->goldBet;
 				BinhGameLogic::getInstance()->arrayPlayer[0]->Gold(BinhGameLogic::getInstance()->arrayPlayer[0]->Gold() - bet);
-				//sceneMgr->openScene(BinhLobbyScene::className);
-                JNIUtils::showAdsBanner(1);
-                sceneMgr->layerGUI    = nullptr;
-                sceneMgr->layerSystem = nullptr;
-                Director::getInstance()->replaceScene(mainScene);
-                sceneMgr->curGui = "";
+				JNIUtils::showAdsBanner(1);
+                if (CONSTANT_GAME.compare("binhAll")) {
+                    sceneMgr->layerGUI    = nullptr;
+                    sceneMgr->layerSystem = nullptr;
+                    Director::getInstance()->replaceScene(mainScene);
+                    sceneMgr->curGui = "";
+                }
+                else {
+                    sceneMgr->openScene(BinhLobbyScene::className);
+                }
                 if (BinhGameLogic::getInstance()->countGame >= 2) {
                     if (gameMgr->useAds)
                         JNIUtils::showAdsFull();

@@ -13,7 +13,7 @@ static const int SOCIAL_ZING_ME		= 0;
 const std::string CONSTANT_FACEBOOK_FANPAGE = "104830091165960";
 const std::string CONSTANT_FACEBOOK_FANPAGE_US = "103337278531124";
 
-const std::string CONSTANT_GAME = "tienlen";
+const std::string CONSTANT_GAME = "binhAll";
 const std::string CONSTANT_GAME_LOGIN_ID = "tienlen";
 const std::string CONSTANT_GAME_LOGIN_SECRET_KEY = "=6%Cj%!CMMq6S$JZ";
 const std::string CONSTANT_GAME_ID = "135";
