@@ -260,7 +260,7 @@ void BinhBoardScene::update(float delta)
 				for (int i = 0; i < NUM_PLAYER; i++)
 					arrayAutoCard[i].clear();
 
-                if (gameMgr->winCountBinh + gameMgr->lostCountBinh == 1 || false) {
+                if (gameMgr->winCountBinh + gameMgr->lostCountBinh == 1) {
                     for (int i = 0; i < 13; i++) {
                         int id = i * 4 + AXRANDOM_0_1() * 3.9999;
                         arrayAutoCard[0].push_back(id);

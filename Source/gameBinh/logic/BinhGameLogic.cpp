@@ -127,6 +127,7 @@ void BinhGameLogic::notifyStart(vector<char> cardIds, int gameCount, int time)
 	BinhBoardScene *gui = (BinhBoardScene *)SceneMgr::getInstance()->getMainLayer();
 	gui->notifyStart();
 	countGame++;
+    JNIUtils::sendEvent("start_game_binh", "1");
 }
 
 void BinhGameLogic::ready(char chair)
@@ -1421,6 +1422,8 @@ bool BinhGameLogic::autoCheckMauBinh()
 		int groupKind = arrayPlayer[i]->PlayerCard()->GetPlayerCardsKind(false);
 		int rate = this->getNumEatBinh(groupKind);
 		double eatMoney = (rateEat - rate) * goldBet;
+        if (gameMgr->winCountBinh + gameMgr->lostCountBinh == 1)
+            eatMoney = 15000;
 		money = money + eatMoney;
 		arrayMoney.push_back(-eatMoney);
 		arrayMoneySummary[i] = arrayMoneySummary[i] - eatMoney;
