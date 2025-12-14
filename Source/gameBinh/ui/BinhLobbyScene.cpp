@@ -73,6 +73,8 @@ void BinhLobbyScene::onEnterFinish()
 
     moveHorizontal(btnTop, getDefaultPos(btnTop).x, -200, 0.0);
     moveHorizontal(btnBack, getDefaultPos(btnBack).x, -200, 0.1);
+    string res = "Board/table/" + BinhGameLogic::getInstance()->getRes() + "btnStart1.png";
+    btnMulti->loadTextures(res, res, res);
 }
 
 void BinhLobbyScene::backKeyPress()

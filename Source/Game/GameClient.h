@@ -259,6 +259,7 @@ public:
     int numDivide;
     void showAdsFull();
     int sourceApp; // app duoc cai dat tu dau
+    int receiveReward;
 
     bool isLandscape;
     void changeToPortrait();

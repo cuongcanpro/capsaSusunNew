@@ -144,7 +144,7 @@ void GameMgr::startGame() {
 	currentIdAvatar = level;
 	if (currentIdAvatar > 19)
 		currentIdAvatar = 19;
-	idAvatarTala = UserDefault::getInstance()->getIntegerForKey("idAvatarBinh", currentIdAvatar);
+	idAvatarBinh = UserDefault::getInstance()->getIntegerForKey("idAvatarBinh", currentIdAvatar);
 	useGuiAt = UserDefault::getInstance()->getBoolForKey("useGuiAt", false);
 	countHelpAt = UserDefault::getInstance()->getIntegerForKey("countHelpAt", 0);
 	canPlayEffect = UserDefault::getInstance()->getIntegerForKey("canPlayEffect", 0);

@@ -40,6 +40,8 @@ import com.android.installreferrer.api.InstallReferrerStateListener;
 import com.android.installreferrer.api.ReferrerDetails;
 import com.google.android.gms.games.PlayGamesSdk;
 
+import java.util.Locale;
+
 import dev.axmol.lib.SharedLoader;
 
 public class AppActivity extends BaseActivity implements InstallReferrerStateListener {
@@ -297,7 +299,7 @@ public class AppActivity extends BaseActivity implements InstallReferrerStateLis
     public static int getSourceApp() {
         return instance.isCampaign;
     }
-    
+
     public static String getCountry() {
         String locale = Locale.getDefault().getLanguage() + "-" + Locale.getDefault().getCountry();
         return locale;

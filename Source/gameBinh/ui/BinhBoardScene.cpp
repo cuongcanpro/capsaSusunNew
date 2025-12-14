@@ -286,13 +286,13 @@ void BinhBoardScene::update(float delta)
                         arrayAutoCard[i % 4].push_back(arrayId[value]);
                         arrayId.erase(arrayId.begin() + value);
                     }
-                    //arrayAutoCard[0].clear();
+                    arrayAutoCard[0].clear();
                     ////	int arr[13] = { 0, 4, 9, 13, 17, 36, 40, 45, 49, 32, 7, 11, 15 };
                     int arr[13] = {0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50};
                      //int arr[13] = { 0, 1, 2, 3, 16, 17, 18, 19, 34, 35, 41, 42, 50 };
                     for (int i = 0; i < 13; i++)
                     {
-                        //arrayAutoCard[0].push_back(arr[i]);
+                        arrayAutoCard[0].push_back(arr[i]);
                     }
                     /*arrayAutoCard[1].clear();
                             int arr1[13] = { 0, 4, 9, 13, 17, 36, 40, 45, 49, 32, 7, 11, 15 };
@@ -1063,7 +1063,7 @@ void BinhBoardScene::sapBai(vector<double> arrayMoney)
 				config.endPosition = posEnd;
 				auto move = EaseOut::create(BezierTo::create(0.6, config), 1);
 
-				Sprite* imgBomb = Sprite::create("table/iconBomb.png");
+				/*Sprite* imgBomb = Sprite::create("table/iconBomb.png");
 				imgBomb->setPosition(posStart);
 				pEffectAll->addChild(imgBomb);
 				imgBomb->runAction(
@@ -1077,7 +1077,7 @@ void BinhBoardScene::sapBai(vector<double> arrayMoney)
 						NULL
 					)
 				);
-                imgBomb->setVisible(false);
+                imgBomb->setVisible(false);*/
 
                 spine::SkeletonAnimation* effectSpecialChi = spine::SkeletonAnimation::createWithJsonFile(
                                     "spine/fx_rocket.json", "spine/fx_rocket.atlas", 1.1f);
@@ -1097,7 +1097,7 @@ void BinhBoardScene::sapBai(vector<double> arrayMoney)
                 effectSpecialChi->runAction(
                     Sequence::create(Spawn::create(EaseBackOut::create(MoveBy::create(0.5, Vec2(0, 30))),
                                                    EaseExponentialOut::create(ScaleTo::create(0.5, 1.0)), NULL),
-                                     EaseExponentialIn::create(MoveTo::create(1.0, Vec2(500, 110))), RemoveSelf::create(), NULL));
+                                     EaseExponentialIn::create(MoveTo::create(1.0, posEnd)), RemoveSelf::create(), NULL));
 			}
 		}
 	}
@@ -1563,7 +1563,7 @@ void BinhBoardScene::onButtonRelease(ax::ui::Button* button, int id)
                 res = "Board/table/flag_1.png";
             }
             btnLanguage->loadTextures(res, res, res);
-            sceneMgr->openGUI(ReceiveGUI::className);
+            game->receiveReward = 1;
             break;
         }
 	case BOARD_SCENE_BTN_SOUND: {
@@ -1597,7 +1597,7 @@ void BinhBoardScene::backKeyPress()
 	gameMgr->checkCanPlayEffect();
 	if (BinhGameLogic::getInstance()->getGameState() == BinhGameState::BINH_GAME_WAITING) {
         JNIUtils::showAdsBanner(1);
-        if (CONSTANT_GAME.compare("binhAll")) {
+        if (CONSTANT_GAME.compare("binhAll") == 0) {
             sceneMgr->layerGUI    = nullptr;
             sceneMgr->layerSystem = nullptr;
             Director::getInstance()->replaceScene(mainScene);
@@ -1616,7 +1616,7 @@ void BinhBoardScene::backKeyPress()
 				int bet = 6 * BinhGameLogic::getInstance()->goldBet;
 				BinhGameLogic::getInstance()->arrayPlayer[0]->Gold(BinhGameLogic::getInstance()->arrayPlayer[0]->Gold() - bet);
 				JNIUtils::showAdsBanner(1);
-                if (CONSTANT_GAME.compare("binhAll")) {
+                if (CONSTANT_GAME.compare("binhAll") == 0) {
                     sceneMgr->layerGUI    = nullptr;
                     sceneMgr->layerSystem = nullptr;
                     Director::getInstance()->replaceScene(mainScene);

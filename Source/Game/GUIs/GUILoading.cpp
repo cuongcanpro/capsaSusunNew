@@ -109,7 +109,7 @@ void GUILoading::callBackSplash()
             NULL
         )
     );
-    iconBall->setVisible(false);
+    //iconBall->setVisible(false);
 
 	background->getImg()->runAction(
         Sequence::create(
@@ -125,12 +125,12 @@ void GUILoading::callBackSplash()
     factory->loadDragonBonesData("dragonbone/kyby_eff_gold_bomb_ske.json");
     factory->loadTextureAtlasData("dragonbone/kyby_eff_gold_bomb_tex.json");
 
-    auto armatureDisplay = factory->buildArmatureDisplay("kyby_eff_gold_bomb");
-    armatureDisplay->setPosition(ax::Vec2(300, 400));
-    //this->addChild(armatureDisplay);
-    armatureDisplay->getEventDispatcher()->setEnabled(true);
-    armatureDisplay->addDBEventListener(dragonBones::EventObject::COMPLETE,
-                                        AX_CALLBACK_0(GUILoading::callbackTest, this));
+    //auto armatureDisplay = factory->buildArmatureDisplay("kyby_eff_gold_bomb");
+    //armatureDisplay->setPosition(ax::Vec2(300, 400));
+    ////this->addChild(armatureDisplay);
+    //armatureDisplay->getEventDispatcher()->setEnabled(true);
+    //armatureDisplay->addDBEventListener(dragonBones::EventObject::COMPLETE,
+    //                                    AX_CALLBACK_0(GUILoading::callbackTest, this));
    // armatureDisplay->getAnimation()->play("lightning");
 
   ////  skeletonNode->setAnimation(0, "walk", true);
@@ -143,22 +143,22 @@ void GUILoading::callBackSplash()
   //  // skeletonNode->setTwoColorTint(true);
 
 
-    spine::SkeletonAnimation* skeletonNode =
-        spine::SkeletonAnimation::createWithJsonFile("spine/firework.json", "spine/firework.atlas", 1.0f);
-    //skeletonNode->setAnimation(0, "idle", true);
-   // skeletonNode->setSkin("idle");
-    skeletonNode->setPosition(Vec2(300, 300));
-    addChild(skeletonNode);
+   // spine::SkeletonAnimation* skeletonNode =
+   //     spine::SkeletonAnimation::createWithJsonFile("spine/firework.json", "spine/firework.atlas", 1.0f);
+   // //skeletonNode->setAnimation(0, "idle", true);
+   //// skeletonNode->setSkin("idle");
+   // skeletonNode->setPosition(Vec2(300, 300));
+   // addChild(skeletonNode);
 
-    // huong tu duoi len tren
-    skeletonNode->setRotation(50); // sang ben phai
-    skeletonNode->setRotation(-30); // huong ben tren
-    skeletonNode->setRotation(-80); // cheo tu phai sang trai
-    skeletonNode->setRotation(10); // cheo tu trai sang phai
+   // // huong tu duoi len tren
+   // skeletonNode->setRotation(50); // sang ben phai
+   // skeletonNode->setRotation(-30); // huong ben tren
+   // skeletonNode->setRotation(-80); // cheo tu phai sang trai
+   // skeletonNode->setRotation(10); // cheo tu trai sang phai
 
-    // huong tu tren xuong duoi
-    skeletonNode->setRotation(150); // huong xuong duoi
-    skeletonNode->setRotation(0); // cheo tu trai sang phai
+   // // huong tu tren xuong duoi
+   // skeletonNode->setRotation(150); // huong xuong duoi
+   // skeletonNode->setRotation(0); // cheo tu trai sang phai
    // skeletonNode->setRotation(-170); // cheo tu phai sang trai
 
   //  skeletonNode->setRotation(90);
@@ -176,13 +176,12 @@ void GUILoading::callBackSplash()
     );*/
   //  skeletonNode->setVisible(false);
 
-    Sparkle* test = new Sparkle(500, 200, "Board/Particles/flare.png");
-   // addChild(test);
-    test->setPosition(size.width * 0.2, size.height * 0.2);
-    test->emitTime = 0.2;
-    test->type = SPARKLE_SHOW;
-    test->startEffect();
-
+   // Sparkle* test = new Sparkle(500, 200, "Board/Particles/flare.png");
+   //// addChild(test);
+   // test->setPosition(size.width * 0.2, size.height * 0.2);
+   // test->emitTime = 0.2;
+   // test->type = SPARKLE_SHOW;
+   // test->startEffect();
     
     
 }

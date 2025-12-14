@@ -2967,6 +2967,9 @@
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\Board\table\btnStart.png">
       <Filter>Content\Board\table</Filter>
     </ClInclude>
+    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\Board\table\btnStart1.png">
+      <Filter>Content\Board\table</Filter>
+    </ClInclude>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\Board\table\btnSwap.png">
       <Filter>Content\Board\table</Filter>
     </ClInclude>
@@ -5637,15 +5640,6 @@
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\common\Localized_vi">
       <Filter>Content\common</Filter>
     </ClInclude>
-    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\dragonbone\kyby_eff_bomb_ske.json">
-      <Filter>Content\dragonbone</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\dragonbone\kyby_eff_bomb_tex.json">
-      <Filter>Content\dragonbone</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\dragonbone\kyby_eff_bomb_tex.png">
-      <Filter>Content\dragonbone</Filter>
-    </ClInclude>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\dragonbone\kyby_eff_gold_bomb_ske.json">
       <Filter>Content\dragonbone</Filter>
     </ClInclude>
@@ -5653,33 +5647,6 @@
       <Filter>Content\dragonbone</Filter>
     </ClInclude>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\dragonbone\kyby_eff_gold_bomb_tex.png">
-      <Filter>Content\dragonbone</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\dragonbone\kyby_eff_lightning_ske.json">
-      <Filter>Content\dragonbone</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\dragonbone\kyby_eff_lightning_tex.json">
-      <Filter>Content\dragonbone</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\dragonbone\kyby_eff_lightning_tex.png">
-      <Filter>Content\dragonbone</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\dragonbone\kyby_longgongbaoxiang_ske.json">
-      <Filter>Content\dragonbone</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\dragonbone\kyby_longgongbaoxiang_tex.json">
-      <Filter>Content\dragonbone</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\dragonbone\kyby_longgongbaoxiang_tex.png">
-      <Filter>Content\dragonbone</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\dragonbone\kyby_zidan6-hit_ske.json">
-      <Filter>Content\dragonbone</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\dragonbone\kyby_zidan6-hit_tex.json">
-      <Filter>Content\dragonbone</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\dragonbone\kyby_zidan6-hit_tex.png">
       <Filter>Content\dragonbone</Filter>
     </ClInclude>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\effect_frame5_ske.json">
@@ -5698,9 +5665,6 @@
       <Filter>Content</Filter>
     </ClInclude>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\fonts\Marker Felt.ttf">
-      <Filter>Content\fonts</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\dev\projects\CapsaSusun\Content\fonts\arial.ttf">
       <Filter>Content\fonts</Filter>
     </ClInclude>
     <ClInclude Include="D:\dev\projects\CapsaSusun\Content\fonts\tahoma.ttf">

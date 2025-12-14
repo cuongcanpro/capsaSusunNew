@@ -61,6 +61,7 @@ void GameClient::applicationWillEnterForeground()
 
 void GameClient::init()
 {
+    receiveReward = -1;
     isLandscape       = true;
     extendGame        = 0;
     showHelpBomb      = false;
@@ -527,6 +528,10 @@ void GameClient::update(float delta)
     {
         JNIUtils::sendEvent("reload_ads", "1");
         getVersion();
+    }
+    if (game->receiveReward >= 0) {
+        onReward(receiveReward);
+        receiveReward = -1;
     }
 }
 
@@ -1434,7 +1439,8 @@ void Java_dev_axmol_app_BaseActivity_nativeOnReward(JNIEnv* env, jobject thiz, j
     {
         int n = (int)num;
         AXLOGD("vo day ne *** ");
-        game->onReward(num);
+        //game->onReward(num);
+        game->receiveReward = num;
     }
 #endif
 }
