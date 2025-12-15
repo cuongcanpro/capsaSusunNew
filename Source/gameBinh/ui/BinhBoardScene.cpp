@@ -260,7 +260,7 @@ void BinhBoardScene::update(float delta)
 				for (int i = 0; i < NUM_PLAYER; i++)
 					arrayAutoCard[i].clear();
 
-                if (gameMgr->winCountBinh + gameMgr->lostCountBinh == 1) {
+                if (gameMgr->winCountBinh + gameMgr->lostCountBinh == 1 && gameMgr->beginner == 1) {
                     for (int i = 0; i < 13; i++) {
                         int id = i * 4 + AXRANDOM_0_1() * 3.9999;
                         arrayAutoCard[0].push_back(id);
@@ -286,13 +286,13 @@ void BinhBoardScene::update(float delta)
                         arrayAutoCard[i % 4].push_back(arrayId[value]);
                         arrayId.erase(arrayId.begin() + value);
                     }
-                    arrayAutoCard[0].clear();
+                    //arrayAutoCard[0].clear();
                     ////	int arr[13] = { 0, 4, 9, 13, 17, 36, 40, 45, 49, 32, 7, 11, 15 };
                     int arr[13] = {0, 4, 9, 13, 18, 21, 26, 30, 34, 36, 41, 46, 50};
                      //int arr[13] = { 0, 1, 2, 3, 16, 17, 18, 19, 34, 35, 41, 42, 50 };
                     for (int i = 0; i < 13; i++)
                     {
-                        arrayAutoCard[0].push_back(arr[i]);
+                        //arrayAutoCard[0].push_back(arr[i]);
                     }
                     /*arrayAutoCard[1].clear();
                             int arr1[13] = { 0, 4, 9, 13, 17, 36, 40, 45, 49, 32, 7, 11, 15 };
@@ -574,6 +574,7 @@ void BinhBoardScene::update(float delta)
             );
         }
     }
+    game->checkReward();
 }
 
 void BinhBoardScene::updateMyCard(vector<int> arrayId, vector<Vec2> arrayPos, vector<float> arraySize)
@@ -1063,7 +1064,7 @@ void BinhBoardScene::sapBai(vector<double> arrayMoney)
 				config.endPosition = posEnd;
 				auto move = EaseOut::create(BezierTo::create(0.6, config), 1);
 
-				/*Sprite* imgBomb = Sprite::create("table/iconBomb.png");
+				Sprite* imgBomb = Sprite::create("table/iconBomb.png");
 				imgBomb->setPosition(posStart);
 				pEffectAll->addChild(imgBomb);
 				imgBomb->runAction(
@@ -1077,7 +1078,7 @@ void BinhBoardScene::sapBai(vector<double> arrayMoney)
 						NULL
 					)
 				);
-                imgBomb->setVisible(false);*/
+                imgBomb->setVisible(false);
 
                 spine::SkeletonAnimation* effectSpecialChi = spine::SkeletonAnimation::createWithJsonFile(
                                     "spine/fx_rocket.json", "spine/fx_rocket.atlas", 1.1f);
@@ -1563,7 +1564,6 @@ void BinhBoardScene::onButtonRelease(ax::ui::Button* button, int id)
                 res = "Board/table/flag_1.png";
             }
             btnLanguage->loadTextures(res, res, res);
-            game->receiveReward = 1;
             break;
         }
 	case BOARD_SCENE_BTN_SOUND: {

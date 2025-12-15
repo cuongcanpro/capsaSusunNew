@@ -22,6 +22,7 @@
 #include <cocostudio/Armature.h>
 #include <DragonBones/DragonBonesHeaders.h>
 #include <DragonBones/CCFactory.h>
+#include <gameBinh/ui/BinhBoardScene.h>
 
 GameMgr::GameMgr()
 {
@@ -31,23 +32,31 @@ GameMgr::~GameMgr()
 {
 
 }
-
-void GameMgr::onReward(int num)
+bool GameMgr::onReward(int num)
 {
 	Node* scene = sceneMgr->getMainLayer();
 	if (scene) {
 		BoardScene* lobby = dynamic_cast<BoardScene*>(scene);
 		if (lobby) {
 			GameLogic::getInstance()->onReward(num);
+            return true;
 		}
 		else {
 			TalaScene* lobby = dynamic_cast<TalaScene*>(scene);
-			if (lobby)
-				TalaGameLogic::getInstance()->onReward(num);
-			else
-				BinhGameLogic::getInstance()->onReward(num);
+			if (lobby) {
+                TalaGameLogic::getInstance()->onReward(num);
+                return true;
+            }
+			else {
+                BinhBoardScene* lobby = dynamic_cast<BinhBoardScene*>(scene);
+                if (lobby) {
+                    BinhGameLogic::getInstance()->onReward(num);
+                    return true;
+                }
+            }
 		}
 	}
+    return false;
 }
 
 bool GameMgr::isIOS()
@@ -100,6 +109,7 @@ GameMgr* GameMgr::getInstance()
 void GameMgr::startGame() {
 	// need init before loading
 //	typeTop = 0;
+    beginner = 1;
         isIndo      = true;
         isInitAds   = false;
         useAds      = 1;

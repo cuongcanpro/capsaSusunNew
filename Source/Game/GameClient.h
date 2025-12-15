@@ -260,7 +260,7 @@ public:
     void showAdsFull();
     int sourceApp; // app duoc cai dat tu dau
     int receiveReward;
-
+    void checkReward();
     bool isLandscape;
     void changeToPortrait();
     void changeToLandscape();

@@ -529,10 +529,7 @@ void GameClient::update(float delta)
         JNIUtils::sendEvent("reload_ads", "1");
         getVersion();
     }
-    if (game->receiveReward >= 0) {
-        onReward(receiveReward);
-        receiveReward = -1;
-    }
+    checkReward();
 }
 
 void GameClient::onPause() {}
@@ -935,12 +932,15 @@ void GameClient::onReward(int num)
 {
     if (num > 0)
     {
-        auto director  = Director::getInstance();
+        /* auto director  = Director::getInstance();
         auto glview    = director->getRenderView();
         Size frameSize = glview->getFrameSize();
         if ((frameSize.height / frameSize.width) <= (1.0f))
         {
             gameMgr->onReward(num);
+            return;
+        }*/
+        if (gameMgr->onReward(num)) {
             return;
         }
         if (GUIManager::getInstance().guiLine != NULL && GUIManager::getInstance().guiLine->isVisible())
@@ -1378,6 +1378,13 @@ void GameClient::setCell(int x, int y)
     if (y < 0 || y > NUM_HEIGHT - 1)
         return;
     dataBrick[y][x] = 1;
+}
+
+void GameClient::checkReward() {
+    if (receiveReward >= 0) {
+        onReward(receiveReward);
+        receiveReward = -1;
+    }
 }
 
 void GameClient::changeToPortrait() {

@@ -139,7 +139,7 @@ public:
 	int arrayOldTop[5];
 
 	int currentPosture;
-	void onReward(int num);
+	bool onReward(int num);
 	void getVersion();
 	void getCountry();
 	bool isIOS();
@@ -172,5 +172,6 @@ public:
     public:
 	static GameMgr* getInstance();
         void showReceiveGold();
+        int beginner;
 };
 #endif // GameMgr_h__
