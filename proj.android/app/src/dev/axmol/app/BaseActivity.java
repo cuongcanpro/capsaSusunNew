@@ -32,7 +32,9 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -287,6 +289,18 @@ public class BaseActivity extends dev.axmol.lib.AxmolActivity {
         });
     }
 
+    private AdSize getAdSize() {
+        Display display = getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        display.getMetrics(outMetrics);
+
+        float widthPixels = outMetrics.widthPixels;
+        float density = outMetrics.density;
+
+        int adWidth = (int) (widthPixels / density);
+        return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, adWidth);
+    }
+
     public void loadAdmobBanner() {
         RequestConfiguration requestConfiguration = MobileAds.getRequestConfiguration().toBuilder()
             .setMaxAdContentRating("MAX_AD_CONTENT_RATING_G")
@@ -301,7 +315,8 @@ public class BaseActivity extends dev.axmol.lib.AxmolActivity {
             .build();
 
         adViewAdmob = new AdView(BaseActivity.this);
-        adViewAdmob.setAdSize(AdSize.BANNER);
+//        adViewAdmob.setAdSize(AdSize.BANNER);
+        adViewAdmob.setAdSize(getAdSize());
 //        adViewAdmob.setAdSize(AdSize.getLandscapeInlineAdaptiveBannerAdSize(this, 600));
         adViewAdmob.setAdUnitId(ConfigGame.ADMOB_BANNER);
 
@@ -361,7 +376,7 @@ public class BaseActivity extends dev.axmol.lib.AxmolActivity {
         mFrameLayout.addView(relativeLayout);
 
         RelativeLayout.LayoutParams adViewParams = new RelativeLayout.LayoutParams(
-            AdView.LayoutParams.WRAP_CONTENT,
+            AdView.LayoutParams.MATCH_PARENT,
             AdView.LayoutParams.WRAP_CONTENT);
         // align bottom
         adViewParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);

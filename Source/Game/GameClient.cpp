@@ -130,13 +130,13 @@ void GameClient::loadPreferences()
     sourceApp  = UserDefault::getInstance()->getIntegerForKey("sourceApp", -1);
     idAdsBanner = UserDefault::getInstance()->getIntegerForKey("idAdsBanner", 1);
     idAdsFull = UserDefault::getInstance()->getIntegerForKey("idAdsFull", 1);
-    adInterUnit = UserDefault::getInstance()->getStringForKey("adInterUnit", "ca-app-pub-3940256099942544/6300978111");
-    adBannerUnit = UserDefault::getInstance()->getStringForKey("adBannerUnit", "ca-app-pub-3940256099942544/1033173712");
-    adRewardUnit = UserDefault::getInstance()->getStringForKey("adRewardUnit", "ca-app-pub-3940256099942544/5224354917");
+    adInterUnit = UserDefault::getInstance()->getStringForKey("adInterUnit", "ca-app-pub-7169368956692170/9394121705");
+    adBannerUnit = UserDefault::getInstance()->getStringForKey("adBannerUnit", "ca-app-pub-7169368956692170/8941135067");
+    adRewardUnit = UserDefault::getInstance()->getStringForKey("adRewardUnit", "ca-app-pub-7169368956692170/4971660968");
 
-    adInterUnitCampaign  = "ca-app-pub-3940256099942544/6300978111";
-    adBannerUnitCampaign = "ca-app-pub-3940256099942544/1033173712";
-    adRewardUnitCampaign = "ca-app-pub-3940256099942544/5224354917";
+    adInterUnitCampaign  = "ca-app-pub-7169368956692170/9394121705";
+    adBannerUnitCampaign = "ca-app-pub-7169368956692170/8941135067";
+    adRewardUnitCampaign = "ca-app-pub-7169368956692170/4971660968";
 
     adBannerFacebook = UserDefault::getInstance()->getStringForKey("adBannerFacebook", "");
     adRewardFacebook = UserDefault::getInstance()->getStringForKey("adRewardFacebook", "");
@@ -642,7 +642,7 @@ void GameClient::getVersion() {
   //  request->setHeaders(std::vector<std::string>{CHROME_UA});
     request->setResponseCallback(AX_CALLBACK_2(GameClient::onVersionCompleted, this));
     request->setTag("GET test3");
-    //ax::network::HttpClient::getInstance()->send(request);
+    ax::network::HttpClient::getInstance()->send(request);
     // don't forget to release it, pair to new
     request->release();
     time_t currentTime;

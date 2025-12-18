@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "735745505095",
-    "project_id": "line-98-451615",
-    "storage_bucket": "line-98-451615.firebasestorage.app"
+    "project_number": "459437180332",
+    "project_id": "capsasusun-a58d6",
+    "storage_bucket": "capsasusun-a58d6.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:735745505095:android:9f59347edf4e84bb663e62",
+        "mobilesdk_app_id": "1:459437180332:android:58459bb1be85c9b2942609",
         "android_client_info": {
-          "package_name": "org.game.capsaSusun1"
+          "package_name": "org.game.capsaSusun"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDQ3tzeRaMCYiIy1ORSfItbhkiHHVvHL6c"
+          "current_key": "AIzaSyAKE6WbgQpgj4CI1PV7Yu33cAiZ4q-Z1vA"
         }
       ],
       "services": {

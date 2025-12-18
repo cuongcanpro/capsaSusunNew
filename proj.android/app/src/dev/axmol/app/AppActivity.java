@@ -27,12 +27,14 @@ package dev.axmol.app;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.util.Log;
+import android.view.ViewGroup;
 import android.view.WindowManager.LayoutParams;
 
 import com.android.installreferrer.api.InstallReferrerClient;
@@ -49,6 +51,7 @@ public class AppActivity extends BaseActivity implements InstallReferrerStateLis
     private static final String TAG = "ReferrerTracker";
     private InstallReferrerClient referrerClient;
     private int isCampaign = 0; // mac dinh la organic
+    int lastOrientation = Configuration.ORIENTATION_UNDEFINED;
     static {
         // DNT remove, some android simulator require explicit load shared libraries, otherwise will crash
         SharedLoader.load();
@@ -303,5 +306,35 @@ public class AppActivity extends BaseActivity implements InstallReferrerStateLis
     public static String getCountry() {
         String locale = Locale.getDefault().getLanguage() + "-" + Locale.getDefault().getCountry();
         return locale;
+    }
+
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (idAdsBanner != ConfigGame.ADMOB_ID)
+            return;
+        System.out.println("Orientation change ");
+        if (newConfig.orientation != lastOrientation) {
+            System.out.println("Orientation change 1");
+            lastOrientation = newConfig.orientation;
+            reloadBannerSafe();
+        }
+    }
+
+    private void reloadBannerSafe() {
+        try {
+            if (adViewAdmob != null) {
+                ViewGroup parent = (ViewGroup) adViewAdmob.getParent();
+                if (parent != null) {
+                    parent.removeView(adViewAdmob);
+                }
+                adViewAdmob.destroy();
+                adViewAdmob = null;
+            }
+            System.out.println("reload Admob Banner ");
+            loadAdmobBanner();
+        }
+        catch (Exception ex) {
+
+        }
     }
 }

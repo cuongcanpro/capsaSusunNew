@@ -112,7 +112,7 @@ void GUIMinigames::callBackSplash()
     btnChess = addButton(BTN_LINE, "iconCard.png", new BubbleBehavior(), NULL, false);
     btnChess->setPosition(bgInfo->getPositionX(), bgInfo->getPositionY() + btnChess->getHeight() * 0.6 + bgInfo->getContentSize().height * 0.5);
 	
-    float heightBg = btnBack->getPositionY() - btnBack->getHeight() * 0.7 - size.height * 0.15;
+    float heightBg = btnBack->getPositionY() - btnBack->getHeight() * 0.55 - size.height * 0.2;
     float widthBg  = size.width * 0.95f - bgInfo->getPositionX() - bgInfo->getContentSize().width * 0.5 - size.width * 0.05;
 	//game->showChess = false;
     //if (game->showChess)
@@ -128,7 +128,7 @@ void GUIMinigames::callBackSplash()
 
 	bgGame = Scale9Sprite::create("IconGame/popup.png");
 	addChild(bgGame);
-	bgGame->setPosition(size.width * 0.95f - widthBg * 0.5, size.height * 0.15 + heightBg * 0.5);
+	bgGame->setPosition(size.width * 0.95f - widthBg * 0.5, size.height * 0.2 + heightBg * 0.5);
 	bgGame->setContentSize(Size(widthBg, heightBg));
 	bgGame->setOpacity(50);
 
