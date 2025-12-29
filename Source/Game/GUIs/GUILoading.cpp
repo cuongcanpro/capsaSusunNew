@@ -61,7 +61,7 @@ void GUILoading::callbackCompleteEndGame() {
 
 void GUILoading::callbackCompleteEndGame1()
 {
-    if (updateGame != 0 || game->message != "")
+    if ((updateGame != 0  && updateGame < 3) || game->message != "")
         return;
    
     

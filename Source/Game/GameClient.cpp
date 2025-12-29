@@ -836,7 +836,7 @@ void GameClient::onVersionCompleted(ax::network::HttpClient* sender, ax::network
         UserDefault::getInstance()->flush();
     }
     //urlUpdate  = "org.simpleGame.colorLineChallenge";
-    //updateGame = 2;
+   // updateGame = 2;
     if (updateGame != 0) {
         showUpdate();
     }
@@ -872,7 +872,7 @@ void onContinueGame() {
     if (GUIManager::getInstance().guiLoading->isVisible())
     {
         GUIManager::getInstance().removeAllGui();
-        GUIManager::getInstance().guiLine->showGui();
+        GUIManager::getInstance().showGuiWithName(GUIMinigames::className);
     }
 }
 
