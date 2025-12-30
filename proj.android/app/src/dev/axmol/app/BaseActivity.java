@@ -383,6 +383,7 @@ public class BaseActivity extends dev.axmol.lib.AxmolActivity {
         // align center
         adViewParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
         relativeLayout.addView(adViewAdmob, adViewParams);
+        checkShowBanner();
     }
 
     public void loadAdmobInter() {
@@ -1074,4 +1075,5 @@ public class BaseActivity extends dev.axmol.lib.AxmolActivity {
     }
 
     public static native void nativeOnReward(int num);
+    public static native void checkShowBanner();
 }

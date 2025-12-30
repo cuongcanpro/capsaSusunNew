@@ -264,6 +264,7 @@ public:
     bool isLandscape;
     void changeToPortrait();
     void changeToLandscape();
+    void checkShowBanner();
 };
 #endif // GameClient_h__
 

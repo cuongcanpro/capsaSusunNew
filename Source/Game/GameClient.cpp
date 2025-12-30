@@ -1427,6 +1427,15 @@ void GameClient::changeToLandscape() {
     }
 }
 
+void GameClient::checkShowBanner()
+{
+    gameMgr->checkShowBanner();
+    if (GUIManager::getInstance().guiPika != NULL && GUIManager::getInstance().guiPika->isVisible()) {
+        JNIUtils::showAdsBanner(false);
+        JNIUtils::sendEvent("hideBanner", "1");
+    }
+    
+}
 /*****************************  Native Callback method  *****************************/
 extern "C" {
 #if (AX_TARGET_PLATFORM == AX_PLATFORM_ANDROID)
@@ -1449,5 +1458,11 @@ void Java_dev_axmol_app_BaseActivity_nativeOnReward(JNIEnv* env, jobject thiz, j
         //game->onReward(num);
         game->receiveReward = num;
     }
+
+void Java_dev_axmol_app_BaseActivity_checkShowBanner(JNIEnv* env, jobject thiz)
+{
+    CCLOG("vo day ne *** checkShowBanner");
+    game->checkShowBanner();
+}
 #endif
 }

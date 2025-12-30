@@ -173,5 +173,6 @@ public:
 	static GameMgr* getInstance();
         void showReceiveGold();
         int beginner;
+        void checkShowBanner();
 };
 #endif // GameMgr_h__

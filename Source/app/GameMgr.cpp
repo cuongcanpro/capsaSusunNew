@@ -786,5 +786,37 @@ void GameMgr::showReceiveGold()
     sceneMgr->addLayerSystem(armatureDisplay);
     armatureDisplay->runAction(Sequence::create(DelayTime::create(4.0), RemoveSelf::create(), NULL));
 }
+
+void GameMgr::checkShowBanner()
+{
+    Node* scene = sceneMgr->getMainLayer();
+    JNIUtils::sendEvent("checkShowBanner", "1");
+    if (scene)
+    {
+        BoardScene* lobby = dynamic_cast<BoardScene*>(scene);
+        if (lobby)
+        {
+            JNIUtils::showAdsBanner(false);
+            JNIUtils::sendEvent("hideBanner", "1");
+        }
+        else
+        {
+            TalaScene* lobby = dynamic_cast<TalaScene*>(scene);
+            if (lobby) {
+                JNIUtils::showAdsBanner(false);
+                JNIUtils::sendEvent("hideBanner", "1");
+            }
+            else {
+                BinhBoardScene* lobby = dynamic_cast<BinhBoardScene*>(scene);
+                if (lobby) {
+                    JNIUtils::showAdsBanner(false);
+                    JNIUtils::sendEvent("hideBanner", "1");
+                }
+            }
+                
+        }
+    }
+    
+}
 GameMgr* GameMgr::_instance = nullptr;
 
