@@ -250,7 +250,7 @@ public class BaseActivity extends dev.axmol.lib.AxmolActivity {
                     showAdmobBanner(show);
                 }
                 else if (idAdsBanner == ConfigGame.FACEBOOK_ID) {
-                    //showFacebookReward();
+                    showFacebookBanner(show);
                 }
                 else if (idAdsBanner == ConfigGame.UNITY_ID) {
                     //showUnityReward();
@@ -744,6 +744,17 @@ public class BaseActivity extends dev.axmol.lib.AxmolActivity {
             return;
         }
         rewardFacebook.show();
+    }
+
+    public void showFacebookBanner(int show) {
+        if (adViewFacebook != null) {
+            if (show == 1) {
+                adViewFacebook.setVisibility(View.VISIBLE);
+            }
+            else {
+                adViewFacebook.setVisibility(View.INVISIBLE);
+            }
+        }
     }
     /** endregion Facebook */
 

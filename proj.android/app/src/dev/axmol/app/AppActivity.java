@@ -49,7 +49,6 @@ import dev.axmol.lib.SharedLoader;
 public class AppActivity extends BaseActivity implements InstallReferrerStateListener {
     public static AppActivity instance;
     private static final String TAG = "ReferrerTracker";
-    private InstallReferrerClient referrerClient;
     private int isCampaign = 0; // mac dinh la organic
     int lastOrientation = Configuration.ORIENTATION_UNDEFINED;
     static {
@@ -84,63 +83,16 @@ public class AppActivity extends BaseActivity implements InstallReferrerStateLis
 //        initAds("", "ca-app-pub-3940256099942544/6300978111", "ca-app-pub-3940256099942544/1033173712", 1, 1);
         initFirebase();
         initAdjust();
-        PlayGamesSdk.initialize(this);
+        //PlayGamesSdk.initialize(this);
         // 1. Khởi tạo client
-        referrerClient = InstallReferrerClient.newBuilder(this).build();
 
         // 2. Bắt đầu kết nối
-        referrerClient.startConnection(this);
 
     }
     // Giao diện InstallReferrerStateListener
     @Override
     public void onInstallReferrerSetupFinished(int responseCode) {
-        switch (responseCode) {
-            case InstallReferrerClient.InstallReferrerResponse.OK:
-                // Kết nối thành công, có thể lấy referrer.
-                try {
-                    ReferrerDetails response = referrerClient.getInstallReferrer();
-                    String referrerUrl = response.getInstallReferrer();
-                    long clickTimestamp = response.getReferrerClickTimestampSeconds();
-                    long installTimestamp = response.getInstallBeginTimestampSeconds();
 
-                    Log.d(TAG, "Install Referrer URL: " + referrerUrl);
-
-                    // TODO: Xử lý chuỗi referrerUrl tại đây để phân biệt Organic/Non-Organic
-                    if (referrerUrl == null || referrerUrl.isEmpty() || referrerUrl.contains("utm_medium=organic")) {
-                        Log.i(TAG, "Nguồn cài đặt: Organic (Tự nhiên)");
-                        isCampaign = 0;
-                    } else {
-                        // Phân tích tham số để xác định chiến dịch trả phí
-                        // Sử dụng android.net.Uri để phân tích chuỗi truy vấn (query string)
-                        android.net.Uri uri = android.net.Uri.parse("http://example.com/?" + referrerUrl);
-                        String source = uri.getQueryParameter("utm_source");
-                        String medium = uri.getQueryParameter("utm_medium");
-
-                        Log.i(TAG, "Nguồn cài đặt: Non-Organic (Trả phí)");
-                        Log.i(TAG, "Campaign Source: " + source + ", Medium: " + medium);
-                        isCampaign = 1;
-                    }
-                    // Sau khi lấy xong, bạn nên ngắt kết nối
-                    referrerClient.endConnection();
-
-                    // Ghi nhớ rằng đã lấy referrer để không gọi lại lần sau
-                    // (Lưu vào SharedPreferences)
-
-                } catch (Exception e) {
-                    Log.e(TAG, "Lỗi khi lấy Referrer: " + e.getMessage());
-                }
-                break;
-            case InstallReferrerClient.InstallReferrerResponse.FEATURE_NOT_SUPPORTED:
-                // API không được hỗ trợ trên thiết bị/Play Store phiên bản cũ
-                Log.w(TAG, "Install Referrer API không được hỗ trợ.");
-                break;
-            case InstallReferrerClient.InstallReferrerResponse.SERVICE_UNAVAILABLE:
-                // Kết nối không thành công (ví dụ: lỗi mạng, dịch vụ Play Store không sẵn sàng)
-                Log.w(TAG, "Dịch vụ Install Referrer không sẵn sàng.");
-                break;
-            // Xử lý các mã lỗi khác nếu cần (API_NOT_AVAILABLE, DEVELOPER_ERROR)
-        }
     }
 
     @Override
