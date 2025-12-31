@@ -157,17 +157,7 @@ void BinhTinhAt::initButton()
 	btnArrange = customButton("btnArrange", BINH_TINH_AT_BTN_ARRANGE, _layout);
 	btnNormal = customButton("btnNormal", BINH_TINH_AT_BTN_NORMAL, _layout);
 
-    if (languageMgr->checkCurrentLanguage(LANGUAGE_EN))
-    {
-        string res = "table/textEnglish/btnReady.png";
-        btnComplete->loadTextures(res, res, res);
-
-        res = "table/textEnglish/btnArrange1.png";
-        btnArrange->loadTextures(res, res, res);
-
-        res = "table/textEnglish/btnCancel.png";
-        btnCancel->loadTextures(res, res, res);
-    }
+    
 }
 
 void BinhTinhAt::initOneButton(Button* btn, string resource)
@@ -195,6 +185,28 @@ void BinhTinhAt::onEnterFinish()
 	scheduleUpdate();
 	setFog(true, 0);
 	clockGame->onEnterFinish();
+	if (languageMgr->checkCurrentLanguage(LANGUAGE_EN))
+    {
+        string res = "table/textEnglish/btnReady.png";
+        btnComplete->loadTextures(res, res, res);
+
+        res = "table/textEnglish/btnArrange1.png";
+        btnArrange->loadTextures(res, res, res);
+
+        res = "table/textEnglish/btnCancel.png";
+        btnCancel->loadTextures(res, res, res);
+    }
+    else
+    {
+    	string res = "table/btnReady.png";
+        btnComplete->loadTextures(res, res, res);
+
+        res = "table/btnArrange1.png";
+        btnArrange->loadTextures(res, res, res);
+
+        res = "table/btnCancel.png";
+        btnCancel->loadTextures(res, res, res);	
+    }
 }
 
 void BinhTinhAt::showEffect(Vec2 arrayPos[], float widthCard, bool effectGUI)
